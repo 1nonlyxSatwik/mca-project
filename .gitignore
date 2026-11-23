@@ -1,4 +1,4 @@
-sim/
+/sim/
 cache/sim/build/
 cache/sim/results*.log
 *.vvp
