@@ -1,0 +1,7 @@
+trace,architecture,accesses,hits,cycles
+random,direct_mapped,2000,67,21660
+random,two_way_lru,2000,60,19370
+locality,direct_mapped,2000,1767,6116
+locality,two_way_lru,2000,1788,3791
+conflict,direct_mapped,2000,0,20000
+conflict,two_way_lru,2000,1998,2016

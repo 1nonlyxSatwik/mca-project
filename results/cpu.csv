@@ -1,0 +1,9 @@
+architecture,program,memory_ops,cycles
+harvard,prog1,3,5
+harvard,prog2,3,4
+harvard,prog3,0,4
+harvard,prog4,4,23
+shared,prog1,3,8
+shared,prog2,3,7
+shared,prog3,0,4
+shared,prog4,4,27
