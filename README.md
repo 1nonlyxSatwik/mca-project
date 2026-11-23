@@ -31,10 +31,10 @@ The project covers the full access path: tag lookup, hit selection, allocation, 
 
 | Member | Name | Enrollment number | Assigned role |
 |:---:|:---|:---|:---|
-| 1 | Satwik | To be added | Direct-mapped baseline, cache data RAM and tag RAM |
-| 2 | Aditya Ranjan | To be added | 2-way cache controller, LRU replacement and top-level integration |
-| 3 | Ashar Asif Shaikh | To be added | Backing memory, CPU-cache bridge and memory-mapped I/O |
-| 4 | Aryan Singh Rathore | To be added | Verification, benchmark analysis, report and CI |
+| 1 | Satwik | | Direct-mapped baseline, cache data RAM and tag RAM |
+| 2 | Aditya Ranjan | 2401010035 | 2-way cache controller, LRU replacement and top-level integration |
+| 3 | Ashar Asif Shaikh | | Backing memory, CPU-cache bridge and memory-mapped I/O |
+| 4 | Aryan Singh Rathore | | Verification, benchmark analysis, report and CI |
 
 ## Results at a glance
 
