@@ -1,0 +1,10 @@
+sim/
+cache/sim/build/
+cache/sim/results*.log
+*.vvp
+*.vcd
+__pycache__/
+*.aux
+*.out
+*.toc
+*.log
