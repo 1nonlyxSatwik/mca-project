@@ -42,7 +42,12 @@ def cache():
    if len(records)!=2000:raise RuntimeError('Incomplete trace')
    rows.append(dict(trace=trace,architecture=architecture,accesses=len(records),hits=sum(x[1]=='HIT' for x in records),cycles=sum(int(x[2]) for x in records)))
  if len(re.findall(r'Mismatches:\s+0',log))!=6:raise RuntimeError('Missing golden model confirmation')
- print('Cache unit, memory, writeback and 3 x 2000-access trace tests: PASS',flush=True)
+ for latency in [1,3,6]:
+  binary=BUILD/f'cache_words_{latency}.vvp'
+  run([IV,'-g2012','-Wall','-s','tb_cache_word_stress',f'-Ptb_cache_word_stress.LATENCY={latency}','-o',binary,*sorted(ROOT.glob('cache/rtl/*.v')),ROOT/'cache/tb/tb_cache_word_stress.v'])
+  stress=run([VVP,binary]);(BUILD/f'cache_words_{latency}.log').write_text(stress)
+  if 'PASS cache_word_stress' not in stress:raise RuntimeError('Missing cache stress result')
+ print('Cache suite: 6000 trace operations + 2358 mixed-word stress operations PASS',flush=True)
  return rows
 def integrated():
  rows=[];sources=[*sorted(ROOT.glob('rtl/*.v')),*sorted(ROOT.glob('cache/rtl/*.v')),*sorted(ROOT.glob('integration/rtl/*.v')),ROOT/'integration/tb/tb_cpu_cached.v']
