@@ -200,8 +200,8 @@ All five top modules passed `hierarchy`, `proc`, `opt`, `check` and `stat` in Gi
 
 ## Credits and project scope
 
-Maintained by **Aditya Ranjan — [kvianAR](https://github.com/kvianAR)**.
+MCA CacheLab is a team project maintained by **Satwik, Aditya Ranjan, Ashar Asif Shaikh, and Aryan Singh Rathore**. Our assigned responsibilities are listed in the [Project team](#project-team) section.
 
-The cache and CPU baselines come from the revisions credited in [SOURCES.md](SOURCES.md). Integration work adds the CPU-cache bridge, latency-controlled CPU line memory, architectural reference checking, mixed-word cache stress tests, consolidated analysis, report generation and CI.
+The cache and CPU baselines build on the source revisions credited in [SOURCES.md](SOURCES.md). The combined project includes the CPU-cache bridge, latency-controlled CPU line memory, architectural reference checking, mixed-word cache stress tests, consolidated analysis, report generation and CI. Source attribution is preserved alongside our team responsibilities.
 
 Root documentation describes the final combined project. Documents under `cache/report/`, `cache/docs/`, `cache/synth/` and `docs/original_*` retain upstream history; inherited Vivado figures marked as needing a rerun are not final-project measurements. Course phase compliance should be checked against the official rubric.
