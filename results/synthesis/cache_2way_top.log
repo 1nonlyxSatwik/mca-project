@@ -1,0 +1,1233 @@
+
+ /----------------------------------------------------------------------------\
+ |  yosys -- Yosys Open SYnthesis Suite                                       |
+ |  Copyright (C) 2012 - 2025  Claire Xenia Wolf <claire@yosyshq.com>         |
+ |  Distributed under an ISC-like license, type "license" to see terms        |
+ \----------------------------------------------------------------------------/
+ Yosys 0.52 (git sha1 fee39a3284c90249e1d9684cf6944ffbbcbb8f90)
+
+-- Executing script file `/home/runner/work/mca-project/mca-project/results/synthesis/cache_2way_top.ys' --
+
+1. Executing Verilog-2005 frontend: cache/rtl/cache_2way_top.v
+Parsing Verilog input from `cache/rtl/cache_2way_top.v' to AST representation.
+Generating RTLIL representation for module `\cache_2way_top'.
+Successfully finished Verilog frontend.
+
+2. Executing Verilog-2005 frontend: cache/rtl/cache_fsm.v
+Parsing Verilog input from `cache/rtl/cache_fsm.v' to AST representation.
+Generating RTLIL representation for module `\cache_fsm'.
+Successfully finished Verilog frontend.
+
+3. Executing Verilog-2005 frontend: cache/rtl/direct_mapped_cache.v
+Parsing Verilog input from `cache/rtl/direct_mapped_cache.v' to AST representation.
+Generating RTLIL representation for module `\direct_mapped_cache'.
+Warning: Replacing memory \dirty_mem with list of registers. See cache/rtl/direct_mapped_cache.v:107
+Warning: Replacing memory \valid_mem with list of registers. See cache/rtl/direct_mapped_cache.v:106
+Warning: Replacing memory \tag_mem with list of registers. See cache/rtl/direct_mapped_cache.v:105
+Warning: Replacing memory \data_mem with list of registers. See cache/rtl/direct_mapped_cache.v:104
+Successfully finished Verilog frontend.
+
+4. Executing Verilog-2005 frontend: cache/rtl/lru_state.v
+Parsing Verilog input from `cache/rtl/lru_state.v' to AST representation.
+Generating RTLIL representation for module `\lru_state'.
+Successfully finished Verilog frontend.
+
+5. Executing Verilog-2005 frontend: cache/rtl/tag_comparator.v
+Parsing Verilog input from `cache/rtl/tag_comparator.v' to AST representation.
+Generating RTLIL representation for module `\tag_comparator'.
+Successfully finished Verilog frontend.
+
+6. Executing Verilog-2005 frontend: cache/rtl/valid_bits.v
+Parsing Verilog input from `cache/rtl/valid_bits.v' to AST representation.
+Generating RTLIL representation for module `\valid_bits'.
+Successfully finished Verilog frontend.
+
+7. Executing Verilog-2005 frontend: cache/rtl/way_data_ram.v
+Parsing Verilog input from `cache/rtl/way_data_ram.v' to AST representation.
+Generating RTLIL representation for module `\way_data_ram'.
+Successfully finished Verilog frontend.
+
+8. Executing Verilog-2005 frontend: cache/rtl/way_tag_ram.v
+Parsing Verilog input from `cache/rtl/way_tag_ram.v' to AST representation.
+Generating RTLIL representation for module `\way_tag_ram'.
+Successfully finished Verilog frontend.
+
+9. Executing HIERARCHY pass (managing design hierarchy).
+
+9.1. Analyzing design hierarchy..
+Top module:  \cache_2way_top
+Used module:     \cache_fsm
+Used module:     \tag_comparator
+Used module:     \lru_state
+Used module:     \valid_bits
+Used module:     \way_tag_ram
+Used module:     \way_data_ram
+Parameter \ADDR_W = 32
+Parameter \SETS = 64
+Parameter \INDEX_W = 6
+Parameter \TAG_W = 22
+Parameter \OFFSET_W = 4
+
+9.2. Executing AST frontend in derive mode using pre-parsed AST for module `\cache_fsm'.
+Parameter \ADDR_W = 32
+Parameter \SETS = 64
+Parameter \INDEX_W = 6
+Parameter \TAG_W = 22
+Parameter \OFFSET_W = 4
+Generating RTLIL representation for module `$paramod$05c1e7bd5a1b59bea00dcbb162015326cffdec58\cache_fsm'.
+Parameter \SETS = 64
+Parameter \INDEX_W = 6
+Parameter \TAG_W = 22
+
+9.3. Executing AST frontend in derive mode using pre-parsed AST for module `\way_tag_ram'.
+Parameter \SETS = 64
+Parameter \INDEX_W = 6
+Parameter \TAG_W = 22
+Generating RTLIL representation for module `$paramod$7237cb41cb34ca93a1ce463152b05b33d6b49d72\way_tag_ram'.
+Parameter \SETS = 64
+Parameter \INDEX_W = 6
+Parameter \TAG_W = 22
+Found cached RTLIL representation for module `$paramod$7237cb41cb34ca93a1ce463152b05b33d6b49d72\way_tag_ram'.
+Parameter \SETS = 64
+Parameter \INDEX_W = 6
+
+9.4. Executing AST frontend in derive mode using pre-parsed AST for module `\way_data_ram'.
+Parameter \SETS = 64
+Parameter \INDEX_W = 6
+Generating RTLIL representation for module `$paramod$1d0d03e245a6da678715d38116649e5c50f51da9\way_data_ram'.
+Parameter \SETS = 64
+Parameter \INDEX_W = 6
+Found cached RTLIL representation for module `$paramod$1d0d03e245a6da678715d38116649e5c50f51da9\way_data_ram'.
+
+9.5. Analyzing design hierarchy..
+Top module:  \cache_2way_top
+Used module:     $paramod$05c1e7bd5a1b59bea00dcbb162015326cffdec58\cache_fsm
+Used module:     \tag_comparator
+Used module:     \lru_state
+Used module:     \valid_bits
+Used module:     $paramod$7237cb41cb34ca93a1ce463152b05b33d6b49d72\way_tag_ram
+Used module:     $paramod$1d0d03e245a6da678715d38116649e5c50f51da9\way_data_ram
+
+9.6. Analyzing design hierarchy..
+Top module:  \cache_2way_top
+Used module:     $paramod$05c1e7bd5a1b59bea00dcbb162015326cffdec58\cache_fsm
+Used module:     \tag_comparator
+Used module:     \lru_state
+Used module:     \valid_bits
+Used module:     $paramod$7237cb41cb34ca93a1ce463152b05b33d6b49d72\way_tag_ram
+Used module:     $paramod$1d0d03e245a6da678715d38116649e5c50f51da9\way_data_ram
+Removing unused module `\way_tag_ram'.
+Removing unused module `\way_data_ram'.
+Removing unused module `\direct_mapped_cache'.
+Removing unused module `\cache_fsm'.
+Removed 4 unused modules.
+
+10. Executing PROC pass (convert processes to netlists).
+
+10.1. Executing PROC_CLEAN pass (remove empty switches from decision trees).
+Cleaned up 0 empty switches.
+
+10.2. Executing PROC_RMDEAD pass (remove dead branches from decision trees).
+Marked 1 switch rules as full_case in process $proc$cache/rtl/way_tag_ram.v:17$545 in module $paramod$7237cb41cb34ca93a1ce463152b05b33d6b49d72\way_tag_ram.
+Marked 5 switch rules as full_case in process $proc$cache/rtl/valid_bits.v:18$329 in module valid_bits.
+Marked 2 switch rules as full_case in process $proc$cache/rtl/lru_state.v:16$300 in module lru_state.
+Marked 4 switch rules as full_case in process $proc$cache/rtl/cache_fsm.v:189$537 in module $paramod$05c1e7bd5a1b59bea00dcbb162015326cffdec58\cache_fsm.
+Marked 10 switch rules as full_case in process $proc$cache/rtl/cache_fsm.v:110$447 in module $paramod$05c1e7bd5a1b59bea00dcbb162015326cffdec58\cache_fsm.
+Marked 5 switch rules as full_case in process $proc$cache/rtl/way_data_ram.v:17$557 in module $paramod$1d0d03e245a6da678715d38116649e5c50f51da9\way_data_ram.
+Removed a total of 0 dead cases.
+
+10.3. Executing PROC_PRUNE pass (remove redundant assignments in processes).
+Removed 0 redundant assignments.
+Promoted 57 assignments to connections.
+
+10.4. Executing PROC_INIT pass (extract init attributes).
+
+10.5. Executing PROC_ARST pass (detect async resets in processes).
+Found async reset \rst_n in `\valid_bits.$proc$cache/rtl/valid_bits.v:18$329'.
+Found async reset \rst_n in `\lru_state.$proc$cache/rtl/lru_state.v:16$300'.
+Found async reset \rst_n in `$paramod$05c1e7bd5a1b59bea00dcbb162015326cffdec58\cache_fsm.$proc$cache/rtl/cache_fsm.v:110$447'.
+
+10.6. Executing PROC_ROM pass (convert switches to ROMs).
+Converted 0 switches.
+<suppressed ~26 debug messages>
+
+10.7. Executing PROC_MUX pass (convert decision trees to multiplexers).
+Creating decoders for process `$paramod$7237cb41cb34ca93a1ce463152b05b33d6b49d72\way_tag_ram.$proc$cache/rtl/way_tag_ram.v:17$545'.
+     1/3: $1$memwr$\mem$cache/rtl/way_tag_ram.v:18$543_EN[21:0]$551
+     2/3: $1$memwr$\mem$cache/rtl/way_tag_ram.v:18$543_DATA[21:0]$550
+     3/3: $1$memwr$\mem$cache/rtl/way_tag_ram.v:18$543_ADDR[5:0]$549
+Creating decoders for process `\valid_bits.$proc$cache/rtl/valid_bits.v:18$329'.
+     1/14: $3$lookahead\way1_valid$328[63:0]$371
+     2/14: $2$bitselwrite$pos$cache/rtl/valid_bits.v:26$326[5:0]$370
+     3/14: $2$lookahead\way1_valid$328[63:0]$362
+     4/14: $2$bitselwrite$pos$cache/rtl/valid_bits.v:25$325[5:0]$361
+     5/14: $3$lookahead\way0_valid$327[63:0]$353
+     6/14: $2$bitselwrite$pos$cache/rtl/valid_bits.v:24$324[5:0]$352
+     7/14: $2$lookahead\way0_valid$327[63:0]$344
+     8/14: $2$bitselwrite$pos$cache/rtl/valid_bits.v:23$323[5:0]$343
+     9/14: $1$lookahead\way1_valid$328[63:0]$342
+    10/14: $1$bitselwrite$pos$cache/rtl/valid_bits.v:26$326[5:0]$340
+    11/14: $1$bitselwrite$pos$cache/rtl/valid_bits.v:25$325[5:0]$339
+    12/14: $1$lookahead\way0_valid$327[63:0]$341
+    13/14: $1$bitselwrite$pos$cache/rtl/valid_bits.v:24$324[5:0]$338
+    14/14: $1$bitselwrite$pos$cache/rtl/valid_bits.v:23$323[5:0]$337
+Creating decoders for process `\lru_state.$proc$cache/rtl/lru_state.v:16$300'.
+     1/4: $2$lookahead\lru_bit$299[63:0]$307
+     2/4: $2$bitselwrite$pos$cache/rtl/lru_state.v:18$298[5:0]$306
+     3/4: $1$lookahead\lru_bit$299[63:0]$305
+     4/4: $1$bitselwrite$pos$cache/rtl/lru_state.v:18$298[5:0]$304
+Creating decoders for process `$paramod$05c1e7bd5a1b59bea00dcbb162015326cffdec58\cache_fsm.$proc$cache/rtl/cache_fsm.v:189$537'.
+     1/25: $2\way1_tag_we[0:0]
+     2/25: $4\way1_word_we[3:0]
+     3/25: $2\way0_tag_we[0:0]
+     4/25: $4\way0_word_we[3:0]
+     5/25: $3\way1_word_we[3:0]
+     6/25: $3\way0_word_we[3:0]
+     7/25: $2\way1_word_we[3:0]
+     8/25: $2\way0_word_we[3:0]
+     9/25: $2\data_wdata[127:0]
+    10/25: $2\cpu_rdata[31:0]
+    11/25: $1\cpu_ready[0:0]
+    12/25: $1\touch_way[0:0]
+    13/25: $1\touch[0:0]
+    14/25: $1\data_wdata[127:0]
+    15/25: $1\way1_word_we[3:0]
+    16/25: $1\way0_word_we[3:0]
+    17/25: $1\cpu_rdata[31:0]
+    18/25: $1\set_valid_way[0:0]
+    19/25: $1\set_valid[0:0]
+    20/25: $1\way1_tag_we[0:0]
+    21/25: $1\way0_tag_we[0:0]
+    22/25: $1\mem_wdata[127:0]
+    23/25: $1\mem_we[0:0]
+    24/25: $1\mem_re[0:0]
+    25/25: $1\mem_addr[31:0]
+Creating decoders for process `$paramod$05c1e7bd5a1b59bea00dcbb162015326cffdec58\cache_fsm.$proc$cache/rtl/cache_fsm.v:110$447'.
+     1/43: $7$lookahead\way1_dirty$445[63:0]$521
+     2/43: $3$bitselwrite$pos$cache/rtl/cache_fsm.v:176$436[5:0]$519
+     3/43: $7$lookahead\way0_dirty$446[63:0]$522
+     4/43: $3$bitselwrite$pos$cache/rtl/cache_fsm.v:177$437[5:0]$520
+     5/43: $6$lookahead\way1_dirty$445[63:0]$503
+     6/43: $4$bitselwrite$pos$cache/rtl/cache_fsm.v:161$434[5:0]$501
+     7/43: $6$lookahead\way0_dirty$446[63:0]$504
+     8/43: $4$bitselwrite$pos$cache/rtl/cache_fsm.v:162$435[5:0]$502
+     9/43: $5$lookahead\way0_dirty$446[63:0]$500
+    10/43: $5$lookahead\way1_dirty$445[63:0]$499
+    11/43: $3$bitselwrite$pos$cache/rtl/cache_fsm.v:162$435[5:0]$498
+    12/43: $3$bitselwrite$pos$cache/rtl/cache_fsm.v:161$434[5:0]$497
+    13/43: $4$lookahead\way1_dirty$445[63:0]$480
+    14/43: $4$bitselwrite$pos$cache/rtl/cache_fsm.v:143$432[5:0]$478
+    15/43: $4$lookahead\way0_dirty$446[63:0]$481
+    16/43: $4$bitselwrite$pos$cache/rtl/cache_fsm.v:144$433[5:0]$479
+    17/43: $3$lookahead\way0_dirty$446[63:0]$477
+    18/43: $3$lookahead\way1_dirty$445[63:0]$476
+    19/43: $3$bitselwrite$pos$cache/rtl/cache_fsm.v:144$433[5:0]$475
+    20/43: $3$bitselwrite$pos$cache/rtl/cache_fsm.v:143$432[5:0]$474
+    21/43: $2$lookahead\way0_dirty$446[63:0]$472
+    22/43: $2$lookahead\way1_dirty$445[63:0]$471
+    23/43: $2$bitselwrite$pos$cache/rtl/cache_fsm.v:177$437[5:0]$470
+    24/43: $2$bitselwrite$pos$cache/rtl/cache_fsm.v:176$436[5:0]$469
+    25/43: $2$bitselwrite$pos$cache/rtl/cache_fsm.v:162$435[5:0]$468
+    26/43: $2$bitselwrite$pos$cache/rtl/cache_fsm.v:161$434[5:0]$467
+    27/43: $2$bitselwrite$pos$cache/rtl/cache_fsm.v:144$433[5:0]$466
+    28/43: $2$bitselwrite$pos$cache/rtl/cache_fsm.v:143$432[5:0]$465
+    29/43: $1$lookahead\way0_dirty$446[63:0]$464
+    30/43: $1$lookahead\way1_dirty$445[63:0]$463
+    31/43: $1$bitselwrite$pos$cache/rtl/cache_fsm.v:177$437[5:0]$462
+    32/43: $1$bitselwrite$pos$cache/rtl/cache_fsm.v:176$436[5:0]$461
+    33/43: $1$bitselwrite$pos$cache/rtl/cache_fsm.v:162$435[5:0]$460
+    34/43: $1$bitselwrite$pos$cache/rtl/cache_fsm.v:161$434[5:0]$459
+    35/43: $1$bitselwrite$pos$cache/rtl/cache_fsm.v:144$433[5:0]$458
+    36/43: $1$bitselwrite$pos$cache/rtl/cache_fsm.v:143$432[5:0]$457
+    37/43: $0\fill_line[127:0]
+    38/43: $0\victim_way[0:0]
+    39/43: $0\hit_way_q[0:0]
+    40/43: $0\is_write[0:0]
+    41/43: $0\wdata_q[31:0]
+    42/43: $0\addr_q[31:0]
+    43/43: $0\state[4:0]
+Creating decoders for process `$paramod$1d0d03e245a6da678715d38116649e5c50f51da9\way_data_ram.$proc$cache/rtl/way_data_ram.v:17$557'.
+     1/24: $2$memwr$\mem$cache/rtl/way_data_ram.v:22$555_EN[127:0]$593
+     2/24: $2$memwr$\mem$cache/rtl/way_data_ram.v:22$555_DATA[127:0]$592
+     3/24: $2$memwr$\mem$cache/rtl/way_data_ram.v:22$555_ADDR[5:0]$591
+     4/24: $2$memwr$\mem$cache/rtl/way_data_ram.v:21$554_EN[127:0]$590
+     5/24: $2$memwr$\mem$cache/rtl/way_data_ram.v:21$554_DATA[127:0]$589
+     6/24: $2$memwr$\mem$cache/rtl/way_data_ram.v:21$554_ADDR[5:0]$588
+     7/24: $2$memwr$\mem$cache/rtl/way_data_ram.v:20$553_EN[127:0]$587
+     8/24: $2$memwr$\mem$cache/rtl/way_data_ram.v:20$553_DATA[127:0]$586
+     9/24: $2$memwr$\mem$cache/rtl/way_data_ram.v:20$553_ADDR[5:0]$585
+    10/24: $2$memwr$\mem$cache/rtl/way_data_ram.v:19$552_EN[127:0]$584
+    11/24: $2$memwr$\mem$cache/rtl/way_data_ram.v:19$552_DATA[127:0]$583
+    12/24: $2$memwr$\mem$cache/rtl/way_data_ram.v:19$552_ADDR[5:0]$582
+    13/24: $1$memwr$\mem$cache/rtl/way_data_ram.v:22$555_EN[127:0]$581
+    14/24: $1$memwr$\mem$cache/rtl/way_data_ram.v:22$555_DATA[127:0]$580
+    15/24: $1$memwr$\mem$cache/rtl/way_data_ram.v:22$555_ADDR[5:0]$579
+    16/24: $1$memwr$\mem$cache/rtl/way_data_ram.v:21$554_EN[127:0]$578
+    17/24: $1$memwr$\mem$cache/rtl/way_data_ram.v:21$554_DATA[127:0]$577
+    18/24: $1$memwr$\mem$cache/rtl/way_data_ram.v:21$554_ADDR[5:0]$576
+    19/24: $1$memwr$\mem$cache/rtl/way_data_ram.v:20$553_EN[127:0]$575
+    20/24: $1$memwr$\mem$cache/rtl/way_data_ram.v:20$553_DATA[127:0]$574
+    21/24: $1$memwr$\mem$cache/rtl/way_data_ram.v:20$553_ADDR[5:0]$573
+    22/24: $1$memwr$\mem$cache/rtl/way_data_ram.v:19$552_EN[127:0]$572
+    23/24: $1$memwr$\mem$cache/rtl/way_data_ram.v:19$552_DATA[127:0]$571
+    24/24: $1$memwr$\mem$cache/rtl/way_data_ram.v:19$552_ADDR[5:0]$570
+Creating decoders for process `\cache_2way_top.$proc$cache/rtl/cache_2way_top.v:186$6'.
+
+10.8. Executing PROC_DLATCH pass (convert process syncs to latches).
+No latch inferred for signal `$paramod$05c1e7bd5a1b59bea00dcbb162015326cffdec58\cache_fsm.\cpu_rdata' from process `$paramod$05c1e7bd5a1b59bea00dcbb162015326cffdec58\cache_fsm.$proc$cache/rtl/cache_fsm.v:189$537'.
+No latch inferred for signal `$paramod$05c1e7bd5a1b59bea00dcbb162015326cffdec58\cache_fsm.\cpu_ready' from process `$paramod$05c1e7bd5a1b59bea00dcbb162015326cffdec58\cache_fsm.$proc$cache/rtl/cache_fsm.v:189$537'.
+No latch inferred for signal `$paramod$05c1e7bd5a1b59bea00dcbb162015326cffdec58\cache_fsm.\mem_addr' from process `$paramod$05c1e7bd5a1b59bea00dcbb162015326cffdec58\cache_fsm.$proc$cache/rtl/cache_fsm.v:189$537'.
+No latch inferred for signal `$paramod$05c1e7bd5a1b59bea00dcbb162015326cffdec58\cache_fsm.\mem_re' from process `$paramod$05c1e7bd5a1b59bea00dcbb162015326cffdec58\cache_fsm.$proc$cache/rtl/cache_fsm.v:189$537'.
+No latch inferred for signal `$paramod$05c1e7bd5a1b59bea00dcbb162015326cffdec58\cache_fsm.\mem_we' from process `$paramod$05c1e7bd5a1b59bea00dcbb162015326cffdec58\cache_fsm.$proc$cache/rtl/cache_fsm.v:189$537'.
+No latch inferred for signal `$paramod$05c1e7bd5a1b59bea00dcbb162015326cffdec58\cache_fsm.\mem_wdata' from process `$paramod$05c1e7bd5a1b59bea00dcbb162015326cffdec58\cache_fsm.$proc$cache/rtl/cache_fsm.v:189$537'.
+No latch inferred for signal `$paramod$05c1e7bd5a1b59bea00dcbb162015326cffdec58\cache_fsm.\way0_word_we' from process `$paramod$05c1e7bd5a1b59bea00dcbb162015326cffdec58\cache_fsm.$proc$cache/rtl/cache_fsm.v:189$537'.
+No latch inferred for signal `$paramod$05c1e7bd5a1b59bea00dcbb162015326cffdec58\cache_fsm.\way1_word_we' from process `$paramod$05c1e7bd5a1b59bea00dcbb162015326cffdec58\cache_fsm.$proc$cache/rtl/cache_fsm.v:189$537'.
+No latch inferred for signal `$paramod$05c1e7bd5a1b59bea00dcbb162015326cffdec58\cache_fsm.\data_wdata' from process `$paramod$05c1e7bd5a1b59bea00dcbb162015326cffdec58\cache_fsm.$proc$cache/rtl/cache_fsm.v:189$537'.
+No latch inferred for signal `$paramod$05c1e7bd5a1b59bea00dcbb162015326cffdec58\cache_fsm.\way0_tag_we' from process `$paramod$05c1e7bd5a1b59bea00dcbb162015326cffdec58\cache_fsm.$proc$cache/rtl/cache_fsm.v:189$537'.
+No latch inferred for signal `$paramod$05c1e7bd5a1b59bea00dcbb162015326cffdec58\cache_fsm.\way1_tag_we' from process `$paramod$05c1e7bd5a1b59bea00dcbb162015326cffdec58\cache_fsm.$proc$cache/rtl/cache_fsm.v:189$537'.
+No latch inferred for signal `$paramod$05c1e7bd5a1b59bea00dcbb162015326cffdec58\cache_fsm.\set_valid' from process `$paramod$05c1e7bd5a1b59bea00dcbb162015326cffdec58\cache_fsm.$proc$cache/rtl/cache_fsm.v:189$537'.
+No latch inferred for signal `$paramod$05c1e7bd5a1b59bea00dcbb162015326cffdec58\cache_fsm.\set_valid_way' from process `$paramod$05c1e7bd5a1b59bea00dcbb162015326cffdec58\cache_fsm.$proc$cache/rtl/cache_fsm.v:189$537'.
+No latch inferred for signal `$paramod$05c1e7bd5a1b59bea00dcbb162015326cffdec58\cache_fsm.\touch' from process `$paramod$05c1e7bd5a1b59bea00dcbb162015326cffdec58\cache_fsm.$proc$cache/rtl/cache_fsm.v:189$537'.
+No latch inferred for signal `$paramod$05c1e7bd5a1b59bea00dcbb162015326cffdec58\cache_fsm.\touch_way' from process `$paramod$05c1e7bd5a1b59bea00dcbb162015326cffdec58\cache_fsm.$proc$cache/rtl/cache_fsm.v:189$537'.
+No latch inferred for signal `\cache_2way_top.\cpu_rdata' from process `\cache_2way_top.$proc$cache/rtl/cache_2way_top.v:186$6'.
+No latch inferred for signal `\cache_2way_top.\cpu_ready' from process `\cache_2way_top.$proc$cache/rtl/cache_2way_top.v:186$6'.
+No latch inferred for signal `\cache_2way_top.\mem_addr' from process `\cache_2way_top.$proc$cache/rtl/cache_2way_top.v:186$6'.
+No latch inferred for signal `\cache_2way_top.\mem_re' from process `\cache_2way_top.$proc$cache/rtl/cache_2way_top.v:186$6'.
+No latch inferred for signal `\cache_2way_top.\mem_we' from process `\cache_2way_top.$proc$cache/rtl/cache_2way_top.v:186$6'.
+No latch inferred for signal `\cache_2way_top.\mem_wdata' from process `\cache_2way_top.$proc$cache/rtl/cache_2way_top.v:186$6'.
+
+10.9. Executing PROC_DFF pass (convert process syncs to FFs).
+Creating register for signal `$paramod$7237cb41cb34ca93a1ce463152b05b33d6b49d72\way_tag_ram.$memwr$\mem$cache/rtl/way_tag_ram.v:18$543_ADDR' using process `$paramod$7237cb41cb34ca93a1ce463152b05b33d6b49d72\way_tag_ram.$proc$cache/rtl/way_tag_ram.v:17$545'.
+  created $dff cell `$procdff$1200' with positive edge clock.
+Creating register for signal `$paramod$7237cb41cb34ca93a1ce463152b05b33d6b49d72\way_tag_ram.$memwr$\mem$cache/rtl/way_tag_ram.v:18$543_DATA' using process `$paramod$7237cb41cb34ca93a1ce463152b05b33d6b49d72\way_tag_ram.$proc$cache/rtl/way_tag_ram.v:17$545'.
+  created $dff cell `$procdff$1201' with positive edge clock.
+Creating register for signal `$paramod$7237cb41cb34ca93a1ce463152b05b33d6b49d72\way_tag_ram.$memwr$\mem$cache/rtl/way_tag_ram.v:18$543_EN' using process `$paramod$7237cb41cb34ca93a1ce463152b05b33d6b49d72\way_tag_ram.$proc$cache/rtl/way_tag_ram.v:17$545'.
+  created $dff cell `$procdff$1202' with positive edge clock.
+Creating register for signal `\valid_bits.\way0_valid' using process `\valid_bits.$proc$cache/rtl/valid_bits.v:18$329'.
+  created $adff cell `$procdff$1207' with positive edge clock and positive level reset.
+Creating register for signal `\valid_bits.\way1_valid' using process `\valid_bits.$proc$cache/rtl/valid_bits.v:18$329'.
+  created $adff cell `$procdff$1212' with positive edge clock and positive level reset.
+Creating register for signal `\valid_bits.$bitselwrite$pos$cache/rtl/valid_bits.v:23$323' using process `\valid_bits.$proc$cache/rtl/valid_bits.v:18$329'.
+  created $adff cell `$procdff$1217' with positive edge clock and positive level reset.
+Creating register for signal `\valid_bits.$bitselwrite$pos$cache/rtl/valid_bits.v:24$324' using process `\valid_bits.$proc$cache/rtl/valid_bits.v:18$329'.
+  created $adff cell `$procdff$1222' with positive edge clock and positive level reset.
+Creating register for signal `\valid_bits.$bitselwrite$pos$cache/rtl/valid_bits.v:25$325' using process `\valid_bits.$proc$cache/rtl/valid_bits.v:18$329'.
+  created $adff cell `$procdff$1227' with positive edge clock and positive level reset.
+Creating register for signal `\valid_bits.$bitselwrite$pos$cache/rtl/valid_bits.v:26$326' using process `\valid_bits.$proc$cache/rtl/valid_bits.v:18$329'.
+  created $adff cell `$procdff$1232' with positive edge clock and positive level reset.
+Creating register for signal `\valid_bits.$lookahead\way0_valid$327' using process `\valid_bits.$proc$cache/rtl/valid_bits.v:18$329'.
+  created $adff cell `$procdff$1237' with positive edge clock and positive level reset.
+Creating register for signal `\valid_bits.$lookahead\way1_valid$328' using process `\valid_bits.$proc$cache/rtl/valid_bits.v:18$329'.
+  created $adff cell `$procdff$1242' with positive edge clock and positive level reset.
+Creating register for signal `\lru_state.\lru_bit' using process `\lru_state.$proc$cache/rtl/lru_state.v:16$300'.
+  created $adff cell `$procdff$1247' with positive edge clock and positive level reset.
+Creating register for signal `\lru_state.$bitselwrite$pos$cache/rtl/lru_state.v:18$298' using process `\lru_state.$proc$cache/rtl/lru_state.v:16$300'.
+  created $adff cell `$procdff$1252' with positive edge clock and positive level reset.
+Creating register for signal `\lru_state.$lookahead\lru_bit$299' using process `\lru_state.$proc$cache/rtl/lru_state.v:16$300'.
+  created $adff cell `$procdff$1257' with positive edge clock and positive level reset.
+Creating register for signal `$paramod$05c1e7bd5a1b59bea00dcbb162015326cffdec58\cache_fsm.\state' using process `$paramod$05c1e7bd5a1b59bea00dcbb162015326cffdec58\cache_fsm.$proc$cache/rtl/cache_fsm.v:110$447'.
+  created $adff cell `$procdff$1262' with positive edge clock and positive level reset.
+Creating register for signal `$paramod$05c1e7bd5a1b59bea00dcbb162015326cffdec58\cache_fsm.\addr_q' using process `$paramod$05c1e7bd5a1b59bea00dcbb162015326cffdec58\cache_fsm.$proc$cache/rtl/cache_fsm.v:110$447'.
+  created $adff cell `$procdff$1267' with positive edge clock and positive level reset.
+Creating register for signal `$paramod$05c1e7bd5a1b59bea00dcbb162015326cffdec58\cache_fsm.\wdata_q' using process `$paramod$05c1e7bd5a1b59bea00dcbb162015326cffdec58\cache_fsm.$proc$cache/rtl/cache_fsm.v:110$447'.
+  created $adff cell `$procdff$1272' with positive edge clock and positive level reset.
+Creating register for signal `$paramod$05c1e7bd5a1b59bea00dcbb162015326cffdec58\cache_fsm.\is_write' using process `$paramod$05c1e7bd5a1b59bea00dcbb162015326cffdec58\cache_fsm.$proc$cache/rtl/cache_fsm.v:110$447'.
+  created $adff cell `$procdff$1277' with positive edge clock and positive level reset.
+Creating register for signal `$paramod$05c1e7bd5a1b59bea00dcbb162015326cffdec58\cache_fsm.\hit_way_q' using process `$paramod$05c1e7bd5a1b59bea00dcbb162015326cffdec58\cache_fsm.$proc$cache/rtl/cache_fsm.v:110$447'.
+  created $adff cell `$procdff$1282' with positive edge clock and positive level reset.
+Creating register for signal `$paramod$05c1e7bd5a1b59bea00dcbb162015326cffdec58\cache_fsm.\victim_way' using process `$paramod$05c1e7bd5a1b59bea00dcbb162015326cffdec58\cache_fsm.$proc$cache/rtl/cache_fsm.v:110$447'.
+  created $adff cell `$procdff$1287' with positive edge clock and positive level reset.
+Creating register for signal `$paramod$05c1e7bd5a1b59bea00dcbb162015326cffdec58\cache_fsm.\fill_line' using process `$paramod$05c1e7bd5a1b59bea00dcbb162015326cffdec58\cache_fsm.$proc$cache/rtl/cache_fsm.v:110$447'.
+  created $adff cell `$procdff$1292' with positive edge clock and positive level reset.
+Creating register for signal `$paramod$05c1e7bd5a1b59bea00dcbb162015326cffdec58\cache_fsm.\way0_dirty' using process `$paramod$05c1e7bd5a1b59bea00dcbb162015326cffdec58\cache_fsm.$proc$cache/rtl/cache_fsm.v:110$447'.
+  created $adff cell `$procdff$1297' with positive edge clock and positive level reset.
+Creating register for signal `$paramod$05c1e7bd5a1b59bea00dcbb162015326cffdec58\cache_fsm.\way1_dirty' using process `$paramod$05c1e7bd5a1b59bea00dcbb162015326cffdec58\cache_fsm.$proc$cache/rtl/cache_fsm.v:110$447'.
+  created $adff cell `$procdff$1302' with positive edge clock and positive level reset.
+Creating register for signal `$paramod$05c1e7bd5a1b59bea00dcbb162015326cffdec58\cache_fsm.$bitselwrite$pos$cache/rtl/cache_fsm.v:143$432' using process `$paramod$05c1e7bd5a1b59bea00dcbb162015326cffdec58\cache_fsm.$proc$cache/rtl/cache_fsm.v:110$447'.
+  created $adff cell `$procdff$1307' with positive edge clock and positive level reset.
+Creating register for signal `$paramod$05c1e7bd5a1b59bea00dcbb162015326cffdec58\cache_fsm.$bitselwrite$pos$cache/rtl/cache_fsm.v:144$433' using process `$paramod$05c1e7bd5a1b59bea00dcbb162015326cffdec58\cache_fsm.$proc$cache/rtl/cache_fsm.v:110$447'.
+  created $adff cell `$procdff$1312' with positive edge clock and positive level reset.
+Creating register for signal `$paramod$05c1e7bd5a1b59bea00dcbb162015326cffdec58\cache_fsm.$bitselwrite$pos$cache/rtl/cache_fsm.v:161$434' using process `$paramod$05c1e7bd5a1b59bea00dcbb162015326cffdec58\cache_fsm.$proc$cache/rtl/cache_fsm.v:110$447'.
+  created $adff cell `$procdff$1317' with positive edge clock and positive level reset.
+Creating register for signal `$paramod$05c1e7bd5a1b59bea00dcbb162015326cffdec58\cache_fsm.$bitselwrite$pos$cache/rtl/cache_fsm.v:162$435' using process `$paramod$05c1e7bd5a1b59bea00dcbb162015326cffdec58\cache_fsm.$proc$cache/rtl/cache_fsm.v:110$447'.
+  created $adff cell `$procdff$1322' with positive edge clock and positive level reset.
+Creating register for signal `$paramod$05c1e7bd5a1b59bea00dcbb162015326cffdec58\cache_fsm.$bitselwrite$pos$cache/rtl/cache_fsm.v:176$436' using process `$paramod$05c1e7bd5a1b59bea00dcbb162015326cffdec58\cache_fsm.$proc$cache/rtl/cache_fsm.v:110$447'.
+  created $adff cell `$procdff$1327' with positive edge clock and positive level reset.
+Creating register for signal `$paramod$05c1e7bd5a1b59bea00dcbb162015326cffdec58\cache_fsm.$bitselwrite$pos$cache/rtl/cache_fsm.v:177$437' using process `$paramod$05c1e7bd5a1b59bea00dcbb162015326cffdec58\cache_fsm.$proc$cache/rtl/cache_fsm.v:110$447'.
+  created $adff cell `$procdff$1332' with positive edge clock and positive level reset.
+Creating register for signal `$paramod$05c1e7bd5a1b59bea00dcbb162015326cffdec58\cache_fsm.$lookahead\way1_dirty$445' using process `$paramod$05c1e7bd5a1b59bea00dcbb162015326cffdec58\cache_fsm.$proc$cache/rtl/cache_fsm.v:110$447'.
+  created $adff cell `$procdff$1337' with positive edge clock and positive level reset.
+Creating register for signal `$paramod$05c1e7bd5a1b59bea00dcbb162015326cffdec58\cache_fsm.$lookahead\way0_dirty$446' using process `$paramod$05c1e7bd5a1b59bea00dcbb162015326cffdec58\cache_fsm.$proc$cache/rtl/cache_fsm.v:110$447'.
+  created $adff cell `$procdff$1342' with positive edge clock and positive level reset.
+Creating register for signal `$paramod$1d0d03e245a6da678715d38116649e5c50f51da9\way_data_ram.$memwr$\mem$cache/rtl/way_data_ram.v:19$552_ADDR' using process `$paramod$1d0d03e245a6da678715d38116649e5c50f51da9\way_data_ram.$proc$cache/rtl/way_data_ram.v:17$557'.
+  created $dff cell `$procdff$1343' with positive edge clock.
+Creating register for signal `$paramod$1d0d03e245a6da678715d38116649e5c50f51da9\way_data_ram.$memwr$\mem$cache/rtl/way_data_ram.v:19$552_DATA' using process `$paramod$1d0d03e245a6da678715d38116649e5c50f51da9\way_data_ram.$proc$cache/rtl/way_data_ram.v:17$557'.
+  created $dff cell `$procdff$1344' with positive edge clock.
+Creating register for signal `$paramod$1d0d03e245a6da678715d38116649e5c50f51da9\way_data_ram.$memwr$\mem$cache/rtl/way_data_ram.v:19$552_EN' using process `$paramod$1d0d03e245a6da678715d38116649e5c50f51da9\way_data_ram.$proc$cache/rtl/way_data_ram.v:17$557'.
+  created $dff cell `$procdff$1345' with positive edge clock.
+Creating register for signal `$paramod$1d0d03e245a6da678715d38116649e5c50f51da9\way_data_ram.$memwr$\mem$cache/rtl/way_data_ram.v:20$553_ADDR' using process `$paramod$1d0d03e245a6da678715d38116649e5c50f51da9\way_data_ram.$proc$cache/rtl/way_data_ram.v:17$557'.
+  created $dff cell `$procdff$1346' with positive edge clock.
+Creating register for signal `$paramod$1d0d03e245a6da678715d38116649e5c50f51da9\way_data_ram.$memwr$\mem$cache/rtl/way_data_ram.v:20$553_DATA' using process `$paramod$1d0d03e245a6da678715d38116649e5c50f51da9\way_data_ram.$proc$cache/rtl/way_data_ram.v:17$557'.
+  created $dff cell `$procdff$1347' with positive edge clock.
+Creating register for signal `$paramod$1d0d03e245a6da678715d38116649e5c50f51da9\way_data_ram.$memwr$\mem$cache/rtl/way_data_ram.v:20$553_EN' using process `$paramod$1d0d03e245a6da678715d38116649e5c50f51da9\way_data_ram.$proc$cache/rtl/way_data_ram.v:17$557'.
+  created $dff cell `$procdff$1348' with positive edge clock.
+Creating register for signal `$paramod$1d0d03e245a6da678715d38116649e5c50f51da9\way_data_ram.$memwr$\mem$cache/rtl/way_data_ram.v:21$554_ADDR' using process `$paramod$1d0d03e245a6da678715d38116649e5c50f51da9\way_data_ram.$proc$cache/rtl/way_data_ram.v:17$557'.
+  created $dff cell `$procdff$1349' with positive edge clock.
+Creating register for signal `$paramod$1d0d03e245a6da678715d38116649e5c50f51da9\way_data_ram.$memwr$\mem$cache/rtl/way_data_ram.v:21$554_DATA' using process `$paramod$1d0d03e245a6da678715d38116649e5c50f51da9\way_data_ram.$proc$cache/rtl/way_data_ram.v:17$557'.
+  created $dff cell `$procdff$1350' with positive edge clock.
+Creating register for signal `$paramod$1d0d03e245a6da678715d38116649e5c50f51da9\way_data_ram.$memwr$\mem$cache/rtl/way_data_ram.v:21$554_EN' using process `$paramod$1d0d03e245a6da678715d38116649e5c50f51da9\way_data_ram.$proc$cache/rtl/way_data_ram.v:17$557'.
+  created $dff cell `$procdff$1351' with positive edge clock.
+Creating register for signal `$paramod$1d0d03e245a6da678715d38116649e5c50f51da9\way_data_ram.$memwr$\mem$cache/rtl/way_data_ram.v:22$555_ADDR' using process `$paramod$1d0d03e245a6da678715d38116649e5c50f51da9\way_data_ram.$proc$cache/rtl/way_data_ram.v:17$557'.
+  created $dff cell `$procdff$1352' with positive edge clock.
+Creating register for signal `$paramod$1d0d03e245a6da678715d38116649e5c50f51da9\way_data_ram.$memwr$\mem$cache/rtl/way_data_ram.v:22$555_DATA' using process `$paramod$1d0d03e245a6da678715d38116649e5c50f51da9\way_data_ram.$proc$cache/rtl/way_data_ram.v:17$557'.
+  created $dff cell `$procdff$1353' with positive edge clock.
+Creating register for signal `$paramod$1d0d03e245a6da678715d38116649e5c50f51da9\way_data_ram.$memwr$\mem$cache/rtl/way_data_ram.v:22$555_EN' using process `$paramod$1d0d03e245a6da678715d38116649e5c50f51da9\way_data_ram.$proc$cache/rtl/way_data_ram.v:17$557'.
+  created $dff cell `$procdff$1354' with positive edge clock.
+
+10.10. Executing PROC_MEMWR pass (convert process memory writes to cells).
+
+10.11. Executing PROC_CLEAN pass (remove empty switches from decision trees).
+Found and cleaned up 1 empty switch in `$paramod$7237cb41cb34ca93a1ce463152b05b33d6b49d72\way_tag_ram.$proc$cache/rtl/way_tag_ram.v:17$545'.
+Removing empty process `$paramod$7237cb41cb34ca93a1ce463152b05b33d6b49d72\way_tag_ram.$proc$cache/rtl/way_tag_ram.v:17$545'.
+Found and cleaned up 4 empty switches in `\valid_bits.$proc$cache/rtl/valid_bits.v:18$329'.
+Removing empty process `valid_bits.$proc$cache/rtl/valid_bits.v:18$329'.
+Found and cleaned up 1 empty switch in `\lru_state.$proc$cache/rtl/lru_state.v:16$300'.
+Removing empty process `lru_state.$proc$cache/rtl/lru_state.v:16$300'.
+Found and cleaned up 4 empty switches in `$paramod$05c1e7bd5a1b59bea00dcbb162015326cffdec58\cache_fsm.$proc$cache/rtl/cache_fsm.v:189$537'.
+Removing empty process `$paramod$05c1e7bd5a1b59bea00dcbb162015326cffdec58\cache_fsm.$proc$cache/rtl/cache_fsm.v:189$537'.
+Found and cleaned up 11 empty switches in `$paramod$05c1e7bd5a1b59bea00dcbb162015326cffdec58\cache_fsm.$proc$cache/rtl/cache_fsm.v:110$447'.
+Removing empty process `$paramod$05c1e7bd5a1b59bea00dcbb162015326cffdec58\cache_fsm.$proc$cache/rtl/cache_fsm.v:110$447'.
+Found and cleaned up 5 empty switches in `$paramod$1d0d03e245a6da678715d38116649e5c50f51da9\way_data_ram.$proc$cache/rtl/way_data_ram.v:17$557'.
+Removing empty process `$paramod$1d0d03e245a6da678715d38116649e5c50f51da9\way_data_ram.$proc$cache/rtl/way_data_ram.v:17$557'.
+Removing empty process `cache_2way_top.$proc$cache/rtl/cache_2way_top.v:186$6'.
+Cleaned up 26 empty switches.
+
+10.12. Executing OPT_EXPR pass (perform const folding).
+Optimizing module $paramod$7237cb41cb34ca93a1ce463152b05b33d6b49d72\way_tag_ram.
+Optimizing module valid_bits.
+<suppressed ~16 debug messages>
+Optimizing module tag_comparator.
+Optimizing module lru_state.
+<suppressed ~6 debug messages>
+Optimizing module $paramod$05c1e7bd5a1b59bea00dcbb162015326cffdec58\cache_fsm.
+<suppressed ~39 debug messages>
+Optimizing module $paramod$1d0d03e245a6da678715d38116649e5c50f51da9\way_data_ram.
+Optimizing module cache_2way_top.
+
+11. Executing OPT pass (performing simple optimizations).
+
+11.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module $paramod$7237cb41cb34ca93a1ce463152b05b33d6b49d72\way_tag_ram.
+Optimizing module valid_bits.
+Optimizing module tag_comparator.
+Optimizing module lru_state.
+Optimizing module $paramod$05c1e7bd5a1b59bea00dcbb162015326cffdec58\cache_fsm.
+<suppressed ~3 debug messages>
+Optimizing module $paramod$1d0d03e245a6da678715d38116649e5c50f51da9\way_data_ram.
+Optimizing module cache_2way_top.
+
+11.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `$paramod$7237cb41cb34ca93a1ce463152b05b33d6b49d72\way_tag_ram'.
+Finding identical cells in module `\valid_bits'.
+<suppressed ~81 debug messages>
+Finding identical cells in module `\tag_comparator'.
+Finding identical cells in module `\lru_state'.
+<suppressed ~9 debug messages>
+Finding identical cells in module `$paramod$05c1e7bd5a1b59bea00dcbb162015326cffdec58\cache_fsm'.
+<suppressed ~360 debug messages>
+Finding identical cells in module `$paramod$1d0d03e245a6da678715d38116649e5c50f51da9\way_data_ram'.
+Finding identical cells in module `\cache_2way_top'.
+Removed a total of 150 cells.
+
+11.3. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module $paramod$7237cb41cb34ca93a1ce463152b05b33d6b49d72\way_tag_ram..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Running muxtree optimizer on module \valid_bits..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+    dead port 1/2 on $mux $procmux$619.
+    dead port 2/2 on $mux $procmux$619.
+    dead port 1/2 on $mux $procmux$613.
+    dead port 2/2 on $mux $procmux$613.
+    dead port 1/2 on $mux $procmux$607.
+    dead port 2/2 on $mux $procmux$607.
+    dead port 1/2 on $mux $procmux$625.
+    dead port 2/2 on $mux $procmux$625.
+Running muxtree optimizer on module \tag_comparator..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Running muxtree optimizer on module \lru_state..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+    dead port 1/2 on $mux $procmux$631.
+    dead port 2/2 on $mux $procmux$631.
+Running muxtree optimizer on module $paramod$05c1e7bd5a1b59bea00dcbb162015326cffdec58\cache_fsm..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+    dead port 2/2 on $mux $procmux$854.
+    dead port 1/2 on $mux $procmux$846.
+    dead port 2/2 on $mux $procmux$846.
+    dead port 1/2 on $mux $procmux$844.
+    dead port 2/2 on $mux $procmux$844.
+    dead port 1/2 on $mux $procmux$842.
+    dead port 2/2 on $mux $procmux$842.
+    dead port 2/2 on $mux $procmux$835.
+    dead port 2/2 on $mux $procmux$833.
+    dead port 1/2 on $mux $procmux$824.
+    dead port 2/2 on $mux $procmux$824.
+    dead port 1/2 on $mux $procmux$822.
+    dead port 2/2 on $mux $procmux$822.
+    dead port 1/2 on $mux $procmux$820.
+    dead port 2/2 on $mux $procmux$820.
+    dead port 2/2 on $mux $procmux$813.
+    dead port 2/2 on $mux $procmux$811.
+    dead port 1/2 on $mux $procmux$802.
+    dead port 2/2 on $mux $procmux$802.
+    dead port 1/2 on $mux $procmux$800.
+    dead port 2/2 on $mux $procmux$800.
+    dead port 2/2 on $mux $procmux$796.
+    dead port 1/2 on $mux $procmux$790.
+    dead port 2/2 on $mux $procmux$790.
+    dead port 1/2 on $mux $procmux$788.
+    dead port 2/2 on $mux $procmux$788.
+    dead port 2/2 on $mux $procmux$784.
+    dead port 1/2 on $mux $procmux$1010.
+    dead port 2/2 on $mux $procmux$1010.
+    dead port 1/2 on $mux $procmux$1003.
+    dead port 2/2 on $mux $procmux$1003.
+    dead port 1/2 on $mux $procmux$996.
+    dead port 2/2 on $mux $procmux$996.
+    dead port 1/2 on $mux $procmux$991.
+    dead port 2/2 on $mux $procmux$991.
+    dead port 1/2 on $mux $procmux$986.
+    dead port 2/2 on $mux $procmux$986.
+    dead port 1/2 on $mux $procmux$983.
+    dead port 2/2 on $mux $procmux$983.
+    dead port 2/2 on $mux $procmux$715.
+    dead port 2/2 on $mux $procmux$706.
+    dead port 2/2 on $mux $procmux$697.
+    dead port 2/2 on $mux $procmux$688.
+    dead port 2/2 on $mux $procmux$679.
+    dead port 1/2 on $mux $procmux$970.
+    dead port 2/2 on $mux $procmux$970.
+    dead port 2/2 on $mux $procmux$677.
+    dead port 2/2 on $mux $procmux$667.
+    dead port 2/2 on $mux $procmux$665.
+    dead port 2/2 on $mux $procmux$655.
+    dead port 1/2 on $mux $procmux$968.
+    dead port 2/2 on $mux $procmux$968.
+    dead port 2/2 on $mux $procmux$649.
+    dead port 1/2 on $mux $procmux$960.
+    dead port 2/2 on $mux $procmux$960.
+    dead port 2/2 on $mux $procmux$643.
+    dead port 2/2 on $mux $procmux$637.
+    dead port 1/2 on $mux $procmux$958.
+    dead port 2/2 on $mux $procmux$958.
+    dead port 2/2 on $mux $procmux$950.
+    dead port 2/2 on $mux $procmux$940.
+    dead port 1/2 on $mux $procmux$878.
+    dead port 2/2 on $mux $procmux$878.
+    dead port 1/2 on $mux $procmux$904.
+    dead port 2/2 on $mux $procmux$904.
+    dead port 1/2 on $mux $procmux$868.
+    dead port 2/2 on $mux $procmux$868.
+    dead port 1/2 on $mux $procmux$930.
+    dead port 2/2 on $mux $procmux$930.
+    dead port 1/2 on $mux $procmux$902.
+    dead port 2/2 on $mux $procmux$902.
+    dead port 2/2 on $mux $procmux$862.
+    dead port 1/2 on $mux $procmux$876.
+    dead port 2/2 on $mux $procmux$876.
+    dead port 1/2 on $mux $procmux$900.
+    dead port 2/2 on $mux $procmux$900.
+    dead port 1/2 on $mux $procmux$928.
+    dead port 2/2 on $mux $procmux$928.
+    dead port 2/2 on $mux $procmux$891.
+    dead port 1/2 on $mux $procmux$926.
+    dead port 2/2 on $mux $procmux$926.
+    dead port 1/2 on $mux $procmux$870.
+    dead port 2/2 on $mux $procmux$870.
+    dead port 2/2 on $mux $procmux$917.
+    dead port 2/2 on $mux $procmux$889.
+    dead port 2/2 on $mux $procmux$915.
+Running muxtree optimizer on module $paramod$1d0d03e245a6da678715d38116649e5c50f51da9\way_data_ram..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+    dead port 2/2 on $mux $procmux$1162.
+    dead port 2/2 on $mux $procmux$1156.
+    dead port 2/2 on $mux $procmux$1150.
+    dead port 2/2 on $mux $procmux$1144.
+    dead port 2/2 on $mux $procmux$1138.
+    dead port 2/2 on $mux $procmux$1132.
+    dead port 2/2 on $mux $procmux$1126.
+    dead port 2/2 on $mux $procmux$1120.
+    dead port 2/2 on $mux $procmux$1114.
+    dead port 2/2 on $mux $procmux$1108.
+    dead port 2/2 on $mux $procmux$1102.
+    dead port 2/2 on $mux $procmux$1096.
+Running muxtree optimizer on module \cache_2way_top..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Removed 108 multiplexer ports.
+<suppressed ~48 debug messages>
+
+11.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module $paramod$7237cb41cb34ca93a1ce463152b05b33d6b49d72\way_tag_ram.
+    Consolidated identical input bits for $mux cell $procmux$595:
+      Old ports: A=22'0000000000000000000000, B=22'1111111111111111111111, Y=$procmux$595_Y
+      New ports: A=1'0, B=1'1, Y=$procmux$595_Y [0]
+      New connections: $procmux$595_Y [21:1] = { $procmux$595_Y [0] $procmux$595_Y [0] $procmux$595_Y [0] $procmux$595_Y [0] $procmux$595_Y [0] $procmux$595_Y [0] $procmux$595_Y [0] $procmux$595_Y [0] $procmux$595_Y [0] $procmux$595_Y [0] $procmux$595_Y [0] $procmux$595_Y [0] $procmux$595_Y [0] $procmux$595_Y [0] $procmux$595_Y [0] $procmux$595_Y [0] $procmux$595_Y [0] $procmux$595_Y [0] $procmux$595_Y [0] $procmux$595_Y [0] $procmux$595_Y [0] }
+  Optimizing cells in module $paramod$7237cb41cb34ca93a1ce463152b05b33d6b49d72\way_tag_ram.
+  Optimizing cells in module \valid_bits.
+  Optimizing cells in module \tag_comparator.
+  Optimizing cells in module \lru_state.
+  Optimizing cells in module $paramod$05c1e7bd5a1b59bea00dcbb162015326cffdec58\cache_fsm.
+    New ctrl vector for $pmux cell $procmux$728: $auto$opt_reduce.cc:137:opt_pmux$1361
+  Optimizing cells in module $paramod$05c1e7bd5a1b59bea00dcbb162015326cffdec58\cache_fsm.
+  Optimizing cells in module $paramod$1d0d03e245a6da678715d38116649e5c50f51da9\way_data_ram.
+    Consolidated identical input bits for $mux cell $procmux$1148:
+      Old ports: A=128'00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000, B=128'00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000011111111111111111111111111111111, Y=$procmux$1148_Y
+      New ports: A=1'0, B=1'1, Y=$procmux$1148_Y [0]
+      New connections: $procmux$1148_Y [127:1] = { 96'000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000 $procmux$1148_Y [0] $procmux$1148_Y [0] $procmux$1148_Y [0] $procmux$1148_Y [0] $procmux$1148_Y [0] $procmux$1148_Y [0] $procmux$1148_Y [0] $procmux$1148_Y [0] $procmux$1148_Y [0] $procmux$1148_Y [0] $procmux$1148_Y [0] $procmux$1148_Y [0] $procmux$1148_Y [0] $procmux$1148_Y [0] $procmux$1148_Y [0] $procmux$1148_Y [0] $procmux$1148_Y [0] $procmux$1148_Y [0] $procmux$1148_Y [0] $procmux$1148_Y [0] $procmux$1148_Y [0] $procmux$1148_Y [0] $procmux$1148_Y [0] $procmux$1148_Y [0] $procmux$1148_Y [0] $procmux$1148_Y [0] $procmux$1148_Y [0] $procmux$1148_Y [0] $procmux$1148_Y [0] $procmux$1148_Y [0] $procmux$1148_Y [0] }
+    Consolidated identical input bits for $mux cell $procmux$1130:
+      Old ports: A=128'00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000, B=128'00000000000000000000000000000000000000000000000000000000000000001111111111111111111111111111111100000000000000000000000000000000, Y=$procmux$1130_Y
+      New ports: A=1'0, B=1'1, Y=$procmux$1130_Y [32]
+      New connections: { $procmux$1130_Y [127:33] $procmux$1130_Y [31:0] } = { 64'0000000000000000000000000000000000000000000000000000000000000000 $procmux$1130_Y [32] $procmux$1130_Y [32] $procmux$1130_Y [32] $procmux$1130_Y [32] $procmux$1130_Y [32] $procmux$1130_Y [32] $procmux$1130_Y [32] $procmux$1130_Y [32] $procmux$1130_Y [32] $procmux$1130_Y [32] $procmux$1130_Y [32] $procmux$1130_Y [32] $procmux$1130_Y [32] $procmux$1130_Y [32] $procmux$1130_Y [32] $procmux$1130_Y [32] $procmux$1130_Y [32] $procmux$1130_Y [32] $procmux$1130_Y [32] $procmux$1130_Y [32] $procmux$1130_Y [32] $procmux$1130_Y [32] $procmux$1130_Y [32] $procmux$1130_Y [32] $procmux$1130_Y [32] $procmux$1130_Y [32] $procmux$1130_Y [32] $procmux$1130_Y [32] $procmux$1130_Y [32] $procmux$1130_Y [32] $procmux$1130_Y [32] 32'00000000000000000000000000000000 }
+    Consolidated identical input bits for $mux cell $procmux$1112:
+      Old ports: A=128'00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000, B=128'00000000000000000000000000000000111111111111111111111111111111110000000000000000000000000000000000000000000000000000000000000000, Y=$procmux$1112_Y
+      New ports: A=1'0, B=1'1, Y=$procmux$1112_Y [64]
+      New connections: { $procmux$1112_Y [127:65] $procmux$1112_Y [63:0] } = { 32'00000000000000000000000000000000 $procmux$1112_Y [64] $procmux$1112_Y [64] $procmux$1112_Y [64] $procmux$1112_Y [64] $procmux$1112_Y [64] $procmux$1112_Y [64] $procmux$1112_Y [64] $procmux$1112_Y [64] $procmux$1112_Y [64] $procmux$1112_Y [64] $procmux$1112_Y [64] $procmux$1112_Y [64] $procmux$1112_Y [64] $procmux$1112_Y [64] $procmux$1112_Y [64] $procmux$1112_Y [64] $procmux$1112_Y [64] $procmux$1112_Y [64] $procmux$1112_Y [64] $procmux$1112_Y [64] $procmux$1112_Y [64] $procmux$1112_Y [64] $procmux$1112_Y [64] $procmux$1112_Y [64] $procmux$1112_Y [64] $procmux$1112_Y [64] $procmux$1112_Y [64] $procmux$1112_Y [64] $procmux$1112_Y [64] $procmux$1112_Y [64] $procmux$1112_Y [64] 64'0000000000000000000000000000000000000000000000000000000000000000 }
+    Consolidated identical input bits for $mux cell $procmux$1094:
+      Old ports: A=128'00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000, B=128'11111111111111111111111111111111000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000, Y=$procmux$1094_Y
+      New ports: A=1'0, B=1'1, Y=$procmux$1094_Y [96]
+      New connections: { $procmux$1094_Y [127:97] $procmux$1094_Y [95:0] } = { $procmux$1094_Y [96] $procmux$1094_Y [96] $procmux$1094_Y [96] $procmux$1094_Y [96] $procmux$1094_Y [96] $procmux$1094_Y [96] $procmux$1094_Y [96] $procmux$1094_Y [96] $procmux$1094_Y [96] $procmux$1094_Y [96] $procmux$1094_Y [96] $procmux$1094_Y [96] $procmux$1094_Y [96] $procmux$1094_Y [96] $procmux$1094_Y [96] $procmux$1094_Y [96] $procmux$1094_Y [96] $procmux$1094_Y [96] $procmux$1094_Y [96] $procmux$1094_Y [96] $procmux$1094_Y [96] $procmux$1094_Y [96] $procmux$1094_Y [96] $procmux$1094_Y [96] $procmux$1094_Y [96] $procmux$1094_Y [96] $procmux$1094_Y [96] $procmux$1094_Y [96] $procmux$1094_Y [96] $procmux$1094_Y [96] $procmux$1094_Y [96] 96'000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000 }
+  Optimizing cells in module $paramod$1d0d03e245a6da678715d38116649e5c50f51da9\way_data_ram.
+    Consolidated identical input bits for $mux cell $procmux$1192:
+      Old ports: A=128'00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000, B=$2$memwr$\mem$cache/rtl/way_data_ram.v:19$552_EN[127:0]$584, Y=$procmux$1192_Y
+      New ports: A=1'0, B=$procmux$1148_Y [0], Y=$procmux$1192_Y [0]
+      New connections: $procmux$1192_Y [127:1] = { 96'000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000 $procmux$1192_Y [0] $procmux$1192_Y [0] $procmux$1192_Y [0] $procmux$1192_Y [0] $procmux$1192_Y [0] $procmux$1192_Y [0] $procmux$1192_Y [0] $procmux$1192_Y [0] $procmux$1192_Y [0] $procmux$1192_Y [0] $procmux$1192_Y [0] $procmux$1192_Y [0] $procmux$1192_Y [0] $procmux$1192_Y [0] $procmux$1192_Y [0] $procmux$1192_Y [0] $procmux$1192_Y [0] $procmux$1192_Y [0] $procmux$1192_Y [0] $procmux$1192_Y [0] $procmux$1192_Y [0] $procmux$1192_Y [0] $procmux$1192_Y [0] $procmux$1192_Y [0] $procmux$1192_Y [0] $procmux$1192_Y [0] $procmux$1192_Y [0] $procmux$1192_Y [0] $procmux$1192_Y [0] $procmux$1192_Y [0] $procmux$1192_Y [0] }
+    Consolidated identical input bits for $mux cell $procmux$1183:
+      Old ports: A=128'00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000, B=$2$memwr$\mem$cache/rtl/way_data_ram.v:20$553_EN[127:0]$587, Y=$procmux$1183_Y
+      New ports: A=1'0, B=$procmux$1130_Y [32], Y=$procmux$1183_Y [32]
+      New connections: { $procmux$1183_Y [127:33] $procmux$1183_Y [31:0] } = { 64'0000000000000000000000000000000000000000000000000000000000000000 $procmux$1183_Y [32] $procmux$1183_Y [32] $procmux$1183_Y [32] $procmux$1183_Y [32] $procmux$1183_Y [32] $procmux$1183_Y [32] $procmux$1183_Y [32] $procmux$1183_Y [32] $procmux$1183_Y [32] $procmux$1183_Y [32] $procmux$1183_Y [32] $procmux$1183_Y [32] $procmux$1183_Y [32] $procmux$1183_Y [32] $procmux$1183_Y [32] $procmux$1183_Y [32] $procmux$1183_Y [32] $procmux$1183_Y [32] $procmux$1183_Y [32] $procmux$1183_Y [32] $procmux$1183_Y [32] $procmux$1183_Y [32] $procmux$1183_Y [32] $procmux$1183_Y [32] $procmux$1183_Y [32] $procmux$1183_Y [32] $procmux$1183_Y [32] $procmux$1183_Y [32] $procmux$1183_Y [32] $procmux$1183_Y [32] $procmux$1183_Y [32] 32'00000000000000000000000000000000 }
+    Consolidated identical input bits for $mux cell $procmux$1174:
+      Old ports: A=128'00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000, B=$2$memwr$\mem$cache/rtl/way_data_ram.v:21$554_EN[127:0]$590, Y=$procmux$1174_Y
+      New ports: A=1'0, B=$procmux$1112_Y [64], Y=$procmux$1174_Y [64]
+      New connections: { $procmux$1174_Y [127:65] $procmux$1174_Y [63:0] } = { 32'00000000000000000000000000000000 $procmux$1174_Y [64] $procmux$1174_Y [64] $procmux$1174_Y [64] $procmux$1174_Y [64] $procmux$1174_Y [64] $procmux$1174_Y [64] $procmux$1174_Y [64] $procmux$1174_Y [64] $procmux$1174_Y [64] $procmux$1174_Y [64] $procmux$1174_Y [64] $procmux$1174_Y [64] $procmux$1174_Y [64] $procmux$1174_Y [64] $procmux$1174_Y [64] $procmux$1174_Y [64] $procmux$1174_Y [64] $procmux$1174_Y [64] $procmux$1174_Y [64] $procmux$1174_Y [64] $procmux$1174_Y [64] $procmux$1174_Y [64] $procmux$1174_Y [64] $procmux$1174_Y [64] $procmux$1174_Y [64] $procmux$1174_Y [64] $procmux$1174_Y [64] $procmux$1174_Y [64] $procmux$1174_Y [64] $procmux$1174_Y [64] $procmux$1174_Y [64] 64'0000000000000000000000000000000000000000000000000000000000000000 }
+    Consolidated identical input bits for $mux cell $procmux$1165:
+      Old ports: A=128'00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000, B=$2$memwr$\mem$cache/rtl/way_data_ram.v:22$555_EN[127:0]$593, Y=$procmux$1165_Y
+      New ports: A=1'0, B=$procmux$1094_Y [96], Y=$procmux$1165_Y [96]
+      New connections: { $procmux$1165_Y [127:97] $procmux$1165_Y [95:0] } = { $procmux$1165_Y [96] $procmux$1165_Y [96] $procmux$1165_Y [96] $procmux$1165_Y [96] $procmux$1165_Y [96] $procmux$1165_Y [96] $procmux$1165_Y [96] $procmux$1165_Y [96] $procmux$1165_Y [96] $procmux$1165_Y [96] $procmux$1165_Y [96] $procmux$1165_Y [96] $procmux$1165_Y [96] $procmux$1165_Y [96] $procmux$1165_Y [96] $procmux$1165_Y [96] $procmux$1165_Y [96] $procmux$1165_Y [96] $procmux$1165_Y [96] $procmux$1165_Y [96] $procmux$1165_Y [96] $procmux$1165_Y [96] $procmux$1165_Y [96] $procmux$1165_Y [96] $procmux$1165_Y [96] $procmux$1165_Y [96] $procmux$1165_Y [96] $procmux$1165_Y [96] $procmux$1165_Y [96] $procmux$1165_Y [96] $procmux$1165_Y [96] 96'000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000 }
+  Optimizing cells in module $paramod$1d0d03e245a6da678715d38116649e5c50f51da9\way_data_ram.
+  Optimizing cells in module \cache_2way_top.
+Performed a total of 10 changes.
+
+11.5. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `$paramod$7237cb41cb34ca93a1ce463152b05b33d6b49d72\way_tag_ram'.
+Finding identical cells in module `\valid_bits'.
+Finding identical cells in module `\tag_comparator'.
+Finding identical cells in module `\lru_state'.
+Finding identical cells in module `$paramod$05c1e7bd5a1b59bea00dcbb162015326cffdec58\cache_fsm'.
+Finding identical cells in module `$paramod$1d0d03e245a6da678715d38116649e5c50f51da9\way_data_ram'.
+Finding identical cells in module `\cache_2way_top'.
+Removed a total of 0 cells.
+
+11.6. Executing OPT_DFF pass (perform DFF optimizations).
+Setting constant 1-bit at position 0 on $procdff$1227 ($adff) from module valid_bits.
+Setting constant 1-bit at position 1 on $procdff$1227 ($adff) from module valid_bits.
+Setting constant 1-bit at position 2 on $procdff$1227 ($adff) from module valid_bits.
+Setting constant 1-bit at position 3 on $procdff$1227 ($adff) from module valid_bits.
+Setting constant 1-bit at position 4 on $procdff$1227 ($adff) from module valid_bits.
+Setting constant 1-bit at position 5 on $procdff$1227 ($adff) from module valid_bits.
+Setting constant 1-bit at position 0 on $procdff$1237 ($adff) from module valid_bits.
+Setting constant 1-bit at position 1 on $procdff$1237 ($adff) from module valid_bits.
+Setting constant 1-bit at position 2 on $procdff$1237 ($adff) from module valid_bits.
+Setting constant 1-bit at position 3 on $procdff$1237 ($adff) from module valid_bits.
+Setting constant 1-bit at position 4 on $procdff$1237 ($adff) from module valid_bits.
+Setting constant 1-bit at position 5 on $procdff$1237 ($adff) from module valid_bits.
+Setting constant 1-bit at position 6 on $procdff$1237 ($adff) from module valid_bits.
+Setting constant 1-bit at position 7 on $procdff$1237 ($adff) from module valid_bits.
+Setting constant 1-bit at position 8 on $procdff$1237 ($adff) from module valid_bits.
+Setting constant 1-bit at position 9 on $procdff$1237 ($adff) from module valid_bits.
+Setting constant 1-bit at position 10 on $procdff$1237 ($adff) from module valid_bits.
+Setting constant 1-bit at position 11 on $procdff$1237 ($adff) from module valid_bits.
+Setting constant 1-bit at position 12 on $procdff$1237 ($adff) from module valid_bits.
+Setting constant 1-bit at position 13 on $procdff$1237 ($adff) from module valid_bits.
+Setting constant 1-bit at position 14 on $procdff$1237 ($adff) from module valid_bits.
+Setting constant 1-bit at position 15 on $procdff$1237 ($adff) from module valid_bits.
+Setting constant 1-bit at position 16 on $procdff$1237 ($adff) from module valid_bits.
+Setting constant 1-bit at position 17 on $procdff$1237 ($adff) from module valid_bits.
+Setting constant 1-bit at position 18 on $procdff$1237 ($adff) from module valid_bits.
+Setting constant 1-bit at position 19 on $procdff$1237 ($adff) from module valid_bits.
+Setting constant 1-bit at position 20 on $procdff$1237 ($adff) from module valid_bits.
+Setting constant 1-bit at position 21 on $procdff$1237 ($adff) from module valid_bits.
+Setting constant 1-bit at position 22 on $procdff$1237 ($adff) from module valid_bits.
+Setting constant 1-bit at position 23 on $procdff$1237 ($adff) from module valid_bits.
+Setting constant 1-bit at position 24 on $procdff$1237 ($adff) from module valid_bits.
+Setting constant 1-bit at position 25 on $procdff$1237 ($adff) from module valid_bits.
+Setting constant 1-bit at position 26 on $procdff$1237 ($adff) from module valid_bits.
+Setting constant 1-bit at position 27 on $procdff$1237 ($adff) from module valid_bits.
+Setting constant 1-bit at position 28 on $procdff$1237 ($adff) from module valid_bits.
+Setting constant 1-bit at position 29 on $procdff$1237 ($adff) from module valid_bits.
+Setting constant 1-bit at position 30 on $procdff$1237 ($adff) from module valid_bits.
+Setting constant 1-bit at position 31 on $procdff$1237 ($adff) from module valid_bits.
+Setting constant 1-bit at position 32 on $procdff$1237 ($adff) from module valid_bits.
+Setting constant 1-bit at position 33 on $procdff$1237 ($adff) from module valid_bits.
+Setting constant 1-bit at position 34 on $procdff$1237 ($adff) from module valid_bits.
+Setting constant 1-bit at position 35 on $procdff$1237 ($adff) from module valid_bits.
+Setting constant 1-bit at position 36 on $procdff$1237 ($adff) from module valid_bits.
+Setting constant 1-bit at position 37 on $procdff$1237 ($adff) from module valid_bits.
+Setting constant 1-bit at position 38 on $procdff$1237 ($adff) from module valid_bits.
+Setting constant 1-bit at position 39 on $procdff$1237 ($adff) from module valid_bits.
+Setting constant 1-bit at position 40 on $procdff$1237 ($adff) from module valid_bits.
+Setting constant 1-bit at position 41 on $procdff$1237 ($adff) from module valid_bits.
+Setting constant 1-bit at position 42 on $procdff$1237 ($adff) from module valid_bits.
+Setting constant 1-bit at position 43 on $procdff$1237 ($adff) from module valid_bits.
+Setting constant 1-bit at position 44 on $procdff$1237 ($adff) from module valid_bits.
+Setting constant 1-bit at position 45 on $procdff$1237 ($adff) from module valid_bits.
+Setting constant 1-bit at position 46 on $procdff$1237 ($adff) from module valid_bits.
+Setting constant 1-bit at position 47 on $procdff$1237 ($adff) from module valid_bits.
+Setting constant 1-bit at position 48 on $procdff$1237 ($adff) from module valid_bits.
+Setting constant 1-bit at position 49 on $procdff$1237 ($adff) from module valid_bits.
+Setting constant 1-bit at position 50 on $procdff$1237 ($adff) from module valid_bits.
+Setting constant 1-bit at position 51 on $procdff$1237 ($adff) from module valid_bits.
+Setting constant 1-bit at position 52 on $procdff$1237 ($adff) from module valid_bits.
+Setting constant 1-bit at position 53 on $procdff$1237 ($adff) from module valid_bits.
+Setting constant 1-bit at position 54 on $procdff$1237 ($adff) from module valid_bits.
+Setting constant 1-bit at position 55 on $procdff$1237 ($adff) from module valid_bits.
+Setting constant 1-bit at position 56 on $procdff$1237 ($adff) from module valid_bits.
+Setting constant 1-bit at position 57 on $procdff$1237 ($adff) from module valid_bits.
+Setting constant 1-bit at position 58 on $procdff$1237 ($adff) from module valid_bits.
+Setting constant 1-bit at position 59 on $procdff$1237 ($adff) from module valid_bits.
+Setting constant 1-bit at position 60 on $procdff$1237 ($adff) from module valid_bits.
+Setting constant 1-bit at position 61 on $procdff$1237 ($adff) from module valid_bits.
+Setting constant 1-bit at position 62 on $procdff$1237 ($adff) from module valid_bits.
+Setting constant 1-bit at position 63 on $procdff$1237 ($adff) from module valid_bits.
+Adding EN signal on $procdff$1247 ($adff) from module lru_state (D = $or$cache/rtl/lru_state.v:0$315_Y, Q = \lru_bit).
+Setting constant 1-bit at position 0 on $procdff$1252 ($adff) from module lru_state.
+Setting constant 1-bit at position 1 on $procdff$1252 ($adff) from module lru_state.
+Setting constant 1-bit at position 2 on $procdff$1252 ($adff) from module lru_state.
+Setting constant 1-bit at position 3 on $procdff$1252 ($adff) from module lru_state.
+Setting constant 1-bit at position 4 on $procdff$1252 ($adff) from module lru_state.
+Setting constant 1-bit at position 5 on $procdff$1252 ($adff) from module lru_state.
+Setting constant 1-bit at position 0 on $procdff$1257 ($adff) from module lru_state.
+Setting constant 1-bit at position 1 on $procdff$1257 ($adff) from module lru_state.
+Setting constant 1-bit at position 2 on $procdff$1257 ($adff) from module lru_state.
+Setting constant 1-bit at position 3 on $procdff$1257 ($adff) from module lru_state.
+Setting constant 1-bit at position 4 on $procdff$1257 ($adff) from module lru_state.
+Setting constant 1-bit at position 5 on $procdff$1257 ($adff) from module lru_state.
+Setting constant 1-bit at position 6 on $procdff$1257 ($adff) from module lru_state.
+Setting constant 1-bit at position 7 on $procdff$1257 ($adff) from module lru_state.
+Setting constant 1-bit at position 8 on $procdff$1257 ($adff) from module lru_state.
+Setting constant 1-bit at position 9 on $procdff$1257 ($adff) from module lru_state.
+Setting constant 1-bit at position 10 on $procdff$1257 ($adff) from module lru_state.
+Setting constant 1-bit at position 11 on $procdff$1257 ($adff) from module lru_state.
+Setting constant 1-bit at position 12 on $procdff$1257 ($adff) from module lru_state.
+Setting constant 1-bit at position 13 on $procdff$1257 ($adff) from module lru_state.
+Setting constant 1-bit at position 14 on $procdff$1257 ($adff) from module lru_state.
+Setting constant 1-bit at position 15 on $procdff$1257 ($adff) from module lru_state.
+Setting constant 1-bit at position 16 on $procdff$1257 ($adff) from module lru_state.
+Setting constant 1-bit at position 17 on $procdff$1257 ($adff) from module lru_state.
+Setting constant 1-bit at position 18 on $procdff$1257 ($adff) from module lru_state.
+Setting constant 1-bit at position 19 on $procdff$1257 ($adff) from module lru_state.
+Setting constant 1-bit at position 20 on $procdff$1257 ($adff) from module lru_state.
+Setting constant 1-bit at position 21 on $procdff$1257 ($adff) from module lru_state.
+Setting constant 1-bit at position 22 on $procdff$1257 ($adff) from module lru_state.
+Setting constant 1-bit at position 23 on $procdff$1257 ($adff) from module lru_state.
+Setting constant 1-bit at position 24 on $procdff$1257 ($adff) from module lru_state.
+Setting constant 1-bit at position 25 on $procdff$1257 ($adff) from module lru_state.
+Setting constant 1-bit at position 26 on $procdff$1257 ($adff) from module lru_state.
+Setting constant 1-bit at position 27 on $procdff$1257 ($adff) from module lru_state.
+Setting constant 1-bit at position 28 on $procdff$1257 ($adff) from module lru_state.
+Setting constant 1-bit at position 29 on $procdff$1257 ($adff) from module lru_state.
+Setting constant 1-bit at position 30 on $procdff$1257 ($adff) from module lru_state.
+Setting constant 1-bit at position 31 on $procdff$1257 ($adff) from module lru_state.
+Setting constant 1-bit at position 32 on $procdff$1257 ($adff) from module lru_state.
+Setting constant 1-bit at position 33 on $procdff$1257 ($adff) from module lru_state.
+Setting constant 1-bit at position 34 on $procdff$1257 ($adff) from module lru_state.
+Setting constant 1-bit at position 35 on $procdff$1257 ($adff) from module lru_state.
+Setting constant 1-bit at position 36 on $procdff$1257 ($adff) from module lru_state.
+Setting constant 1-bit at position 37 on $procdff$1257 ($adff) from module lru_state.
+Setting constant 1-bit at position 38 on $procdff$1257 ($adff) from module lru_state.
+Setting constant 1-bit at position 39 on $procdff$1257 ($adff) from module lru_state.
+Setting constant 1-bit at position 40 on $procdff$1257 ($adff) from module lru_state.
+Setting constant 1-bit at position 41 on $procdff$1257 ($adff) from module lru_state.
+Setting constant 1-bit at position 42 on $procdff$1257 ($adff) from module lru_state.
+Setting constant 1-bit at position 43 on $procdff$1257 ($adff) from module lru_state.
+Setting constant 1-bit at position 44 on $procdff$1257 ($adff) from module lru_state.
+Setting constant 1-bit at position 45 on $procdff$1257 ($adff) from module lru_state.
+Setting constant 1-bit at position 46 on $procdff$1257 ($adff) from module lru_state.
+Setting constant 1-bit at position 47 on $procdff$1257 ($adff) from module lru_state.
+Setting constant 1-bit at position 48 on $procdff$1257 ($adff) from module lru_state.
+Setting constant 1-bit at position 49 on $procdff$1257 ($adff) from module lru_state.
+Setting constant 1-bit at position 50 on $procdff$1257 ($adff) from module lru_state.
+Setting constant 1-bit at position 51 on $procdff$1257 ($adff) from module lru_state.
+Setting constant 1-bit at position 52 on $procdff$1257 ($adff) from module lru_state.
+Setting constant 1-bit at position 53 on $procdff$1257 ($adff) from module lru_state.
+Setting constant 1-bit at position 54 on $procdff$1257 ($adff) from module lru_state.
+Setting constant 1-bit at position 55 on $procdff$1257 ($adff) from module lru_state.
+Setting constant 1-bit at position 56 on $procdff$1257 ($adff) from module lru_state.
+Setting constant 1-bit at position 57 on $procdff$1257 ($adff) from module lru_state.
+Setting constant 1-bit at position 58 on $procdff$1257 ($adff) from module lru_state.
+Setting constant 1-bit at position 59 on $procdff$1257 ($adff) from module lru_state.
+Setting constant 1-bit at position 60 on $procdff$1257 ($adff) from module lru_state.
+Setting constant 1-bit at position 61 on $procdff$1257 ($adff) from module lru_state.
+Setting constant 1-bit at position 62 on $procdff$1257 ($adff) from module lru_state.
+Setting constant 1-bit at position 63 on $procdff$1257 ($adff) from module lru_state.
+Adding EN signal on $procdff$1277 ($adff) from module $paramod$05c1e7bd5a1b59bea00dcbb162015326cffdec58\cache_fsm (D = \cpu_we, Q = \is_write).
+Adding EN signal on $procdff$1282 ($adff) from module $paramod$05c1e7bd5a1b59bea00dcbb162015326cffdec58\cache_fsm (D = \hit_way, Q = \hit_way_q).
+Adding EN signal on $procdff$1302 ($adff) from module $paramod$05c1e7bd5a1b59bea00dcbb162015326cffdec58\cache_fsm (D = $procmux$978_Y, Q = \way1_dirty).
+Adding EN signal on $procdff$1267 ($adff) from module $paramod$05c1e7bd5a1b59bea00dcbb162015326cffdec58\cache_fsm (D = \cpu_addr, Q = \addr_q).
+Adding EN signal on $procdff$1297 ($adff) from module $paramod$05c1e7bd5a1b59bea00dcbb162015326cffdec58\cache_fsm (D = $procmux$973_Y, Q = \way0_dirty).
+Adding EN signal on $procdff$1287 ($adff) from module $paramod$05c1e7bd5a1b59bea00dcbb162015326cffdec58\cache_fsm (D = \lru_way, Q = \victim_way).
+Adding EN signal on $procdff$1272 ($adff) from module $paramod$05c1e7bd5a1b59bea00dcbb162015326cffdec58\cache_fsm (D = \cpu_wdata, Q = \wdata_q).
+Adding EN signal on $procdff$1292 ($adff) from module $paramod$05c1e7bd5a1b59bea00dcbb162015326cffdec58\cache_fsm (D = \mem_rdata, Q = \fill_line).
+Adding EN signal on $procdff$1262 ($adff) from module $paramod$05c1e7bd5a1b59bea00dcbb162015326cffdec58\cache_fsm (D = $procmux$1069_Y, Q = \state).
+Setting constant 1-bit at position 0 on $procdff$1337 ($adff) from module $paramod$05c1e7bd5a1b59bea00dcbb162015326cffdec58\cache_fsm.
+Setting constant 1-bit at position 1 on $procdff$1337 ($adff) from module $paramod$05c1e7bd5a1b59bea00dcbb162015326cffdec58\cache_fsm.
+Setting constant 1-bit at position 2 on $procdff$1337 ($adff) from module $paramod$05c1e7bd5a1b59bea00dcbb162015326cffdec58\cache_fsm.
+Setting constant 1-bit at position 3 on $procdff$1337 ($adff) from module $paramod$05c1e7bd5a1b59bea00dcbb162015326cffdec58\cache_fsm.
+Setting constant 1-bit at position 4 on $procdff$1337 ($adff) from module $paramod$05c1e7bd5a1b59bea00dcbb162015326cffdec58\cache_fsm.
+Setting constant 1-bit at position 5 on $procdff$1337 ($adff) from module $paramod$05c1e7bd5a1b59bea00dcbb162015326cffdec58\cache_fsm.
+Setting constant 1-bit at position 6 on $procdff$1337 ($adff) from module $paramod$05c1e7bd5a1b59bea00dcbb162015326cffdec58\cache_fsm.
+Setting constant 1-bit at position 7 on $procdff$1337 ($adff) from module $paramod$05c1e7bd5a1b59bea00dcbb162015326cffdec58\cache_fsm.
+Setting constant 1-bit at position 8 on $procdff$1337 ($adff) from module $paramod$05c1e7bd5a1b59bea00dcbb162015326cffdec58\cache_fsm.
+Setting constant 1-bit at position 9 on $procdff$1337 ($adff) from module $paramod$05c1e7bd5a1b59bea00dcbb162015326cffdec58\cache_fsm.
+Setting constant 1-bit at position 10 on $procdff$1337 ($adff) from module $paramod$05c1e7bd5a1b59bea00dcbb162015326cffdec58\cache_fsm.
+Setting constant 1-bit at position 11 on $procdff$1337 ($adff) from module $paramod$05c1e7bd5a1b59bea00dcbb162015326cffdec58\cache_fsm.
+Setting constant 1-bit at position 12 on $procdff$1337 ($adff) from module $paramod$05c1e7bd5a1b59bea00dcbb162015326cffdec58\cache_fsm.
+Setting constant 1-bit at position 13 on $procdff$1337 ($adff) from module $paramod$05c1e7bd5a1b59bea00dcbb162015326cffdec58\cache_fsm.
+Setting constant 1-bit at position 14 on $procdff$1337 ($adff) from module $paramod$05c1e7bd5a1b59bea00dcbb162015326cffdec58\cache_fsm.
+Setting constant 1-bit at position 15 on $procdff$1337 ($adff) from module $paramod$05c1e7bd5a1b59bea00dcbb162015326cffdec58\cache_fsm.
+Setting constant 1-bit at position 16 on $procdff$1337 ($adff) from module $paramod$05c1e7bd5a1b59bea00dcbb162015326cffdec58\cache_fsm.
+Setting constant 1-bit at position 17 on $procdff$1337 ($adff) from module $paramod$05c1e7bd5a1b59bea00dcbb162015326cffdec58\cache_fsm.
+Setting constant 1-bit at position 18 on $procdff$1337 ($adff) from module $paramod$05c1e7bd5a1b59bea00dcbb162015326cffdec58\cache_fsm.
+Setting constant 1-bit at position 19 on $procdff$1337 ($adff) from module $paramod$05c1e7bd5a1b59bea00dcbb162015326cffdec58\cache_fsm.
+Setting constant 1-bit at position 20 on $procdff$1337 ($adff) from module $paramod$05c1e7bd5a1b59bea00dcbb162015326cffdec58\cache_fsm.
+Setting constant 1-bit at position 21 on $procdff$1337 ($adff) from module $paramod$05c1e7bd5a1b59bea00dcbb162015326cffdec58\cache_fsm.
+Setting constant 1-bit at position 22 on $procdff$1337 ($adff) from module $paramod$05c1e7bd5a1b59bea00dcbb162015326cffdec58\cache_fsm.
+Setting constant 1-bit at position 23 on $procdff$1337 ($adff) from module $paramod$05c1e7bd5a1b59bea00dcbb162015326cffdec58\cache_fsm.
+Setting constant 1-bit at position 24 on $procdff$1337 ($adff) from module $paramod$05c1e7bd5a1b59bea00dcbb162015326cffdec58\cache_fsm.
+Setting constant 1-bit at position 25 on $procdff$1337 ($adff) from module $paramod$05c1e7bd5a1b59bea00dcbb162015326cffdec58\cache_fsm.
+Setting constant 1-bit at position 26 on $procdff$1337 ($adff) from module $paramod$05c1e7bd5a1b59bea00dcbb162015326cffdec58\cache_fsm.
+Setting constant 1-bit at position 27 on $procdff$1337 ($adff) from module $paramod$05c1e7bd5a1b59bea00dcbb162015326cffdec58\cache_fsm.
+Setting constant 1-bit at position 28 on $procdff$1337 ($adff) from module $paramod$05c1e7bd5a1b59bea00dcbb162015326cffdec58\cache_fsm.
+Setting constant 1-bit at position 29 on $procdff$1337 ($adff) from module $paramod$05c1e7bd5a1b59bea00dcbb162015326cffdec58\cache_fsm.
+Setting constant 1-bit at position 30 on $procdff$1337 ($adff) from module $paramod$05c1e7bd5a1b59bea00dcbb162015326cffdec58\cache_fsm.
+Setting constant 1-bit at position 31 on $procdff$1337 ($adff) from module $paramod$05c1e7bd5a1b59bea00dcbb162015326cffdec58\cache_fsm.
+Setting constant 1-bit at position 32 on $procdff$1337 ($adff) from module $paramod$05c1e7bd5a1b59bea00dcbb162015326cffdec58\cache_fsm.
+Setting constant 1-bit at position 33 on $procdff$1337 ($adff) from module $paramod$05c1e7bd5a1b59bea00dcbb162015326cffdec58\cache_fsm.
+Setting constant 1-bit at position 34 on $procdff$1337 ($adff) from module $paramod$05c1e7bd5a1b59bea00dcbb162015326cffdec58\cache_fsm.
+Setting constant 1-bit at position 35 on $procdff$1337 ($adff) from module $paramod$05c1e7bd5a1b59bea00dcbb162015326cffdec58\cache_fsm.
+Setting constant 1-bit at position 36 on $procdff$1337 ($adff) from module $paramod$05c1e7bd5a1b59bea00dcbb162015326cffdec58\cache_fsm.
+Setting constant 1-bit at position 37 on $procdff$1337 ($adff) from module $paramod$05c1e7bd5a1b59bea00dcbb162015326cffdec58\cache_fsm.
+Setting constant 1-bit at position 38 on $procdff$1337 ($adff) from module $paramod$05c1e7bd5a1b59bea00dcbb162015326cffdec58\cache_fsm.
+Setting constant 1-bit at position 39 on $procdff$1337 ($adff) from module $paramod$05c1e7bd5a1b59bea00dcbb162015326cffdec58\cache_fsm.
+Setting constant 1-bit at position 40 on $procdff$1337 ($adff) from module $paramod$05c1e7bd5a1b59bea00dcbb162015326cffdec58\cache_fsm.
+Setting constant 1-bit at position 41 on $procdff$1337 ($adff) from module $paramod$05c1e7bd5a1b59bea00dcbb162015326cffdec58\cache_fsm.
+Setting constant 1-bit at position 42 on $procdff$1337 ($adff) from module $paramod$05c1e7bd5a1b59bea00dcbb162015326cffdec58\cache_fsm.
+Setting constant 1-bit at position 43 on $procdff$1337 ($adff) from module $paramod$05c1e7bd5a1b59bea00dcbb162015326cffdec58\cache_fsm.
+Setting constant 1-bit at position 44 on $procdff$1337 ($adff) from module $paramod$05c1e7bd5a1b59bea00dcbb162015326cffdec58\cache_fsm.
+Setting constant 1-bit at position 45 on $procdff$1337 ($adff) from module $paramod$05c1e7bd5a1b59bea00dcbb162015326cffdec58\cache_fsm.
+Setting constant 1-bit at position 46 on $procdff$1337 ($adff) from module $paramod$05c1e7bd5a1b59bea00dcbb162015326cffdec58\cache_fsm.
+Setting constant 1-bit at position 47 on $procdff$1337 ($adff) from module $paramod$05c1e7bd5a1b59bea00dcbb162015326cffdec58\cache_fsm.
+Setting constant 1-bit at position 48 on $procdff$1337 ($adff) from module $paramod$05c1e7bd5a1b59bea00dcbb162015326cffdec58\cache_fsm.
+Setting constant 1-bit at position 49 on $procdff$1337 ($adff) from module $paramod$05c1e7bd5a1b59bea00dcbb162015326cffdec58\cache_fsm.
+Setting constant 1-bit at position 50 on $procdff$1337 ($adff) from module $paramod$05c1e7bd5a1b59bea00dcbb162015326cffdec58\cache_fsm.
+Setting constant 1-bit at position 51 on $procdff$1337 ($adff) from module $paramod$05c1e7bd5a1b59bea00dcbb162015326cffdec58\cache_fsm.
+Setting constant 1-bit at position 52 on $procdff$1337 ($adff) from module $paramod$05c1e7bd5a1b59bea00dcbb162015326cffdec58\cache_fsm.
+Setting constant 1-bit at position 53 on $procdff$1337 ($adff) from module $paramod$05c1e7bd5a1b59bea00dcbb162015326cffdec58\cache_fsm.
+Setting constant 1-bit at position 54 on $procdff$1337 ($adff) from module $paramod$05c1e7bd5a1b59bea00dcbb162015326cffdec58\cache_fsm.
+Setting constant 1-bit at position 55 on $procdff$1337 ($adff) from module $paramod$05c1e7bd5a1b59bea00dcbb162015326cffdec58\cache_fsm.
+Setting constant 1-bit at position 56 on $procdff$1337 ($adff) from module $paramod$05c1e7bd5a1b59bea00dcbb162015326cffdec58\cache_fsm.
+Setting constant 1-bit at position 57 on $procdff$1337 ($adff) from module $paramod$05c1e7bd5a1b59bea00dcbb162015326cffdec58\cache_fsm.
+Setting constant 1-bit at position 58 on $procdff$1337 ($adff) from module $paramod$05c1e7bd5a1b59bea00dcbb162015326cffdec58\cache_fsm.
+Setting constant 1-bit at position 59 on $procdff$1337 ($adff) from module $paramod$05c1e7bd5a1b59bea00dcbb162015326cffdec58\cache_fsm.
+Setting constant 1-bit at position 60 on $procdff$1337 ($adff) from module $paramod$05c1e7bd5a1b59bea00dcbb162015326cffdec58\cache_fsm.
+Setting constant 1-bit at position 61 on $procdff$1337 ($adff) from module $paramod$05c1e7bd5a1b59bea00dcbb162015326cffdec58\cache_fsm.
+Setting constant 1-bit at position 62 on $procdff$1337 ($adff) from module $paramod$05c1e7bd5a1b59bea00dcbb162015326cffdec58\cache_fsm.
+Setting constant 1-bit at position 63 on $procdff$1337 ($adff) from module $paramod$05c1e7bd5a1b59bea00dcbb162015326cffdec58\cache_fsm.
+Setting constant 1-bit at position 0 on $procdff$1312 ($adff) from module $paramod$05c1e7bd5a1b59bea00dcbb162015326cffdec58\cache_fsm.
+Setting constant 1-bit at position 1 on $procdff$1312 ($adff) from module $paramod$05c1e7bd5a1b59bea00dcbb162015326cffdec58\cache_fsm.
+Setting constant 1-bit at position 2 on $procdff$1312 ($adff) from module $paramod$05c1e7bd5a1b59bea00dcbb162015326cffdec58\cache_fsm.
+Setting constant 1-bit at position 3 on $procdff$1312 ($adff) from module $paramod$05c1e7bd5a1b59bea00dcbb162015326cffdec58\cache_fsm.
+Setting constant 1-bit at position 4 on $procdff$1312 ($adff) from module $paramod$05c1e7bd5a1b59bea00dcbb162015326cffdec58\cache_fsm.
+Setting constant 1-bit at position 5 on $procdff$1312 ($adff) from module $paramod$05c1e7bd5a1b59bea00dcbb162015326cffdec58\cache_fsm.
+
+11.7. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module $paramod$7237cb41cb34ca93a1ce463152b05b33d6b49d72\way_tag_ram..
+Finding unused cells or wires in module \valid_bits..
+Finding unused cells or wires in module \tag_comparator..
+Finding unused cells or wires in module \lru_state..
+Finding unused cells or wires in module $paramod$05c1e7bd5a1b59bea00dcbb162015326cffdec58\cache_fsm..
+Finding unused cells or wires in module $paramod$1d0d03e245a6da678715d38116649e5c50f51da9\way_data_ram..
+Finding unused cells or wires in module \cache_2way_top..
+Removed 34 unused cells and 592 unused wires.
+<suppressed ~42 debug messages>
+
+11.8. Executing OPT_EXPR pass (perform const folding).
+Optimizing module $paramod$05c1e7bd5a1b59bea00dcbb162015326cffdec58\cache_fsm.
+<suppressed ~2 debug messages>
+Optimizing module $paramod$1d0d03e245a6da678715d38116649e5c50f51da9\way_data_ram.
+Optimizing module $paramod$7237cb41cb34ca93a1ce463152b05b33d6b49d72\way_tag_ram.
+Optimizing module cache_2way_top.
+Optimizing module lru_state.
+Optimizing module tag_comparator.
+Optimizing module valid_bits.
+
+11.9. Rerunning OPT passes. (Maybe there is more to do..)
+
+11.10. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module $paramod$05c1e7bd5a1b59bea00dcbb162015326cffdec58\cache_fsm..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Running muxtree optimizer on module $paramod$1d0d03e245a6da678715d38116649e5c50f51da9\way_data_ram..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Running muxtree optimizer on module $paramod$7237cb41cb34ca93a1ce463152b05b33d6b49d72\way_tag_ram..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Running muxtree optimizer on module \cache_2way_top..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Running muxtree optimizer on module \lru_state..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Running muxtree optimizer on module \tag_comparator..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Running muxtree optimizer on module \valid_bits..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~41 debug messages>
+
+11.11. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module $paramod$05c1e7bd5a1b59bea00dcbb162015326cffdec58\cache_fsm.
+  Optimizing cells in module $paramod$1d0d03e245a6da678715d38116649e5c50f51da9\way_data_ram.
+  Optimizing cells in module $paramod$7237cb41cb34ca93a1ce463152b05b33d6b49d72\way_tag_ram.
+  Optimizing cells in module \cache_2way_top.
+  Optimizing cells in module \lru_state.
+  Optimizing cells in module \tag_comparator.
+  Optimizing cells in module \valid_bits.
+Performed a total of 0 changes.
+
+11.12. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `$paramod$05c1e7bd5a1b59bea00dcbb162015326cffdec58\cache_fsm'.
+<suppressed ~18 debug messages>
+Finding identical cells in module `$paramod$1d0d03e245a6da678715d38116649e5c50f51da9\way_data_ram'.
+Finding identical cells in module `$paramod$7237cb41cb34ca93a1ce463152b05b33d6b49d72\way_tag_ram'.
+Finding identical cells in module `\cache_2way_top'.
+Finding identical cells in module `\lru_state'.
+Finding identical cells in module `\tag_comparator'.
+Finding identical cells in module `\valid_bits'.
+Removed a total of 6 cells.
+
+11.13. Executing OPT_DFF pass (perform DFF optimizations).
+
+11.14. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module $paramod$05c1e7bd5a1b59bea00dcbb162015326cffdec58\cache_fsm..
+Finding unused cells or wires in module $paramod$1d0d03e245a6da678715d38116649e5c50f51da9\way_data_ram..
+Finding unused cells or wires in module $paramod$7237cb41cb34ca93a1ce463152b05b33d6b49d72\way_tag_ram..
+Finding unused cells or wires in module \cache_2way_top..
+Finding unused cells or wires in module \lru_state..
+Finding unused cells or wires in module \tag_comparator..
+Finding unused cells or wires in module \valid_bits..
+Removed 0 unused cells and 6 unused wires.
+<suppressed ~1 debug messages>
+
+11.15. Executing OPT_EXPR pass (perform const folding).
+Optimizing module $paramod$05c1e7bd5a1b59bea00dcbb162015326cffdec58\cache_fsm.
+Optimizing module $paramod$1d0d03e245a6da678715d38116649e5c50f51da9\way_data_ram.
+Optimizing module $paramod$7237cb41cb34ca93a1ce463152b05b33d6b49d72\way_tag_ram.
+Optimizing module cache_2way_top.
+Optimizing module lru_state.
+Optimizing module tag_comparator.
+Optimizing module valid_bits.
+
+11.16. Rerunning OPT passes. (Maybe there is more to do..)
+
+11.17. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module $paramod$05c1e7bd5a1b59bea00dcbb162015326cffdec58\cache_fsm..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Running muxtree optimizer on module $paramod$1d0d03e245a6da678715d38116649e5c50f51da9\way_data_ram..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Running muxtree optimizer on module $paramod$7237cb41cb34ca93a1ce463152b05b33d6b49d72\way_tag_ram..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Running muxtree optimizer on module \cache_2way_top..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Running muxtree optimizer on module \lru_state..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Running muxtree optimizer on module \tag_comparator..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Running muxtree optimizer on module \valid_bits..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~41 debug messages>
+
+11.18. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module $paramod$05c1e7bd5a1b59bea00dcbb162015326cffdec58\cache_fsm.
+  Optimizing cells in module $paramod$1d0d03e245a6da678715d38116649e5c50f51da9\way_data_ram.
+  Optimizing cells in module $paramod$7237cb41cb34ca93a1ce463152b05b33d6b49d72\way_tag_ram.
+  Optimizing cells in module \cache_2way_top.
+  Optimizing cells in module \lru_state.
+  Optimizing cells in module \tag_comparator.
+  Optimizing cells in module \valid_bits.
+Performed a total of 0 changes.
+
+11.19. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `$paramod$05c1e7bd5a1b59bea00dcbb162015326cffdec58\cache_fsm'.
+Finding identical cells in module `$paramod$1d0d03e245a6da678715d38116649e5c50f51da9\way_data_ram'.
+Finding identical cells in module `$paramod$7237cb41cb34ca93a1ce463152b05b33d6b49d72\way_tag_ram'.
+Finding identical cells in module `\cache_2way_top'.
+Finding identical cells in module `\lru_state'.
+Finding identical cells in module `\tag_comparator'.
+Finding identical cells in module `\valid_bits'.
+Removed a total of 0 cells.
+
+11.20. Executing OPT_DFF pass (perform DFF optimizations).
+
+11.21. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module $paramod$05c1e7bd5a1b59bea00dcbb162015326cffdec58\cache_fsm..
+Finding unused cells or wires in module $paramod$1d0d03e245a6da678715d38116649e5c50f51da9\way_data_ram..
+Finding unused cells or wires in module $paramod$7237cb41cb34ca93a1ce463152b05b33d6b49d72\way_tag_ram..
+Finding unused cells or wires in module \cache_2way_top..
+Finding unused cells or wires in module \lru_state..
+Finding unused cells or wires in module \tag_comparator..
+Finding unused cells or wires in module \valid_bits..
+
+11.22. Executing OPT_EXPR pass (perform const folding).
+Optimizing module $paramod$05c1e7bd5a1b59bea00dcbb162015326cffdec58\cache_fsm.
+Optimizing module $paramod$1d0d03e245a6da678715d38116649e5c50f51da9\way_data_ram.
+Optimizing module $paramod$7237cb41cb34ca93a1ce463152b05b33d6b49d72\way_tag_ram.
+Optimizing module cache_2way_top.
+Optimizing module lru_state.
+Optimizing module tag_comparator.
+Optimizing module valid_bits.
+
+11.23. Finished OPT passes. (There is nothing left to do.)
+
+12. Executing CHECK pass (checking for obvious problems).
+Checking module $paramod$05c1e7bd5a1b59bea00dcbb162015326cffdec58\cache_fsm...
+Checking module $paramod$1d0d03e245a6da678715d38116649e5c50f51da9\way_data_ram...
+Checking module $paramod$7237cb41cb34ca93a1ce463152b05b33d6b49d72\way_tag_ram...
+Checking module cache_2way_top...
+Checking module lru_state...
+Checking module tag_comparator...
+Checking module valid_bits...
+Found and reported 0 problems.
+
+13. Printing statistics.
+
+=== $paramod$05c1e7bd5a1b59bea00dcbb162015326cffdec58\cache_fsm ===
+
+   Number of wires:                123
+   Number of wire bits:           3349
+   Number of public wires:          51
+   Number of public wire bits:    1521
+   Number of ports:                 35
+   Number of port bits:            889
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                101
+     $adffe                          9
+     $and                            2
+     $eq                             6
+     $logic_not                      1
+     $logic_or                       1
+     $mux                           41
+     $ne                            10
+     $neg                            1
+     $not                            1
+     $or                             6
+     $pmux                           8
+     $reduce_and                     6
+     $reduce_bool                    1
+     $reduce_or                      1
+     $shift                          3
+     $shiftx                         3
+     $shl                            1
+
+=== $paramod$1d0d03e245a6da678715d38116649e5c50f51da9\way_data_ram ===
+
+   Number of wires:                 30
+   Number of wire bits:           2364
+   Number of public wires:           6
+   Number of public wire bits:     268
+   Number of ports:                  6
+   Number of port bits:            268
+   Number of memories:               1
+   Number of memory bits:         8192
+   Number of processes:              0
+   Number of cells:                 29
+     $memrd                          1
+     $memwr_v2                       4
+     $mux                           24
+
+=== $paramod$7237cb41cb34ca93a1ce463152b05b33d6b49d72\way_tag_ram ===
+
+   Number of wires:                  8
+   Number of wire bits:            102
+   Number of public wires:           5
+   Number of public wire bits:      52
+   Number of ports:                  5
+   Number of port bits:             52
+   Number of memories:               1
+   Number of memory bits:         1408
+   Number of processes:              0
+   Number of cells:                  5
+     $memrd                          1
+     $memwr_v2                       1
+     $mux                            3
+
+=== cache_2way_top ===
+
+   Number of wires:                 46
+   Number of wire bits:           1089
+   Number of public wires:          41
+   Number of public wire bits:    1084
+   Number of ports:                 14
+   Number of port bits:            392
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                 13
+     $logic_and                      2
+     $logic_not                      1
+     $paramod$05c1e7bd5a1b59bea00dcbb162015326cffdec58\cache_fsm      1
+     $paramod$1d0d03e245a6da678715d38116649e5c50f51da9\way_data_ram      2
+     $paramod$7237cb41cb34ca93a1ce463152b05b33d6b49d72\way_tag_ram      2
+     $reduce_or                      2
+     lru_state                       1
+     tag_comparator                  1
+     valid_bits                      1
+
+=== lru_state ===
+
+   Number of wires:                 14
+   Number of wire bits:            403
+   Number of public wires:           7
+   Number of public wire bits:      75
+   Number of ports:                  6
+   Number of port bits:             11
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                  9
+     $adffe                          1
+     $and                            1
+     $neg                            1
+     $not                            2
+     $or                             1
+     $shift                          2
+     $shiftx                         1
+
+=== tag_comparator ===
+
+   Number of wires:                 11
+   Number of wire bits:             74
+   Number of public wires:           9
+   Number of public wire bits:      72
+   Number of ports:                  9
+   Number of port bits:             72
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                  6
+     $eq                             2
+     $logic_and                      2
+     $logic_or                       1
+     $mux                            1
+
+=== valid_bits ===
+
+   Number of wires:                 27
+   Number of wire bits:           1109
+   Number of public wires:          11
+   Number of public wire bits:     142
+   Number of ports:                  9
+   Number of port bits:             14
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                 20
+     $adff                           2
+     $and                            4
+     $mux                            4
+     $neg                            1
+     $not                            1
+     $or                             4
+     $shift                          2
+     $shiftx                         2
+
+=== design hierarchy ===
+
+   cache_2way_top                    1
+     $paramod$05c1e7bd5a1b59bea00dcbb162015326cffdec58\cache_fsm      1
+     $paramod$1d0d03e245a6da678715d38116649e5c50f51da9\way_data_ram      2
+     $paramod$7237cb41cb34ca93a1ce463152b05b33d6b49d72\way_tag_ram      2
+     lru_state                       1
+     tag_comparator                  1
+     valid_bits                      1
+
+   Number of wires:                297
+   Number of wire bits:          10956
+   Number of public wires:         141
+   Number of public wire bits:    3534
+   Number of ports:                 95
+   Number of port bits:           2018
+   Number of memories:               4
+   Number of memory bits:        19200
+   Number of processes:              0
+   Number of cells:                209
+     $adff                           2
+     $adffe                         10
+     $and                            7
+     $eq                             8
+     $logic_and                      4
+     $logic_not                      2
+     $logic_or                       2
+     $memrd                          4
+     $memwr_v2                      10
+     $mux                          100
+     $ne                            10
+     $neg                            3
+     $not                            4
+     $or                            11
+     $pmux                           8
+     $reduce_and                     6
+     $reduce_bool                    1
+     $reduce_or                      3
+     $shift                          7
+     $shiftx                         6
+     $shl                            1
+
+Warnings: 4 unique messages, 4 total
+End of script. Logfile hash: f6e46e3453, CPU: user 0.33s system 0.02s, MEM: 42.70 MB peak
+Yosys 0.52 (git sha1 fee39a3284c90249e1d9684cf6944ffbbcbb8f90)
+Time spent: 59% 9x read_verilog (0 sec), 8% 5x opt_expr (0 sec), ...

@@ -28,3 +28,7 @@ Directed workload details:
 Original Harvard/shared benches cover programs 1-4. Programs 5-6 are cached-CPU directed tests. No claim is made that reset-during-dirty-writeback or all arbitrary geometry configurations are verified.
 
 The GitHub workflow also checks that measured CSVs regenerate without differences and injects a compiler failure (`IVERILOG=false`) to ensure failures propagate. Structural synthesis logs are separate from simulation evidence and are not timing closure reports.
+
+## Structural synthesis
+
+All five top modules passed Yosys 0.52 hierarchy/proc/opt/check/stat in GitHub CI. The complete raw logs and scripts are committed under results/synthesis/. The two-way hierarchy reports four data/tag memories totaling 19,200 bits; these are generic RTL storage statistics, not technology-mapped FPGA LUT/BRAM counts. No place-and-route frequency or power claim is made.

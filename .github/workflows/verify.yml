@@ -1,0 +1,41 @@
+name: Verify cache and CPU integration
+on: [push, pull_request, workflow_dispatch]
+jobs:
+  simulation:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - run: sudo apt-get update && sudo apt-get install -y iverilog
+      - run: make test
+      - name: Check reproducible measured CSVs
+        run: git diff --exit-code -- results/*.csv
+      - name: Verify fail-closed compiler handling
+        run: |
+          if IVERILOG=false make compare; then
+            echo 'Expected compiler failure to propagate'; exit 1
+          fi
+      - name: Upload simulation evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: simulation-results
+          path: |
+            results/*.csv
+            sim/*.log
+  synthesis:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - run: sudo apt-get update && sudo apt-get install -y yosys
+      - run: make synth
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: structural-synthesis
+          path: results/synthesis/

@@ -1,0 +1,32 @@
+[
+  {
+    "top": "harvard_top",
+    "status": "PASS",
+    "tool": "Yosys 0.52 (git sha1 fee39a3284c90249e1d9684cf6944ffbbcbb8f90)",
+    "flow": "hierarchy/proc/opt/check/stat"
+  },
+  {
+    "top": "shared_top",
+    "status": "PASS",
+    "tool": "Yosys 0.52 (git sha1 fee39a3284c90249e1d9684cf6944ffbbcbb8f90)",
+    "flow": "hierarchy/proc/opt/check/stat"
+  },
+  {
+    "top": "direct_mapped_cache",
+    "status": "PASS",
+    "tool": "Yosys 0.52 (git sha1 fee39a3284c90249e1d9684cf6944ffbbcbb8f90)",
+    "flow": "hierarchy/proc/opt/check/stat"
+  },
+  {
+    "top": "cache_2way_top",
+    "status": "PASS",
+    "tool": "Yosys 0.52 (git sha1 fee39a3284c90249e1d9684cf6944ffbbcbb8f90)",
+    "flow": "hierarchy/proc/opt/check/stat"
+  },
+  {
+    "top": "cpu_cached_top",
+    "status": "PASS",
+    "tool": "Yosys 0.52 (git sha1 fee39a3284c90249e1d9684cf6944ffbbcbb8f90)",
+    "flow": "hierarchy/proc/opt/check/stat"
+  }
+]

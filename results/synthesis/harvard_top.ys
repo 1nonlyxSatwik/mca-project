@@ -1,0 +1,1 @@
+read_verilog rtl/address_decoder.v rtl/cpu.v rtl/data_memory.v rtl/harvard_top.v rtl/instruction_memory.v rtl/io_reg.v rtl/program_counter.v rtl/register_file.v rtl/rw_control.v rtl/shared_mem_controller.v rtl/shared_memory.v rtl/shared_top.v; hierarchy -check -top harvard_top; proc; opt; check -assert; stat;

@@ -1,0 +1,878 @@
+
+ /----------------------------------------------------------------------------\
+ |  yosys -- Yosys Open SYnthesis Suite                                       |
+ |  Copyright (C) 2012 - 2025  Claire Xenia Wolf <claire@yosyshq.com>         |
+ |  Distributed under an ISC-like license, type "license" to see terms        |
+ \----------------------------------------------------------------------------/
+ Yosys 0.52 (git sha1 fee39a3284c90249e1d9684cf6944ffbbcbb8f90)
+
+-- Executing script file `/home/runner/work/mca-project/mca-project/results/synthesis/harvard_top.ys' --
+
+1. Executing Verilog-2005 frontend: rtl/address_decoder.v
+Parsing Verilog input from `rtl/address_decoder.v' to AST representation.
+Generating RTLIL representation for module `\address_decoder'.
+Successfully finished Verilog frontend.
+
+2. Executing Verilog-2005 frontend: rtl/cpu.v
+Parsing Verilog input from `rtl/cpu.v' to AST representation.
+Generating RTLIL representation for module `\cpu'.
+Successfully finished Verilog frontend.
+
+3. Executing Verilog-2005 frontend: rtl/data_memory.v
+Parsing Verilog input from `rtl/data_memory.v' to AST representation.
+Generating RTLIL representation for module `\data_memory'.
+Successfully finished Verilog frontend.
+
+4. Executing Verilog-2005 frontend: rtl/harvard_top.v
+Parsing Verilog input from `rtl/harvard_top.v' to AST representation.
+Generating RTLIL representation for module `\harvard_top'.
+Successfully finished Verilog frontend.
+
+5. Executing Verilog-2005 frontend: rtl/instruction_memory.v
+Parsing Verilog input from `rtl/instruction_memory.v' to AST representation.
+Generating RTLIL representation for module `\instruction_memory'.
+Successfully finished Verilog frontend.
+
+6. Executing Verilog-2005 frontend: rtl/io_reg.v
+Parsing Verilog input from `rtl/io_reg.v' to AST representation.
+Generating RTLIL representation for module `\io_reg'.
+Successfully finished Verilog frontend.
+
+7. Executing Verilog-2005 frontend: rtl/program_counter.v
+Parsing Verilog input from `rtl/program_counter.v' to AST representation.
+Generating RTLIL representation for module `\program_counter'.
+Successfully finished Verilog frontend.
+
+8. Executing Verilog-2005 frontend: rtl/register_file.v
+Parsing Verilog input from `rtl/register_file.v' to AST representation.
+Generating RTLIL representation for module `\register_file'.
+Successfully finished Verilog frontend.
+
+9. Executing Verilog-2005 frontend: rtl/rw_control.v
+Parsing Verilog input from `rtl/rw_control.v' to AST representation.
+Generating RTLIL representation for module `\rw_control'.
+Successfully finished Verilog frontend.
+
+10. Executing Verilog-2005 frontend: rtl/shared_mem_controller.v
+Parsing Verilog input from `rtl/shared_mem_controller.v' to AST representation.
+Generating RTLIL representation for module `\shared_mem_controller'.
+Successfully finished Verilog frontend.
+
+11. Executing Verilog-2005 frontend: rtl/shared_memory.v
+Parsing Verilog input from `rtl/shared_memory.v' to AST representation.
+Generating RTLIL representation for module `\shared_memory'.
+Successfully finished Verilog frontend.
+
+12. Executing Verilog-2005 frontend: rtl/shared_top.v
+Parsing Verilog input from `rtl/shared_top.v' to AST representation.
+Generating RTLIL representation for module `\shared_top'.
+Successfully finished Verilog frontend.
+
+13. Executing HIERARCHY pass (managing design hierarchy).
+
+13.1. Analyzing design hierarchy..
+Top module:  \harvard_top
+Used module:     \io_reg
+Used module:     \data_memory
+Used module:     \rw_control
+Used module:     \address_decoder
+Used module:     \instruction_memory
+Used module:     \cpu
+Used module:         \program_counter
+Used module:         \register_file
+Parameter \DATA_FILE = 184'0111000001110010011011110110011101110010011000010110110101110011001011110111000001110010011011110110011100110001010111110110010001100001011101000110000100101110011010000110010101111000
+
+13.2. Executing AST frontend in derive mode using pre-parsed AST for module `\data_memory'.
+Parameter \DATA_FILE = 184'0111000001110010011011110110011101110010011000010110110101110011001011110111000001110010011011110110011100110001010111110110010001100001011101000110000100101110011010000110010101111000
+Generating RTLIL representation for module `$paramod$f6ce05bb10604bc605cf6e7bdac8ad5db3f1ee7e\data_memory'.
+Parameter \PROG_FILE = 144'011100000111001001101111011001110111001001100001011011010111001100101111011100000111001001101111011001110011000100101110011010000110010101111000
+
+13.3. Executing AST frontend in derive mode using pre-parsed AST for module `\instruction_memory'.
+Parameter \PROG_FILE = 144'011100000111001001101111011001110111001001100001011011010111001100101111011100000111001001101111011001110011000100101110011010000110010101111000
+Generating RTLIL representation for module `$paramod$c4fd62287f5239a4abe79f563127fdd5b49b5f48\instruction_memory'.
+
+13.4. Analyzing design hierarchy..
+Top module:  \harvard_top
+Used module:     \io_reg
+Used module:     $paramod$f6ce05bb10604bc605cf6e7bdac8ad5db3f1ee7e\data_memory
+Used module:     \rw_control
+Used module:     \address_decoder
+Used module:     $paramod$c4fd62287f5239a4abe79f563127fdd5b49b5f48\instruction_memory
+Used module:     \cpu
+Used module:         \program_counter
+Used module:         \register_file
+
+13.5. Analyzing design hierarchy..
+Top module:  \harvard_top
+Used module:     \io_reg
+Used module:     $paramod$f6ce05bb10604bc605cf6e7bdac8ad5db3f1ee7e\data_memory
+Used module:     \rw_control
+Used module:     \address_decoder
+Used module:     $paramod$c4fd62287f5239a4abe79f563127fdd5b49b5f48\instruction_memory
+Used module:     \cpu
+Used module:         \program_counter
+Used module:         \register_file
+Removing unused module `\shared_top'.
+Removing unused module `\shared_memory'.
+Removing unused module `\shared_mem_controller'.
+Removing unused module `\instruction_memory'.
+Removing unused module `\data_memory'.
+Removed 5 unused modules.
+
+14. Executing PROC pass (convert processes to netlists).
+
+14.1. Executing PROC_CLEAN pass (remove empty switches from decision trees).
+Cleaned up 0 empty switches.
+
+14.2. Executing PROC_RMDEAD pass (remove dead branches from decision trees).
+Marked 2 switch rules as full_case in process $proc$rtl/register_file.v:19$461 in module register_file.
+Marked 2 switch rules as full_case in process $proc$rtl/program_counter.v:13$449 in module program_counter.
+Marked 1 switch rules as full_case in process $proc$rtl/io_reg.v:11$448 in module io_reg.
+Marked 1 switch rules as full_case in process $proc$rtl/data_memory.v:23$785 in module $paramod$f6ce05bb10604bc605cf6e7bdac8ad5db3f1ee7e\data_memory.
+Marked 1 switch rules as full_case in process $proc$rtl/cpu.v:90$41 in module cpu.
+Removed a total of 0 dead cases.
+
+14.3. Executing PROC_PRUNE pass (remove redundant assignments in processes).
+Removed 0 redundant assignments.
+Promoted 145 assignments to connections.
+
+14.4. Executing PROC_INIT pass (extract init attributes).
+
+14.5. Executing PROC_ARST pass (detect async resets in processes).
+
+14.6. Executing PROC_ROM pass (convert switches to ROMs).
+Converted 0 switches.
+<suppressed ~10 debug messages>
+
+14.7. Executing PROC_MUX pass (convert decision trees to multiplexers).
+Creating decoders for process `\register_file.$proc$rtl/register_file.v:19$461'.
+     1/15: $2$memwr$\regs$rtl/register_file.v:24$460_EN[15:0]$488
+     2/15: $2$memwr$\regs$rtl/register_file.v:24$460_DATA[15:0]$487
+     3/15: $2$memwr$\regs$rtl/register_file.v:24$460_ADDR[2:0]$486
+     4/15: $1\i[31:0]
+     5/15: $1$memwr$\regs$rtl/register_file.v:22$459_EN[15:0]$480
+     6/15: $1$memwr$\regs$rtl/register_file.v:22$458_EN[15:0]$479
+     7/15: $1$memwr$\regs$rtl/register_file.v:22$457_EN[15:0]$478
+     8/15: $1$memwr$\regs$rtl/register_file.v:22$456_EN[15:0]$477
+     9/15: $1$memwr$\regs$rtl/register_file.v:22$455_EN[15:0]$476
+    10/15: $1$memwr$\regs$rtl/register_file.v:22$454_EN[15:0]$475
+    11/15: $1$memwr$\regs$rtl/register_file.v:22$453_EN[15:0]$474
+    12/15: $1$memwr$\regs$rtl/register_file.v:22$452_EN[15:0]$473
+    13/15: $1$memwr$\regs$rtl/register_file.v:24$460_EN[15:0]$483
+    14/15: $1$memwr$\regs$rtl/register_file.v:24$460_DATA[15:0]$482
+    15/15: $1$memwr$\regs$rtl/register_file.v:24$460_ADDR[2:0]$481
+Creating decoders for process `\program_counter.$proc$rtl/program_counter.v:13$449'.
+     1/1: $0\pc[5:0]
+Creating decoders for process `\io_reg.$proc$rtl/io_reg.v:11$448'.
+     1/1: $0\io_out[15:0]
+Creating decoders for process `$paramod$f6ce05bb10604bc605cf6e7bdac8ad5db3f1ee7e\data_memory.$proc$rtl/data_memory.v:0$858'.
+Creating decoders for process `$paramod$f6ce05bb10604bc605cf6e7bdac8ad5db3f1ee7e\data_memory.$proc$rtl/data_memory.v:23$785'.
+     1/3: $1$memwr$\mem$rtl/data_memory.v:25$784_EN[15:0]$791
+     2/3: $1$memwr$\mem$rtl/data_memory.v:25$784_DATA[15:0]$790
+     3/3: $1$memwr$\mem$rtl/data_memory.v:25$784_ADDR[5:0]$789
+Creating decoders for process `$paramod$c4fd62287f5239a4abe79f563127fdd5b49b5f48\instruction_memory.$proc$rtl/instruction_memory.v:0$1053'.
+Creating decoders for process `\cpu.$proc$rtl/cpu.v:90$41'.
+     1/1: $0\halted_r[0:0]
+
+14.8. Executing PROC_DLATCH pass (convert process syncs to latches).
+No latch inferred for signal `$paramod$f6ce05bb10604bc605cf6e7bdac8ad5db3f1ee7e\data_memory.\i' from process `$paramod$f6ce05bb10604bc605cf6e7bdac8ad5db3f1ee7e\data_memory.$proc$rtl/data_memory.v:0$858'.
+No latch inferred for signal `$paramod$f6ce05bb10604bc605cf6e7bdac8ad5db3f1ee7e\data_memory.$memwr$\mem$rtl/data_memory.v:19$720_EN' from process `$paramod$f6ce05bb10604bc605cf6e7bdac8ad5db3f1ee7e\data_memory.$proc$rtl/data_memory.v:0$858'.
+No latch inferred for signal `$paramod$f6ce05bb10604bc605cf6e7bdac8ad5db3f1ee7e\data_memory.$memwr$\mem$rtl/data_memory.v:19$721_EN' from process `$paramod$f6ce05bb10604bc605cf6e7bdac8ad5db3f1ee7e\data_memory.$proc$rtl/data_memory.v:0$858'.
+No latch inferred for signal `$paramod$f6ce05bb10604bc605cf6e7bdac8ad5db3f1ee7e\data_memory.$memwr$\mem$rtl/data_memory.v:19$722_EN' from process `$paramod$f6ce05bb10604bc605cf6e7bdac8ad5db3f1ee7e\data_memory.$proc$rtl/data_memory.v:0$858'.
+No latch inferred for signal `$paramod$f6ce05bb10604bc605cf6e7bdac8ad5db3f1ee7e\data_memory.$memwr$\mem$rtl/data_memory.v:19$723_EN' from process `$paramod$f6ce05bb10604bc605cf6e7bdac8ad5db3f1ee7e\data_memory.$proc$rtl/data_memory.v:0$858'.
+No latch inferred for signal `$paramod$f6ce05bb10604bc605cf6e7bdac8ad5db3f1ee7e\data_memory.$memwr$\mem$rtl/data_memory.v:19$724_EN' from process `$paramod$f6ce05bb10604bc605cf6e7bdac8ad5db3f1ee7e\data_memory.$proc$rtl/data_memory.v:0$858'.
+No latch inferred for signal `$paramod$f6ce05bb10604bc605cf6e7bdac8ad5db3f1ee7e\data_memory.$memwr$\mem$rtl/data_memory.v:19$725_EN' from process `$paramod$f6ce05bb10604bc605cf6e7bdac8ad5db3f1ee7e\data_memory.$proc$rtl/data_memory.v:0$858'.
+No latch inferred for signal `$paramod$f6ce05bb10604bc605cf6e7bdac8ad5db3f1ee7e\data_memory.$memwr$\mem$rtl/data_memory.v:19$726_EN' from process `$paramod$f6ce05bb10604bc605cf6e7bdac8ad5db3f1ee7e\data_memory.$proc$rtl/data_memory.v:0$858'.
+No latch inferred for signal `$paramod$f6ce05bb10604bc605cf6e7bdac8ad5db3f1ee7e\data_memory.$memwr$\mem$rtl/data_memory.v:19$727_EN' from process `$paramod$f6ce05bb10604bc605cf6e7bdac8ad5db3f1ee7e\data_memory.$proc$rtl/data_memory.v:0$858'.
+No latch inferred for signal `$paramod$f6ce05bb10604bc605cf6e7bdac8ad5db3f1ee7e\data_memory.$memwr$\mem$rtl/data_memory.v:19$728_EN' from process `$paramod$f6ce05bb10604bc605cf6e7bdac8ad5db3f1ee7e\data_memory.$proc$rtl/data_memory.v:0$858'.
+No latch inferred for signal `$paramod$f6ce05bb10604bc605cf6e7bdac8ad5db3f1ee7e\data_memory.$memwr$\mem$rtl/data_memory.v:19$729_EN' from process `$paramod$f6ce05bb10604bc605cf6e7bdac8ad5db3f1ee7e\data_memory.$proc$rtl/data_memory.v:0$858'.
+No latch inferred for signal `$paramod$f6ce05bb10604bc605cf6e7bdac8ad5db3f1ee7e\data_memory.$memwr$\mem$rtl/data_memory.v:19$730_EN' from process `$paramod$f6ce05bb10604bc605cf6e7bdac8ad5db3f1ee7e\data_memory.$proc$rtl/data_memory.v:0$858'.
+No latch inferred for signal `$paramod$f6ce05bb10604bc605cf6e7bdac8ad5db3f1ee7e\data_memory.$memwr$\mem$rtl/data_memory.v:19$731_EN' from process `$paramod$f6ce05bb10604bc605cf6e7bdac8ad5db3f1ee7e\data_memory.$proc$rtl/data_memory.v:0$858'.
+No latch inferred for signal `$paramod$f6ce05bb10604bc605cf6e7bdac8ad5db3f1ee7e\data_memory.$memwr$\mem$rtl/data_memory.v:19$732_EN' from process `$paramod$f6ce05bb10604bc605cf6e7bdac8ad5db3f1ee7e\data_memory.$proc$rtl/data_memory.v:0$858'.
+No latch inferred for signal `$paramod$f6ce05bb10604bc605cf6e7bdac8ad5db3f1ee7e\data_memory.$memwr$\mem$rtl/data_memory.v:19$733_EN' from process `$paramod$f6ce05bb10604bc605cf6e7bdac8ad5db3f1ee7e\data_memory.$proc$rtl/data_memory.v:0$858'.
+No latch inferred for signal `$paramod$f6ce05bb10604bc605cf6e7bdac8ad5db3f1ee7e\data_memory.$memwr$\mem$rtl/data_memory.v:19$734_EN' from process `$paramod$f6ce05bb10604bc605cf6e7bdac8ad5db3f1ee7e\data_memory.$proc$rtl/data_memory.v:0$858'.
+No latch inferred for signal `$paramod$f6ce05bb10604bc605cf6e7bdac8ad5db3f1ee7e\data_memory.$memwr$\mem$rtl/data_memory.v:19$735_EN' from process `$paramod$f6ce05bb10604bc605cf6e7bdac8ad5db3f1ee7e\data_memory.$proc$rtl/data_memory.v:0$858'.
+No latch inferred for signal `$paramod$f6ce05bb10604bc605cf6e7bdac8ad5db3f1ee7e\data_memory.$memwr$\mem$rtl/data_memory.v:19$736_EN' from process `$paramod$f6ce05bb10604bc605cf6e7bdac8ad5db3f1ee7e\data_memory.$proc$rtl/data_memory.v:0$858'.
+No latch inferred for signal `$paramod$f6ce05bb10604bc605cf6e7bdac8ad5db3f1ee7e\data_memory.$memwr$\mem$rtl/data_memory.v:19$737_EN' from process `$paramod$f6ce05bb10604bc605cf6e7bdac8ad5db3f1ee7e\data_memory.$proc$rtl/data_memory.v:0$858'.
+No latch inferred for signal `$paramod$f6ce05bb10604bc605cf6e7bdac8ad5db3f1ee7e\data_memory.$memwr$\mem$rtl/data_memory.v:19$738_EN' from process `$paramod$f6ce05bb10604bc605cf6e7bdac8ad5db3f1ee7e\data_memory.$proc$rtl/data_memory.v:0$858'.
+No latch inferred for signal `$paramod$f6ce05bb10604bc605cf6e7bdac8ad5db3f1ee7e\data_memory.$memwr$\mem$rtl/data_memory.v:19$739_EN' from process `$paramod$f6ce05bb10604bc605cf6e7bdac8ad5db3f1ee7e\data_memory.$proc$rtl/data_memory.v:0$858'.
+No latch inferred for signal `$paramod$f6ce05bb10604bc605cf6e7bdac8ad5db3f1ee7e\data_memory.$memwr$\mem$rtl/data_memory.v:19$740_EN' from process `$paramod$f6ce05bb10604bc605cf6e7bdac8ad5db3f1ee7e\data_memory.$proc$rtl/data_memory.v:0$858'.
+No latch inferred for signal `$paramod$f6ce05bb10604bc605cf6e7bdac8ad5db3f1ee7e\data_memory.$memwr$\mem$rtl/data_memory.v:19$741_EN' from process `$paramod$f6ce05bb10604bc605cf6e7bdac8ad5db3f1ee7e\data_memory.$proc$rtl/data_memory.v:0$858'.
+No latch inferred for signal `$paramod$f6ce05bb10604bc605cf6e7bdac8ad5db3f1ee7e\data_memory.$memwr$\mem$rtl/data_memory.v:19$742_EN' from process `$paramod$f6ce05bb10604bc605cf6e7bdac8ad5db3f1ee7e\data_memory.$proc$rtl/data_memory.v:0$858'.
+No latch inferred for signal `$paramod$f6ce05bb10604bc605cf6e7bdac8ad5db3f1ee7e\data_memory.$memwr$\mem$rtl/data_memory.v:19$743_EN' from process `$paramod$f6ce05bb10604bc605cf6e7bdac8ad5db3f1ee7e\data_memory.$proc$rtl/data_memory.v:0$858'.
+No latch inferred for signal `$paramod$f6ce05bb10604bc605cf6e7bdac8ad5db3f1ee7e\data_memory.$memwr$\mem$rtl/data_memory.v:19$744_EN' from process `$paramod$f6ce05bb10604bc605cf6e7bdac8ad5db3f1ee7e\data_memory.$proc$rtl/data_memory.v:0$858'.
+No latch inferred for signal `$paramod$f6ce05bb10604bc605cf6e7bdac8ad5db3f1ee7e\data_memory.$memwr$\mem$rtl/data_memory.v:19$745_EN' from process `$paramod$f6ce05bb10604bc605cf6e7bdac8ad5db3f1ee7e\data_memory.$proc$rtl/data_memory.v:0$858'.
+No latch inferred for signal `$paramod$f6ce05bb10604bc605cf6e7bdac8ad5db3f1ee7e\data_memory.$memwr$\mem$rtl/data_memory.v:19$746_EN' from process `$paramod$f6ce05bb10604bc605cf6e7bdac8ad5db3f1ee7e\data_memory.$proc$rtl/data_memory.v:0$858'.
+No latch inferred for signal `$paramod$f6ce05bb10604bc605cf6e7bdac8ad5db3f1ee7e\data_memory.$memwr$\mem$rtl/data_memory.v:19$747_EN' from process `$paramod$f6ce05bb10604bc605cf6e7bdac8ad5db3f1ee7e\data_memory.$proc$rtl/data_memory.v:0$858'.
+No latch inferred for signal `$paramod$f6ce05bb10604bc605cf6e7bdac8ad5db3f1ee7e\data_memory.$memwr$\mem$rtl/data_memory.v:19$748_EN' from process `$paramod$f6ce05bb10604bc605cf6e7bdac8ad5db3f1ee7e\data_memory.$proc$rtl/data_memory.v:0$858'.
+No latch inferred for signal `$paramod$f6ce05bb10604bc605cf6e7bdac8ad5db3f1ee7e\data_memory.$memwr$\mem$rtl/data_memory.v:19$749_EN' from process `$paramod$f6ce05bb10604bc605cf6e7bdac8ad5db3f1ee7e\data_memory.$proc$rtl/data_memory.v:0$858'.
+No latch inferred for signal `$paramod$f6ce05bb10604bc605cf6e7bdac8ad5db3f1ee7e\data_memory.$memwr$\mem$rtl/data_memory.v:19$750_EN' from process `$paramod$f6ce05bb10604bc605cf6e7bdac8ad5db3f1ee7e\data_memory.$proc$rtl/data_memory.v:0$858'.
+No latch inferred for signal `$paramod$f6ce05bb10604bc605cf6e7bdac8ad5db3f1ee7e\data_memory.$memwr$\mem$rtl/data_memory.v:19$751_EN' from process `$paramod$f6ce05bb10604bc605cf6e7bdac8ad5db3f1ee7e\data_memory.$proc$rtl/data_memory.v:0$858'.
+No latch inferred for signal `$paramod$f6ce05bb10604bc605cf6e7bdac8ad5db3f1ee7e\data_memory.$memwr$\mem$rtl/data_memory.v:19$752_EN' from process `$paramod$f6ce05bb10604bc605cf6e7bdac8ad5db3f1ee7e\data_memory.$proc$rtl/data_memory.v:0$858'.
+No latch inferred for signal `$paramod$f6ce05bb10604bc605cf6e7bdac8ad5db3f1ee7e\data_memory.$memwr$\mem$rtl/data_memory.v:19$753_EN' from process `$paramod$f6ce05bb10604bc605cf6e7bdac8ad5db3f1ee7e\data_memory.$proc$rtl/data_memory.v:0$858'.
+No latch inferred for signal `$paramod$f6ce05bb10604bc605cf6e7bdac8ad5db3f1ee7e\data_memory.$memwr$\mem$rtl/data_memory.v:19$754_EN' from process `$paramod$f6ce05bb10604bc605cf6e7bdac8ad5db3f1ee7e\data_memory.$proc$rtl/data_memory.v:0$858'.
+No latch inferred for signal `$paramod$f6ce05bb10604bc605cf6e7bdac8ad5db3f1ee7e\data_memory.$memwr$\mem$rtl/data_memory.v:19$755_EN' from process `$paramod$f6ce05bb10604bc605cf6e7bdac8ad5db3f1ee7e\data_memory.$proc$rtl/data_memory.v:0$858'.
+No latch inferred for signal `$paramod$f6ce05bb10604bc605cf6e7bdac8ad5db3f1ee7e\data_memory.$memwr$\mem$rtl/data_memory.v:19$756_EN' from process `$paramod$f6ce05bb10604bc605cf6e7bdac8ad5db3f1ee7e\data_memory.$proc$rtl/data_memory.v:0$858'.
+No latch inferred for signal `$paramod$f6ce05bb10604bc605cf6e7bdac8ad5db3f1ee7e\data_memory.$memwr$\mem$rtl/data_memory.v:19$757_EN' from process `$paramod$f6ce05bb10604bc605cf6e7bdac8ad5db3f1ee7e\data_memory.$proc$rtl/data_memory.v:0$858'.
+No latch inferred for signal `$paramod$f6ce05bb10604bc605cf6e7bdac8ad5db3f1ee7e\data_memory.$memwr$\mem$rtl/data_memory.v:19$758_EN' from process `$paramod$f6ce05bb10604bc605cf6e7bdac8ad5db3f1ee7e\data_memory.$proc$rtl/data_memory.v:0$858'.
+No latch inferred for signal `$paramod$f6ce05bb10604bc605cf6e7bdac8ad5db3f1ee7e\data_memory.$memwr$\mem$rtl/data_memory.v:19$759_EN' from process `$paramod$f6ce05bb10604bc605cf6e7bdac8ad5db3f1ee7e\data_memory.$proc$rtl/data_memory.v:0$858'.
+No latch inferred for signal `$paramod$f6ce05bb10604bc605cf6e7bdac8ad5db3f1ee7e\data_memory.$memwr$\mem$rtl/data_memory.v:19$760_EN' from process `$paramod$f6ce05bb10604bc605cf6e7bdac8ad5db3f1ee7e\data_memory.$proc$rtl/data_memory.v:0$858'.
+No latch inferred for signal `$paramod$f6ce05bb10604bc605cf6e7bdac8ad5db3f1ee7e\data_memory.$memwr$\mem$rtl/data_memory.v:19$761_EN' from process `$paramod$f6ce05bb10604bc605cf6e7bdac8ad5db3f1ee7e\data_memory.$proc$rtl/data_memory.v:0$858'.
+No latch inferred for signal `$paramod$f6ce05bb10604bc605cf6e7bdac8ad5db3f1ee7e\data_memory.$memwr$\mem$rtl/data_memory.v:19$762_EN' from process `$paramod$f6ce05bb10604bc605cf6e7bdac8ad5db3f1ee7e\data_memory.$proc$rtl/data_memory.v:0$858'.
+No latch inferred for signal `$paramod$f6ce05bb10604bc605cf6e7bdac8ad5db3f1ee7e\data_memory.$memwr$\mem$rtl/data_memory.v:19$763_EN' from process `$paramod$f6ce05bb10604bc605cf6e7bdac8ad5db3f1ee7e\data_memory.$proc$rtl/data_memory.v:0$858'.
+No latch inferred for signal `$paramod$f6ce05bb10604bc605cf6e7bdac8ad5db3f1ee7e\data_memory.$memwr$\mem$rtl/data_memory.v:19$764_EN' from process `$paramod$f6ce05bb10604bc605cf6e7bdac8ad5db3f1ee7e\data_memory.$proc$rtl/data_memory.v:0$858'.
+No latch inferred for signal `$paramod$f6ce05bb10604bc605cf6e7bdac8ad5db3f1ee7e\data_memory.$memwr$\mem$rtl/data_memory.v:19$765_EN' from process `$paramod$f6ce05bb10604bc605cf6e7bdac8ad5db3f1ee7e\data_memory.$proc$rtl/data_memory.v:0$858'.
+No latch inferred for signal `$paramod$f6ce05bb10604bc605cf6e7bdac8ad5db3f1ee7e\data_memory.$memwr$\mem$rtl/data_memory.v:19$766_EN' from process `$paramod$f6ce05bb10604bc605cf6e7bdac8ad5db3f1ee7e\data_memory.$proc$rtl/data_memory.v:0$858'.
+No latch inferred for signal `$paramod$f6ce05bb10604bc605cf6e7bdac8ad5db3f1ee7e\data_memory.$memwr$\mem$rtl/data_memory.v:19$767_EN' from process `$paramod$f6ce05bb10604bc605cf6e7bdac8ad5db3f1ee7e\data_memory.$proc$rtl/data_memory.v:0$858'.
+No latch inferred for signal `$paramod$f6ce05bb10604bc605cf6e7bdac8ad5db3f1ee7e\data_memory.$memwr$\mem$rtl/data_memory.v:19$768_EN' from process `$paramod$f6ce05bb10604bc605cf6e7bdac8ad5db3f1ee7e\data_memory.$proc$rtl/data_memory.v:0$858'.
+No latch inferred for signal `$paramod$f6ce05bb10604bc605cf6e7bdac8ad5db3f1ee7e\data_memory.$memwr$\mem$rtl/data_memory.v:19$769_EN' from process `$paramod$f6ce05bb10604bc605cf6e7bdac8ad5db3f1ee7e\data_memory.$proc$rtl/data_memory.v:0$858'.
+No latch inferred for signal `$paramod$f6ce05bb10604bc605cf6e7bdac8ad5db3f1ee7e\data_memory.$memwr$\mem$rtl/data_memory.v:19$770_EN' from process `$paramod$f6ce05bb10604bc605cf6e7bdac8ad5db3f1ee7e\data_memory.$proc$rtl/data_memory.v:0$858'.
+No latch inferred for signal `$paramod$f6ce05bb10604bc605cf6e7bdac8ad5db3f1ee7e\data_memory.$memwr$\mem$rtl/data_memory.v:19$771_EN' from process `$paramod$f6ce05bb10604bc605cf6e7bdac8ad5db3f1ee7e\data_memory.$proc$rtl/data_memory.v:0$858'.
+No latch inferred for signal `$paramod$f6ce05bb10604bc605cf6e7bdac8ad5db3f1ee7e\data_memory.$memwr$\mem$rtl/data_memory.v:19$772_EN' from process `$paramod$f6ce05bb10604bc605cf6e7bdac8ad5db3f1ee7e\data_memory.$proc$rtl/data_memory.v:0$858'.
+No latch inferred for signal `$paramod$f6ce05bb10604bc605cf6e7bdac8ad5db3f1ee7e\data_memory.$memwr$\mem$rtl/data_memory.v:19$773_EN' from process `$paramod$f6ce05bb10604bc605cf6e7bdac8ad5db3f1ee7e\data_memory.$proc$rtl/data_memory.v:0$858'.
+No latch inferred for signal `$paramod$f6ce05bb10604bc605cf6e7bdac8ad5db3f1ee7e\data_memory.$memwr$\mem$rtl/data_memory.v:19$774_EN' from process `$paramod$f6ce05bb10604bc605cf6e7bdac8ad5db3f1ee7e\data_memory.$proc$rtl/data_memory.v:0$858'.
+No latch inferred for signal `$paramod$f6ce05bb10604bc605cf6e7bdac8ad5db3f1ee7e\data_memory.$memwr$\mem$rtl/data_memory.v:19$775_EN' from process `$paramod$f6ce05bb10604bc605cf6e7bdac8ad5db3f1ee7e\data_memory.$proc$rtl/data_memory.v:0$858'.
+No latch inferred for signal `$paramod$f6ce05bb10604bc605cf6e7bdac8ad5db3f1ee7e\data_memory.$memwr$\mem$rtl/data_memory.v:19$776_EN' from process `$paramod$f6ce05bb10604bc605cf6e7bdac8ad5db3f1ee7e\data_memory.$proc$rtl/data_memory.v:0$858'.
+No latch inferred for signal `$paramod$f6ce05bb10604bc605cf6e7bdac8ad5db3f1ee7e\data_memory.$memwr$\mem$rtl/data_memory.v:19$777_EN' from process `$paramod$f6ce05bb10604bc605cf6e7bdac8ad5db3f1ee7e\data_memory.$proc$rtl/data_memory.v:0$858'.
+No latch inferred for signal `$paramod$f6ce05bb10604bc605cf6e7bdac8ad5db3f1ee7e\data_memory.$memwr$\mem$rtl/data_memory.v:19$778_EN' from process `$paramod$f6ce05bb10604bc605cf6e7bdac8ad5db3f1ee7e\data_memory.$proc$rtl/data_memory.v:0$858'.
+No latch inferred for signal `$paramod$f6ce05bb10604bc605cf6e7bdac8ad5db3f1ee7e\data_memory.$memwr$\mem$rtl/data_memory.v:19$779_EN' from process `$paramod$f6ce05bb10604bc605cf6e7bdac8ad5db3f1ee7e\data_memory.$proc$rtl/data_memory.v:0$858'.
+No latch inferred for signal `$paramod$f6ce05bb10604bc605cf6e7bdac8ad5db3f1ee7e\data_memory.$memwr$\mem$rtl/data_memory.v:19$780_EN' from process `$paramod$f6ce05bb10604bc605cf6e7bdac8ad5db3f1ee7e\data_memory.$proc$rtl/data_memory.v:0$858'.
+No latch inferred for signal `$paramod$f6ce05bb10604bc605cf6e7bdac8ad5db3f1ee7e\data_memory.$memwr$\mem$rtl/data_memory.v:19$781_EN' from process `$paramod$f6ce05bb10604bc605cf6e7bdac8ad5db3f1ee7e\data_memory.$proc$rtl/data_memory.v:0$858'.
+No latch inferred for signal `$paramod$f6ce05bb10604bc605cf6e7bdac8ad5db3f1ee7e\data_memory.$memwr$\mem$rtl/data_memory.v:19$782_EN' from process `$paramod$f6ce05bb10604bc605cf6e7bdac8ad5db3f1ee7e\data_memory.$proc$rtl/data_memory.v:0$858'.
+No latch inferred for signal `$paramod$f6ce05bb10604bc605cf6e7bdac8ad5db3f1ee7e\data_memory.$memwr$\mem$rtl/data_memory.v:19$783_EN' from process `$paramod$f6ce05bb10604bc605cf6e7bdac8ad5db3f1ee7e\data_memory.$proc$rtl/data_memory.v:0$858'.
+No latch inferred for signal `$paramod$c4fd62287f5239a4abe79f563127fdd5b49b5f48\instruction_memory.\i' from process `$paramod$c4fd62287f5239a4abe79f563127fdd5b49b5f48\instruction_memory.$proc$rtl/instruction_memory.v:0$1053'.
+No latch inferred for signal `$paramod$c4fd62287f5239a4abe79f563127fdd5b49b5f48\instruction_memory.$memwr$\mem$rtl/instruction_memory.v:16$923_EN' from process `$paramod$c4fd62287f5239a4abe79f563127fdd5b49b5f48\instruction_memory.$proc$rtl/instruction_memory.v:0$1053'.
+No latch inferred for signal `$paramod$c4fd62287f5239a4abe79f563127fdd5b49b5f48\instruction_memory.$memwr$\mem$rtl/instruction_memory.v:16$924_EN' from process `$paramod$c4fd62287f5239a4abe79f563127fdd5b49b5f48\instruction_memory.$proc$rtl/instruction_memory.v:0$1053'.
+No latch inferred for signal `$paramod$c4fd62287f5239a4abe79f563127fdd5b49b5f48\instruction_memory.$memwr$\mem$rtl/instruction_memory.v:16$925_EN' from process `$paramod$c4fd62287f5239a4abe79f563127fdd5b49b5f48\instruction_memory.$proc$rtl/instruction_memory.v:0$1053'.
+No latch inferred for signal `$paramod$c4fd62287f5239a4abe79f563127fdd5b49b5f48\instruction_memory.$memwr$\mem$rtl/instruction_memory.v:16$926_EN' from process `$paramod$c4fd62287f5239a4abe79f563127fdd5b49b5f48\instruction_memory.$proc$rtl/instruction_memory.v:0$1053'.
+No latch inferred for signal `$paramod$c4fd62287f5239a4abe79f563127fdd5b49b5f48\instruction_memory.$memwr$\mem$rtl/instruction_memory.v:16$927_EN' from process `$paramod$c4fd62287f5239a4abe79f563127fdd5b49b5f48\instruction_memory.$proc$rtl/instruction_memory.v:0$1053'.
+No latch inferred for signal `$paramod$c4fd62287f5239a4abe79f563127fdd5b49b5f48\instruction_memory.$memwr$\mem$rtl/instruction_memory.v:16$928_EN' from process `$paramod$c4fd62287f5239a4abe79f563127fdd5b49b5f48\instruction_memory.$proc$rtl/instruction_memory.v:0$1053'.
+No latch inferred for signal `$paramod$c4fd62287f5239a4abe79f563127fdd5b49b5f48\instruction_memory.$memwr$\mem$rtl/instruction_memory.v:16$929_EN' from process `$paramod$c4fd62287f5239a4abe79f563127fdd5b49b5f48\instruction_memory.$proc$rtl/instruction_memory.v:0$1053'.
+No latch inferred for signal `$paramod$c4fd62287f5239a4abe79f563127fdd5b49b5f48\instruction_memory.$memwr$\mem$rtl/instruction_memory.v:16$930_EN' from process `$paramod$c4fd62287f5239a4abe79f563127fdd5b49b5f48\instruction_memory.$proc$rtl/instruction_memory.v:0$1053'.
+No latch inferred for signal `$paramod$c4fd62287f5239a4abe79f563127fdd5b49b5f48\instruction_memory.$memwr$\mem$rtl/instruction_memory.v:16$931_EN' from process `$paramod$c4fd62287f5239a4abe79f563127fdd5b49b5f48\instruction_memory.$proc$rtl/instruction_memory.v:0$1053'.
+No latch inferred for signal `$paramod$c4fd62287f5239a4abe79f563127fdd5b49b5f48\instruction_memory.$memwr$\mem$rtl/instruction_memory.v:16$932_EN' from process `$paramod$c4fd62287f5239a4abe79f563127fdd5b49b5f48\instruction_memory.$proc$rtl/instruction_memory.v:0$1053'.
+No latch inferred for signal `$paramod$c4fd62287f5239a4abe79f563127fdd5b49b5f48\instruction_memory.$memwr$\mem$rtl/instruction_memory.v:16$933_EN' from process `$paramod$c4fd62287f5239a4abe79f563127fdd5b49b5f48\instruction_memory.$proc$rtl/instruction_memory.v:0$1053'.
+No latch inferred for signal `$paramod$c4fd62287f5239a4abe79f563127fdd5b49b5f48\instruction_memory.$memwr$\mem$rtl/instruction_memory.v:16$934_EN' from process `$paramod$c4fd62287f5239a4abe79f563127fdd5b49b5f48\instruction_memory.$proc$rtl/instruction_memory.v:0$1053'.
+No latch inferred for signal `$paramod$c4fd62287f5239a4abe79f563127fdd5b49b5f48\instruction_memory.$memwr$\mem$rtl/instruction_memory.v:16$935_EN' from process `$paramod$c4fd62287f5239a4abe79f563127fdd5b49b5f48\instruction_memory.$proc$rtl/instruction_memory.v:0$1053'.
+No latch inferred for signal `$paramod$c4fd62287f5239a4abe79f563127fdd5b49b5f48\instruction_memory.$memwr$\mem$rtl/instruction_memory.v:16$936_EN' from process `$paramod$c4fd62287f5239a4abe79f563127fdd5b49b5f48\instruction_memory.$proc$rtl/instruction_memory.v:0$1053'.
+No latch inferred for signal `$paramod$c4fd62287f5239a4abe79f563127fdd5b49b5f48\instruction_memory.$memwr$\mem$rtl/instruction_memory.v:16$937_EN' from process `$paramod$c4fd62287f5239a4abe79f563127fdd5b49b5f48\instruction_memory.$proc$rtl/instruction_memory.v:0$1053'.
+No latch inferred for signal `$paramod$c4fd62287f5239a4abe79f563127fdd5b49b5f48\instruction_memory.$memwr$\mem$rtl/instruction_memory.v:16$938_EN' from process `$paramod$c4fd62287f5239a4abe79f563127fdd5b49b5f48\instruction_memory.$proc$rtl/instruction_memory.v:0$1053'.
+No latch inferred for signal `$paramod$c4fd62287f5239a4abe79f563127fdd5b49b5f48\instruction_memory.$memwr$\mem$rtl/instruction_memory.v:16$939_EN' from process `$paramod$c4fd62287f5239a4abe79f563127fdd5b49b5f48\instruction_memory.$proc$rtl/instruction_memory.v:0$1053'.
+No latch inferred for signal `$paramod$c4fd62287f5239a4abe79f563127fdd5b49b5f48\instruction_memory.$memwr$\mem$rtl/instruction_memory.v:16$940_EN' from process `$paramod$c4fd62287f5239a4abe79f563127fdd5b49b5f48\instruction_memory.$proc$rtl/instruction_memory.v:0$1053'.
+No latch inferred for signal `$paramod$c4fd62287f5239a4abe79f563127fdd5b49b5f48\instruction_memory.$memwr$\mem$rtl/instruction_memory.v:16$941_EN' from process `$paramod$c4fd62287f5239a4abe79f563127fdd5b49b5f48\instruction_memory.$proc$rtl/instruction_memory.v:0$1053'.
+No latch inferred for signal `$paramod$c4fd62287f5239a4abe79f563127fdd5b49b5f48\instruction_memory.$memwr$\mem$rtl/instruction_memory.v:16$942_EN' from process `$paramod$c4fd62287f5239a4abe79f563127fdd5b49b5f48\instruction_memory.$proc$rtl/instruction_memory.v:0$1053'.
+No latch inferred for signal `$paramod$c4fd62287f5239a4abe79f563127fdd5b49b5f48\instruction_memory.$memwr$\mem$rtl/instruction_memory.v:16$943_EN' from process `$paramod$c4fd62287f5239a4abe79f563127fdd5b49b5f48\instruction_memory.$proc$rtl/instruction_memory.v:0$1053'.
+No latch inferred for signal `$paramod$c4fd62287f5239a4abe79f563127fdd5b49b5f48\instruction_memory.$memwr$\mem$rtl/instruction_memory.v:16$944_EN' from process `$paramod$c4fd62287f5239a4abe79f563127fdd5b49b5f48\instruction_memory.$proc$rtl/instruction_memory.v:0$1053'.
+No latch inferred for signal `$paramod$c4fd62287f5239a4abe79f563127fdd5b49b5f48\instruction_memory.$memwr$\mem$rtl/instruction_memory.v:16$945_EN' from process `$paramod$c4fd62287f5239a4abe79f563127fdd5b49b5f48\instruction_memory.$proc$rtl/instruction_memory.v:0$1053'.
+No latch inferred for signal `$paramod$c4fd62287f5239a4abe79f563127fdd5b49b5f48\instruction_memory.$memwr$\mem$rtl/instruction_memory.v:16$946_EN' from process `$paramod$c4fd62287f5239a4abe79f563127fdd5b49b5f48\instruction_memory.$proc$rtl/instruction_memory.v:0$1053'.
+No latch inferred for signal `$paramod$c4fd62287f5239a4abe79f563127fdd5b49b5f48\instruction_memory.$memwr$\mem$rtl/instruction_memory.v:16$947_EN' from process `$paramod$c4fd62287f5239a4abe79f563127fdd5b49b5f48\instruction_memory.$proc$rtl/instruction_memory.v:0$1053'.
+No latch inferred for signal `$paramod$c4fd62287f5239a4abe79f563127fdd5b49b5f48\instruction_memory.$memwr$\mem$rtl/instruction_memory.v:16$948_EN' from process `$paramod$c4fd62287f5239a4abe79f563127fdd5b49b5f48\instruction_memory.$proc$rtl/instruction_memory.v:0$1053'.
+No latch inferred for signal `$paramod$c4fd62287f5239a4abe79f563127fdd5b49b5f48\instruction_memory.$memwr$\mem$rtl/instruction_memory.v:16$949_EN' from process `$paramod$c4fd62287f5239a4abe79f563127fdd5b49b5f48\instruction_memory.$proc$rtl/instruction_memory.v:0$1053'.
+No latch inferred for signal `$paramod$c4fd62287f5239a4abe79f563127fdd5b49b5f48\instruction_memory.$memwr$\mem$rtl/instruction_memory.v:16$950_EN' from process `$paramod$c4fd62287f5239a4abe79f563127fdd5b49b5f48\instruction_memory.$proc$rtl/instruction_memory.v:0$1053'.
+No latch inferred for signal `$paramod$c4fd62287f5239a4abe79f563127fdd5b49b5f48\instruction_memory.$memwr$\mem$rtl/instruction_memory.v:16$951_EN' from process `$paramod$c4fd62287f5239a4abe79f563127fdd5b49b5f48\instruction_memory.$proc$rtl/instruction_memory.v:0$1053'.
+No latch inferred for signal `$paramod$c4fd62287f5239a4abe79f563127fdd5b49b5f48\instruction_memory.$memwr$\mem$rtl/instruction_memory.v:16$952_EN' from process `$paramod$c4fd62287f5239a4abe79f563127fdd5b49b5f48\instruction_memory.$proc$rtl/instruction_memory.v:0$1053'.
+No latch inferred for signal `$paramod$c4fd62287f5239a4abe79f563127fdd5b49b5f48\instruction_memory.$memwr$\mem$rtl/instruction_memory.v:16$953_EN' from process `$paramod$c4fd62287f5239a4abe79f563127fdd5b49b5f48\instruction_memory.$proc$rtl/instruction_memory.v:0$1053'.
+No latch inferred for signal `$paramod$c4fd62287f5239a4abe79f563127fdd5b49b5f48\instruction_memory.$memwr$\mem$rtl/instruction_memory.v:16$954_EN' from process `$paramod$c4fd62287f5239a4abe79f563127fdd5b49b5f48\instruction_memory.$proc$rtl/instruction_memory.v:0$1053'.
+No latch inferred for signal `$paramod$c4fd62287f5239a4abe79f563127fdd5b49b5f48\instruction_memory.$memwr$\mem$rtl/instruction_memory.v:16$955_EN' from process `$paramod$c4fd62287f5239a4abe79f563127fdd5b49b5f48\instruction_memory.$proc$rtl/instruction_memory.v:0$1053'.
+No latch inferred for signal `$paramod$c4fd62287f5239a4abe79f563127fdd5b49b5f48\instruction_memory.$memwr$\mem$rtl/instruction_memory.v:16$956_EN' from process `$paramod$c4fd62287f5239a4abe79f563127fdd5b49b5f48\instruction_memory.$proc$rtl/instruction_memory.v:0$1053'.
+No latch inferred for signal `$paramod$c4fd62287f5239a4abe79f563127fdd5b49b5f48\instruction_memory.$memwr$\mem$rtl/instruction_memory.v:16$957_EN' from process `$paramod$c4fd62287f5239a4abe79f563127fdd5b49b5f48\instruction_memory.$proc$rtl/instruction_memory.v:0$1053'.
+No latch inferred for signal `$paramod$c4fd62287f5239a4abe79f563127fdd5b49b5f48\instruction_memory.$memwr$\mem$rtl/instruction_memory.v:16$958_EN' from process `$paramod$c4fd62287f5239a4abe79f563127fdd5b49b5f48\instruction_memory.$proc$rtl/instruction_memory.v:0$1053'.
+No latch inferred for signal `$paramod$c4fd62287f5239a4abe79f563127fdd5b49b5f48\instruction_memory.$memwr$\mem$rtl/instruction_memory.v:16$959_EN' from process `$paramod$c4fd62287f5239a4abe79f563127fdd5b49b5f48\instruction_memory.$proc$rtl/instruction_memory.v:0$1053'.
+No latch inferred for signal `$paramod$c4fd62287f5239a4abe79f563127fdd5b49b5f48\instruction_memory.$memwr$\mem$rtl/instruction_memory.v:16$960_EN' from process `$paramod$c4fd62287f5239a4abe79f563127fdd5b49b5f48\instruction_memory.$proc$rtl/instruction_memory.v:0$1053'.
+No latch inferred for signal `$paramod$c4fd62287f5239a4abe79f563127fdd5b49b5f48\instruction_memory.$memwr$\mem$rtl/instruction_memory.v:16$961_EN' from process `$paramod$c4fd62287f5239a4abe79f563127fdd5b49b5f48\instruction_memory.$proc$rtl/instruction_memory.v:0$1053'.
+No latch inferred for signal `$paramod$c4fd62287f5239a4abe79f563127fdd5b49b5f48\instruction_memory.$memwr$\mem$rtl/instruction_memory.v:16$962_EN' from process `$paramod$c4fd62287f5239a4abe79f563127fdd5b49b5f48\instruction_memory.$proc$rtl/instruction_memory.v:0$1053'.
+No latch inferred for signal `$paramod$c4fd62287f5239a4abe79f563127fdd5b49b5f48\instruction_memory.$memwr$\mem$rtl/instruction_memory.v:16$963_EN' from process `$paramod$c4fd62287f5239a4abe79f563127fdd5b49b5f48\instruction_memory.$proc$rtl/instruction_memory.v:0$1053'.
+No latch inferred for signal `$paramod$c4fd62287f5239a4abe79f563127fdd5b49b5f48\instruction_memory.$memwr$\mem$rtl/instruction_memory.v:16$964_EN' from process `$paramod$c4fd62287f5239a4abe79f563127fdd5b49b5f48\instruction_memory.$proc$rtl/instruction_memory.v:0$1053'.
+No latch inferred for signal `$paramod$c4fd62287f5239a4abe79f563127fdd5b49b5f48\instruction_memory.$memwr$\mem$rtl/instruction_memory.v:16$965_EN' from process `$paramod$c4fd62287f5239a4abe79f563127fdd5b49b5f48\instruction_memory.$proc$rtl/instruction_memory.v:0$1053'.
+No latch inferred for signal `$paramod$c4fd62287f5239a4abe79f563127fdd5b49b5f48\instruction_memory.$memwr$\mem$rtl/instruction_memory.v:16$966_EN' from process `$paramod$c4fd62287f5239a4abe79f563127fdd5b49b5f48\instruction_memory.$proc$rtl/instruction_memory.v:0$1053'.
+No latch inferred for signal `$paramod$c4fd62287f5239a4abe79f563127fdd5b49b5f48\instruction_memory.$memwr$\mem$rtl/instruction_memory.v:16$967_EN' from process `$paramod$c4fd62287f5239a4abe79f563127fdd5b49b5f48\instruction_memory.$proc$rtl/instruction_memory.v:0$1053'.
+No latch inferred for signal `$paramod$c4fd62287f5239a4abe79f563127fdd5b49b5f48\instruction_memory.$memwr$\mem$rtl/instruction_memory.v:16$968_EN' from process `$paramod$c4fd62287f5239a4abe79f563127fdd5b49b5f48\instruction_memory.$proc$rtl/instruction_memory.v:0$1053'.
+No latch inferred for signal `$paramod$c4fd62287f5239a4abe79f563127fdd5b49b5f48\instruction_memory.$memwr$\mem$rtl/instruction_memory.v:16$969_EN' from process `$paramod$c4fd62287f5239a4abe79f563127fdd5b49b5f48\instruction_memory.$proc$rtl/instruction_memory.v:0$1053'.
+No latch inferred for signal `$paramod$c4fd62287f5239a4abe79f563127fdd5b49b5f48\instruction_memory.$memwr$\mem$rtl/instruction_memory.v:16$970_EN' from process `$paramod$c4fd62287f5239a4abe79f563127fdd5b49b5f48\instruction_memory.$proc$rtl/instruction_memory.v:0$1053'.
+No latch inferred for signal `$paramod$c4fd62287f5239a4abe79f563127fdd5b49b5f48\instruction_memory.$memwr$\mem$rtl/instruction_memory.v:16$971_EN' from process `$paramod$c4fd62287f5239a4abe79f563127fdd5b49b5f48\instruction_memory.$proc$rtl/instruction_memory.v:0$1053'.
+No latch inferred for signal `$paramod$c4fd62287f5239a4abe79f563127fdd5b49b5f48\instruction_memory.$memwr$\mem$rtl/instruction_memory.v:16$972_EN' from process `$paramod$c4fd62287f5239a4abe79f563127fdd5b49b5f48\instruction_memory.$proc$rtl/instruction_memory.v:0$1053'.
+No latch inferred for signal `$paramod$c4fd62287f5239a4abe79f563127fdd5b49b5f48\instruction_memory.$memwr$\mem$rtl/instruction_memory.v:16$973_EN' from process `$paramod$c4fd62287f5239a4abe79f563127fdd5b49b5f48\instruction_memory.$proc$rtl/instruction_memory.v:0$1053'.
+No latch inferred for signal `$paramod$c4fd62287f5239a4abe79f563127fdd5b49b5f48\instruction_memory.$memwr$\mem$rtl/instruction_memory.v:16$974_EN' from process `$paramod$c4fd62287f5239a4abe79f563127fdd5b49b5f48\instruction_memory.$proc$rtl/instruction_memory.v:0$1053'.
+No latch inferred for signal `$paramod$c4fd62287f5239a4abe79f563127fdd5b49b5f48\instruction_memory.$memwr$\mem$rtl/instruction_memory.v:16$975_EN' from process `$paramod$c4fd62287f5239a4abe79f563127fdd5b49b5f48\instruction_memory.$proc$rtl/instruction_memory.v:0$1053'.
+No latch inferred for signal `$paramod$c4fd62287f5239a4abe79f563127fdd5b49b5f48\instruction_memory.$memwr$\mem$rtl/instruction_memory.v:16$976_EN' from process `$paramod$c4fd62287f5239a4abe79f563127fdd5b49b5f48\instruction_memory.$proc$rtl/instruction_memory.v:0$1053'.
+No latch inferred for signal `$paramod$c4fd62287f5239a4abe79f563127fdd5b49b5f48\instruction_memory.$memwr$\mem$rtl/instruction_memory.v:16$977_EN' from process `$paramod$c4fd62287f5239a4abe79f563127fdd5b49b5f48\instruction_memory.$proc$rtl/instruction_memory.v:0$1053'.
+No latch inferred for signal `$paramod$c4fd62287f5239a4abe79f563127fdd5b49b5f48\instruction_memory.$memwr$\mem$rtl/instruction_memory.v:16$978_EN' from process `$paramod$c4fd62287f5239a4abe79f563127fdd5b49b5f48\instruction_memory.$proc$rtl/instruction_memory.v:0$1053'.
+No latch inferred for signal `$paramod$c4fd62287f5239a4abe79f563127fdd5b49b5f48\instruction_memory.$memwr$\mem$rtl/instruction_memory.v:16$979_EN' from process `$paramod$c4fd62287f5239a4abe79f563127fdd5b49b5f48\instruction_memory.$proc$rtl/instruction_memory.v:0$1053'.
+No latch inferred for signal `$paramod$c4fd62287f5239a4abe79f563127fdd5b49b5f48\instruction_memory.$memwr$\mem$rtl/instruction_memory.v:16$980_EN' from process `$paramod$c4fd62287f5239a4abe79f563127fdd5b49b5f48\instruction_memory.$proc$rtl/instruction_memory.v:0$1053'.
+No latch inferred for signal `$paramod$c4fd62287f5239a4abe79f563127fdd5b49b5f48\instruction_memory.$memwr$\mem$rtl/instruction_memory.v:16$981_EN' from process `$paramod$c4fd62287f5239a4abe79f563127fdd5b49b5f48\instruction_memory.$proc$rtl/instruction_memory.v:0$1053'.
+No latch inferred for signal `$paramod$c4fd62287f5239a4abe79f563127fdd5b49b5f48\instruction_memory.$memwr$\mem$rtl/instruction_memory.v:16$982_EN' from process `$paramod$c4fd62287f5239a4abe79f563127fdd5b49b5f48\instruction_memory.$proc$rtl/instruction_memory.v:0$1053'.
+No latch inferred for signal `$paramod$c4fd62287f5239a4abe79f563127fdd5b49b5f48\instruction_memory.$memwr$\mem$rtl/instruction_memory.v:16$983_EN' from process `$paramod$c4fd62287f5239a4abe79f563127fdd5b49b5f48\instruction_memory.$proc$rtl/instruction_memory.v:0$1053'.
+No latch inferred for signal `$paramod$c4fd62287f5239a4abe79f563127fdd5b49b5f48\instruction_memory.$memwr$\mem$rtl/instruction_memory.v:16$984_EN' from process `$paramod$c4fd62287f5239a4abe79f563127fdd5b49b5f48\instruction_memory.$proc$rtl/instruction_memory.v:0$1053'.
+No latch inferred for signal `$paramod$c4fd62287f5239a4abe79f563127fdd5b49b5f48\instruction_memory.$memwr$\mem$rtl/instruction_memory.v:16$985_EN' from process `$paramod$c4fd62287f5239a4abe79f563127fdd5b49b5f48\instruction_memory.$proc$rtl/instruction_memory.v:0$1053'.
+No latch inferred for signal `$paramod$c4fd62287f5239a4abe79f563127fdd5b49b5f48\instruction_memory.$memwr$\mem$rtl/instruction_memory.v:16$986_EN' from process `$paramod$c4fd62287f5239a4abe79f563127fdd5b49b5f48\instruction_memory.$proc$rtl/instruction_memory.v:0$1053'.
+
+14.9. Executing PROC_DFF pass (convert process syncs to FFs).
+Creating register for signal `\register_file.\i' using process `\register_file.$proc$rtl/register_file.v:19$461'.
+  created $dff cell `$procdff$1199' with positive edge clock.
+Creating register for signal `\register_file.$memwr$\regs$rtl/register_file.v:22$452_EN' using process `\register_file.$proc$rtl/register_file.v:19$461'.
+  created $dff cell `$procdff$1200' with positive edge clock.
+Creating register for signal `\register_file.$memwr$\regs$rtl/register_file.v:22$453_EN' using process `\register_file.$proc$rtl/register_file.v:19$461'.
+  created $dff cell `$procdff$1201' with positive edge clock.
+Creating register for signal `\register_file.$memwr$\regs$rtl/register_file.v:22$454_EN' using process `\register_file.$proc$rtl/register_file.v:19$461'.
+  created $dff cell `$procdff$1202' with positive edge clock.
+Creating register for signal `\register_file.$memwr$\regs$rtl/register_file.v:22$455_EN' using process `\register_file.$proc$rtl/register_file.v:19$461'.
+  created $dff cell `$procdff$1203' with positive edge clock.
+Creating register for signal `\register_file.$memwr$\regs$rtl/register_file.v:22$456_EN' using process `\register_file.$proc$rtl/register_file.v:19$461'.
+  created $dff cell `$procdff$1204' with positive edge clock.
+Creating register for signal `\register_file.$memwr$\regs$rtl/register_file.v:22$457_EN' using process `\register_file.$proc$rtl/register_file.v:19$461'.
+  created $dff cell `$procdff$1205' with positive edge clock.
+Creating register for signal `\register_file.$memwr$\regs$rtl/register_file.v:22$458_EN' using process `\register_file.$proc$rtl/register_file.v:19$461'.
+  created $dff cell `$procdff$1206' with positive edge clock.
+Creating register for signal `\register_file.$memwr$\regs$rtl/register_file.v:22$459_EN' using process `\register_file.$proc$rtl/register_file.v:19$461'.
+  created $dff cell `$procdff$1207' with positive edge clock.
+Creating register for signal `\register_file.$memwr$\regs$rtl/register_file.v:24$460_ADDR' using process `\register_file.$proc$rtl/register_file.v:19$461'.
+  created $dff cell `$procdff$1208' with positive edge clock.
+Creating register for signal `\register_file.$memwr$\regs$rtl/register_file.v:24$460_DATA' using process `\register_file.$proc$rtl/register_file.v:19$461'.
+  created $dff cell `$procdff$1209' with positive edge clock.
+Creating register for signal `\register_file.$memwr$\regs$rtl/register_file.v:24$460_EN' using process `\register_file.$proc$rtl/register_file.v:19$461'.
+  created $dff cell `$procdff$1210' with positive edge clock.
+Creating register for signal `\program_counter.\pc' using process `\program_counter.$proc$rtl/program_counter.v:13$449'.
+  created $dff cell `$procdff$1211' with positive edge clock.
+Creating register for signal `\io_reg.\io_out' using process `\io_reg.$proc$rtl/io_reg.v:11$448'.
+  created $dff cell `$procdff$1212' with positive edge clock.
+Creating register for signal `$paramod$f6ce05bb10604bc605cf6e7bdac8ad5db3f1ee7e\data_memory.$memwr$\mem$rtl/data_memory.v:25$784_ADDR' using process `$paramod$f6ce05bb10604bc605cf6e7bdac8ad5db3f1ee7e\data_memory.$proc$rtl/data_memory.v:23$785'.
+  created $dff cell `$procdff$1213' with positive edge clock.
+Creating register for signal `$paramod$f6ce05bb10604bc605cf6e7bdac8ad5db3f1ee7e\data_memory.$memwr$\mem$rtl/data_memory.v:25$784_DATA' using process `$paramod$f6ce05bb10604bc605cf6e7bdac8ad5db3f1ee7e\data_memory.$proc$rtl/data_memory.v:23$785'.
+  created $dff cell `$procdff$1214' with positive edge clock.
+Creating register for signal `$paramod$f6ce05bb10604bc605cf6e7bdac8ad5db3f1ee7e\data_memory.$memwr$\mem$rtl/data_memory.v:25$784_EN' using process `$paramod$f6ce05bb10604bc605cf6e7bdac8ad5db3f1ee7e\data_memory.$proc$rtl/data_memory.v:23$785'.
+  created $dff cell `$procdff$1215' with positive edge clock.
+Creating register for signal `\cpu.\halted_r' using process `\cpu.$proc$rtl/cpu.v:90$41'.
+  created $dff cell `$procdff$1216' with positive edge clock.
+
+14.10. Executing PROC_MEMWR pass (convert process memory writes to cells).
+
+14.11. Executing PROC_CLEAN pass (remove empty switches from decision trees).
+Found and cleaned up 2 empty switches in `\register_file.$proc$rtl/register_file.v:19$461'.
+Removing empty process `register_file.$proc$rtl/register_file.v:19$461'.
+Found and cleaned up 3 empty switches in `\program_counter.$proc$rtl/program_counter.v:13$449'.
+Removing empty process `program_counter.$proc$rtl/program_counter.v:13$449'.
+Found and cleaned up 2 empty switches in `\io_reg.$proc$rtl/io_reg.v:11$448'.
+Removing empty process `io_reg.$proc$rtl/io_reg.v:11$448'.
+Removing empty process `$paramod$f6ce05bb10604bc605cf6e7bdac8ad5db3f1ee7e\data_memory.$proc$rtl/data_memory.v:0$858'.
+Found and cleaned up 1 empty switch in `$paramod$f6ce05bb10604bc605cf6e7bdac8ad5db3f1ee7e\data_memory.$proc$rtl/data_memory.v:23$785'.
+Removing empty process `$paramod$f6ce05bb10604bc605cf6e7bdac8ad5db3f1ee7e\data_memory.$proc$rtl/data_memory.v:23$785'.
+Removing empty process `$paramod$c4fd62287f5239a4abe79f563127fdd5b49b5f48\instruction_memory.$proc$rtl/instruction_memory.v:0$1053'.
+Found and cleaned up 2 empty switches in `\cpu.$proc$rtl/cpu.v:90$41'.
+Removing empty process `cpu.$proc$rtl/cpu.v:90$41'.
+Cleaned up 10 empty switches.
+
+14.12. Executing OPT_EXPR pass (perform const folding).
+Optimizing module rw_control.
+Optimizing module register_file.
+<suppressed ~3 debug messages>
+Optimizing module program_counter.
+Optimizing module io_reg.
+Optimizing module $paramod$f6ce05bb10604bc605cf6e7bdac8ad5db3f1ee7e\data_memory.
+Optimizing module harvard_top.
+Optimizing module $paramod$c4fd62287f5239a4abe79f563127fdd5b49b5f48\instruction_memory.
+Optimizing module cpu.
+<suppressed ~1 debug messages>
+Optimizing module address_decoder.
+
+15. Executing OPT pass (performing simple optimizations).
+
+15.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module rw_control.
+Optimizing module register_file.
+Optimizing module program_counter.
+Optimizing module io_reg.
+Optimizing module $paramod$f6ce05bb10604bc605cf6e7bdac8ad5db3f1ee7e\data_memory.
+Optimizing module harvard_top.
+Optimizing module $paramod$c4fd62287f5239a4abe79f563127fdd5b49b5f48\instruction_memory.
+Optimizing module cpu.
+Optimizing module address_decoder.
+
+15.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\rw_control'.
+Finding identical cells in module `\register_file'.
+Finding identical cells in module `\program_counter'.
+Finding identical cells in module `\io_reg'.
+Finding identical cells in module `$paramod$f6ce05bb10604bc605cf6e7bdac8ad5db3f1ee7e\data_memory'.
+Finding identical cells in module `\harvard_top'.
+Finding identical cells in module `$paramod$c4fd62287f5239a4abe79f563127fdd5b49b5f48\instruction_memory'.
+Finding identical cells in module `\cpu'.
+<suppressed ~9 debug messages>
+Finding identical cells in module `\address_decoder'.
+Removed a total of 3 cells.
+
+15.3. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \rw_control..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Running muxtree optimizer on module \register_file..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+    dead port 1/2 on $mux $procmux$1134.
+    dead port 1/2 on $mux $procmux$1128.
+    dead port 1/2 on $mux $procmux$1122.
+Running muxtree optimizer on module \program_counter..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Running muxtree optimizer on module \io_reg..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Running muxtree optimizer on module $paramod$f6ce05bb10604bc605cf6e7bdac8ad5db3f1ee7e\data_memory..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Running muxtree optimizer on module \harvard_top..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Running muxtree optimizer on module $paramod$c4fd62287f5239a4abe79f563127fdd5b49b5f48\instruction_memory..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Running muxtree optimizer on module \cpu..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Running muxtree optimizer on module \address_decoder..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Removed 3 multiplexer ports.
+<suppressed ~23 debug messages>
+
+15.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \rw_control.
+  Optimizing cells in module \register_file.
+    Consolidated identical input bits for $mux cell $procmux$1161:
+      Old ports: A=16'0000000000000000, B=16'1111111111111111, Y=$procmux$1161_Y
+      New ports: A=1'0, B=1'1, Y=$procmux$1161_Y [0]
+      New connections: $procmux$1161_Y [15:1] = { $procmux$1161_Y [0] $procmux$1161_Y [0] $procmux$1161_Y [0] $procmux$1161_Y [0] $procmux$1161_Y [0] $procmux$1161_Y [0] $procmux$1161_Y [0] $procmux$1161_Y [0] $procmux$1161_Y [0] $procmux$1161_Y [0] $procmux$1161_Y [0] $procmux$1161_Y [0] $procmux$1161_Y [0] $procmux$1161_Y [0] $procmux$1161_Y [0] }
+    Consolidated identical input bits for $mux cell $procmux$1158:
+      Old ports: A=16'0000000000000000, B=16'1111111111111111, Y=$procmux$1158_Y
+      New ports: A=1'0, B=1'1, Y=$procmux$1158_Y [0]
+      New connections: $procmux$1158_Y [15:1] = { $procmux$1158_Y [0] $procmux$1158_Y [0] $procmux$1158_Y [0] $procmux$1158_Y [0] $procmux$1158_Y [0] $procmux$1158_Y [0] $procmux$1158_Y [0] $procmux$1158_Y [0] $procmux$1158_Y [0] $procmux$1158_Y [0] $procmux$1158_Y [0] $procmux$1158_Y [0] $procmux$1158_Y [0] $procmux$1158_Y [0] $procmux$1158_Y [0] }
+    Consolidated identical input bits for $mux cell $procmux$1155:
+      Old ports: A=16'0000000000000000, B=16'1111111111111111, Y=$procmux$1155_Y
+      New ports: A=1'0, B=1'1, Y=$procmux$1155_Y [0]
+      New connections: $procmux$1155_Y [15:1] = { $procmux$1155_Y [0] $procmux$1155_Y [0] $procmux$1155_Y [0] $procmux$1155_Y [0] $procmux$1155_Y [0] $procmux$1155_Y [0] $procmux$1155_Y [0] $procmux$1155_Y [0] $procmux$1155_Y [0] $procmux$1155_Y [0] $procmux$1155_Y [0] $procmux$1155_Y [0] $procmux$1155_Y [0] $procmux$1155_Y [0] $procmux$1155_Y [0] }
+    Consolidated identical input bits for $mux cell $procmux$1152:
+      Old ports: A=16'0000000000000000, B=16'1111111111111111, Y=$procmux$1152_Y
+      New ports: A=1'0, B=1'1, Y=$procmux$1152_Y [0]
+      New connections: $procmux$1152_Y [15:1] = { $procmux$1152_Y [0] $procmux$1152_Y [0] $procmux$1152_Y [0] $procmux$1152_Y [0] $procmux$1152_Y [0] $procmux$1152_Y [0] $procmux$1152_Y [0] $procmux$1152_Y [0] $procmux$1152_Y [0] $procmux$1152_Y [0] $procmux$1152_Y [0] $procmux$1152_Y [0] $procmux$1152_Y [0] $procmux$1152_Y [0] $procmux$1152_Y [0] }
+    Consolidated identical input bits for $mux cell $procmux$1149:
+      Old ports: A=16'0000000000000000, B=16'1111111111111111, Y=$procmux$1149_Y
+      New ports: A=1'0, B=1'1, Y=$procmux$1149_Y [0]
+      New connections: $procmux$1149_Y [15:1] = { $procmux$1149_Y [0] $procmux$1149_Y [0] $procmux$1149_Y [0] $procmux$1149_Y [0] $procmux$1149_Y [0] $procmux$1149_Y [0] $procmux$1149_Y [0] $procmux$1149_Y [0] $procmux$1149_Y [0] $procmux$1149_Y [0] $procmux$1149_Y [0] $procmux$1149_Y [0] $procmux$1149_Y [0] $procmux$1149_Y [0] $procmux$1149_Y [0] }
+    Consolidated identical input bits for $mux cell $procmux$1146:
+      Old ports: A=16'0000000000000000, B=16'1111111111111111, Y=$procmux$1146_Y
+      New ports: A=1'0, B=1'1, Y=$procmux$1146_Y [0]
+      New connections: $procmux$1146_Y [15:1] = { $procmux$1146_Y [0] $procmux$1146_Y [0] $procmux$1146_Y [0] $procmux$1146_Y [0] $procmux$1146_Y [0] $procmux$1146_Y [0] $procmux$1146_Y [0] $procmux$1146_Y [0] $procmux$1146_Y [0] $procmux$1146_Y [0] $procmux$1146_Y [0] $procmux$1146_Y [0] $procmux$1146_Y [0] $procmux$1146_Y [0] $procmux$1146_Y [0] }
+    Consolidated identical input bits for $mux cell $procmux$1143:
+      Old ports: A=16'0000000000000000, B=16'1111111111111111, Y=$procmux$1143_Y
+      New ports: A=1'0, B=1'1, Y=$procmux$1143_Y [0]
+      New connections: $procmux$1143_Y [15:1] = { $procmux$1143_Y [0] $procmux$1143_Y [0] $procmux$1143_Y [0] $procmux$1143_Y [0] $procmux$1143_Y [0] $procmux$1143_Y [0] $procmux$1143_Y [0] $procmux$1143_Y [0] $procmux$1143_Y [0] $procmux$1143_Y [0] $procmux$1143_Y [0] $procmux$1143_Y [0] $procmux$1143_Y [0] $procmux$1143_Y [0] $procmux$1143_Y [0] }
+    Consolidated identical input bits for $mux cell $procmux$1140:
+      Old ports: A=16'0000000000000000, B=16'1111111111111111, Y=$procmux$1140_Y
+      New ports: A=1'0, B=1'1, Y=$procmux$1140_Y [0]
+      New connections: $procmux$1140_Y [15:1] = { $procmux$1140_Y [0] $procmux$1140_Y [0] $procmux$1140_Y [0] $procmux$1140_Y [0] $procmux$1140_Y [0] $procmux$1140_Y [0] $procmux$1140_Y [0] $procmux$1140_Y [0] $procmux$1140_Y [0] $procmux$1140_Y [0] $procmux$1140_Y [0] $procmux$1140_Y [0] $procmux$1140_Y [0] $procmux$1140_Y [0] $procmux$1140_Y [0] }
+    Consolidated identical input bits for $mux cell $procmux$1119:
+      Old ports: A=16'0000000000000000, B=16'1111111111111111, Y=$procmux$1119_Y
+      New ports: A=1'0, B=1'1, Y=$procmux$1119_Y [0]
+      New connections: $procmux$1119_Y [15:1] = { $procmux$1119_Y [0] $procmux$1119_Y [0] $procmux$1119_Y [0] $procmux$1119_Y [0] $procmux$1119_Y [0] $procmux$1119_Y [0] $procmux$1119_Y [0] $procmux$1119_Y [0] $procmux$1119_Y [0] $procmux$1119_Y [0] $procmux$1119_Y [0] $procmux$1119_Y [0] $procmux$1119_Y [0] $procmux$1119_Y [0] $procmux$1119_Y [0] }
+  Optimizing cells in module \register_file.
+    Consolidated identical input bits for $mux cell $procmux$1164:
+      Old ports: A=$2$memwr$\regs$rtl/register_file.v:24$460_EN[15:0]$488, B=16'0000000000000000, Y=$procmux$1164_Y
+      New ports: A=$procmux$1119_Y [0], B=1'0, Y=$procmux$1164_Y [0]
+      New connections: $procmux$1164_Y [15:1] = { $procmux$1164_Y [0] $procmux$1164_Y [0] $procmux$1164_Y [0] $procmux$1164_Y [0] $procmux$1164_Y [0] $procmux$1164_Y [0] $procmux$1164_Y [0] $procmux$1164_Y [0] $procmux$1164_Y [0] $procmux$1164_Y [0] $procmux$1164_Y [0] $procmux$1164_Y [0] $procmux$1164_Y [0] $procmux$1164_Y [0] $procmux$1164_Y [0] }
+  Optimizing cells in module \register_file.
+  Optimizing cells in module \program_counter.
+  Optimizing cells in module \io_reg.
+  Optimizing cells in module $paramod$f6ce05bb10604bc605cf6e7bdac8ad5db3f1ee7e\data_memory.
+    Consolidated identical input bits for $mux cell $procmux$1186:
+      Old ports: A=16'0000000000000000, B=16'1111111111111111, Y=$procmux$1186_Y
+      New ports: A=1'0, B=1'1, Y=$procmux$1186_Y [0]
+      New connections: $procmux$1186_Y [15:1] = { $procmux$1186_Y [0] $procmux$1186_Y [0] $procmux$1186_Y [0] $procmux$1186_Y [0] $procmux$1186_Y [0] $procmux$1186_Y [0] $procmux$1186_Y [0] $procmux$1186_Y [0] $procmux$1186_Y [0] $procmux$1186_Y [0] $procmux$1186_Y [0] $procmux$1186_Y [0] $procmux$1186_Y [0] $procmux$1186_Y [0] $procmux$1186_Y [0] }
+  Optimizing cells in module $paramod$f6ce05bb10604bc605cf6e7bdac8ad5db3f1ee7e\data_memory.
+  Optimizing cells in module \harvard_top.
+  Optimizing cells in module $paramod$c4fd62287f5239a4abe79f563127fdd5b49b5f48\instruction_memory.
+  Optimizing cells in module \cpu.
+  Optimizing cells in module \address_decoder.
+Performed a total of 11 changes.
+
+15.5. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\rw_control'.
+Finding identical cells in module `\register_file'.
+<suppressed ~42 debug messages>
+Finding identical cells in module `\program_counter'.
+Finding identical cells in module `\io_reg'.
+Finding identical cells in module `$paramod$f6ce05bb10604bc605cf6e7bdac8ad5db3f1ee7e\data_memory'.
+Finding identical cells in module `\harvard_top'.
+Finding identical cells in module `$paramod$c4fd62287f5239a4abe79f563127fdd5b49b5f48\instruction_memory'.
+Finding identical cells in module `\cpu'.
+Finding identical cells in module `\address_decoder'.
+Removed a total of 14 cells.
+
+15.6. Executing OPT_DFF pass (perform DFF optimizations).
+Adding EN signal on $procdff$1199 ($dff) from module register_file (D = 8, Q = \i).
+Setting constant 0-bit at position 0 on $auto$ff.cc:266:slice$1227 ($dffe) from module register_file.
+Setting constant 0-bit at position 1 on $auto$ff.cc:266:slice$1227 ($dffe) from module register_file.
+Setting constant 0-bit at position 2 on $auto$ff.cc:266:slice$1227 ($dffe) from module register_file.
+Setting constant 1-bit at position 3 on $auto$ff.cc:266:slice$1227 ($dffe) from module register_file.
+Setting constant 0-bit at position 4 on $auto$ff.cc:266:slice$1227 ($dffe) from module register_file.
+Setting constant 0-bit at position 5 on $auto$ff.cc:266:slice$1227 ($dffe) from module register_file.
+Setting constant 0-bit at position 6 on $auto$ff.cc:266:slice$1227 ($dffe) from module register_file.
+Setting constant 0-bit at position 7 on $auto$ff.cc:266:slice$1227 ($dffe) from module register_file.
+Setting constant 0-bit at position 8 on $auto$ff.cc:266:slice$1227 ($dffe) from module register_file.
+Setting constant 0-bit at position 9 on $auto$ff.cc:266:slice$1227 ($dffe) from module register_file.
+Setting constant 0-bit at position 10 on $auto$ff.cc:266:slice$1227 ($dffe) from module register_file.
+Setting constant 0-bit at position 11 on $auto$ff.cc:266:slice$1227 ($dffe) from module register_file.
+Setting constant 0-bit at position 12 on $auto$ff.cc:266:slice$1227 ($dffe) from module register_file.
+Setting constant 0-bit at position 13 on $auto$ff.cc:266:slice$1227 ($dffe) from module register_file.
+Setting constant 0-bit at position 14 on $auto$ff.cc:266:slice$1227 ($dffe) from module register_file.
+Setting constant 0-bit at position 15 on $auto$ff.cc:266:slice$1227 ($dffe) from module register_file.
+Setting constant 0-bit at position 16 on $auto$ff.cc:266:slice$1227 ($dffe) from module register_file.
+Setting constant 0-bit at position 17 on $auto$ff.cc:266:slice$1227 ($dffe) from module register_file.
+Setting constant 0-bit at position 18 on $auto$ff.cc:266:slice$1227 ($dffe) from module register_file.
+Setting constant 0-bit at position 19 on $auto$ff.cc:266:slice$1227 ($dffe) from module register_file.
+Setting constant 0-bit at position 20 on $auto$ff.cc:266:slice$1227 ($dffe) from module register_file.
+Setting constant 0-bit at position 21 on $auto$ff.cc:266:slice$1227 ($dffe) from module register_file.
+Setting constant 0-bit at position 22 on $auto$ff.cc:266:slice$1227 ($dffe) from module register_file.
+Setting constant 0-bit at position 23 on $auto$ff.cc:266:slice$1227 ($dffe) from module register_file.
+Setting constant 0-bit at position 24 on $auto$ff.cc:266:slice$1227 ($dffe) from module register_file.
+Setting constant 0-bit at position 25 on $auto$ff.cc:266:slice$1227 ($dffe) from module register_file.
+Setting constant 0-bit at position 26 on $auto$ff.cc:266:slice$1227 ($dffe) from module register_file.
+Setting constant 0-bit at position 27 on $auto$ff.cc:266:slice$1227 ($dffe) from module register_file.
+Setting constant 0-bit at position 28 on $auto$ff.cc:266:slice$1227 ($dffe) from module register_file.
+Setting constant 0-bit at position 29 on $auto$ff.cc:266:slice$1227 ($dffe) from module register_file.
+Setting constant 0-bit at position 30 on $auto$ff.cc:266:slice$1227 ($dffe) from module register_file.
+Setting constant 0-bit at position 31 on $auto$ff.cc:266:slice$1227 ($dffe) from module register_file.
+Adding SRST signal on $procdff$1211 ($dff) from module program_counter (D = $procmux$1175_Y, Q = \pc, rval = 6'000000).
+Adding EN signal on $auto$ff.cc:266:slice$1228 ($sdff) from module program_counter (D = $procmux$1173_Y, Q = \pc).
+Adding SRST signal on $procdff$1212 ($dff) from module io_reg (D = $procmux$1180_Y, Q = \io_out, rval = 16'0000000000000000).
+Adding EN signal on $auto$ff.cc:266:slice$1230 ($sdff) from module io_reg (D = \wdata, Q = \io_out).
+Adding SRST signal on $procdff$1216 ($dff) from module cpu (D = $procmux$1194_Y, Q = \halted_r, rval = 1'0).
+Adding EN signal on $auto$ff.cc:266:slice$1232 ($sdff) from module cpu (D = 1'1, Q = \halted_r).
+
+15.7. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \rw_control..
+Finding unused cells or wires in module \register_file..
+Finding unused cells or wires in module \program_counter..
+Finding unused cells or wires in module \io_reg..
+Finding unused cells or wires in module $paramod$f6ce05bb10604bc605cf6e7bdac8ad5db3f1ee7e\data_memory..
+Finding unused cells or wires in module \harvard_top..
+Finding unused cells or wires in module $paramod$c4fd62287f5239a4abe79f563127fdd5b49b5f48\instruction_memory..
+Finding unused cells or wires in module \cpu..
+Finding unused cells or wires in module \address_decoder..
+Removed 19 unused cells and 396 unused wires.
+<suppressed ~32 debug messages>
+
+15.8. Executing OPT_EXPR pass (perform const folding).
+Optimizing module $paramod$c4fd62287f5239a4abe79f563127fdd5b49b5f48\instruction_memory.
+Optimizing module $paramod$f6ce05bb10604bc605cf6e7bdac8ad5db3f1ee7e\data_memory.
+Optimizing module address_decoder.
+Optimizing module cpu.
+Optimizing module harvard_top.
+Optimizing module io_reg.
+Optimizing module program_counter.
+Optimizing module register_file.
+Optimizing module rw_control.
+
+15.9. Rerunning OPT passes. (Maybe there is more to do..)
+
+15.10. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module $paramod$c4fd62287f5239a4abe79f563127fdd5b49b5f48\instruction_memory..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Running muxtree optimizer on module $paramod$f6ce05bb10604bc605cf6e7bdac8ad5db3f1ee7e\data_memory..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Running muxtree optimizer on module \address_decoder..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Running muxtree optimizer on module \cpu..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Running muxtree optimizer on module \harvard_top..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Running muxtree optimizer on module \io_reg..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Running muxtree optimizer on module \program_counter..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Running muxtree optimizer on module \register_file..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Running muxtree optimizer on module \rw_control..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~13 debug messages>
+
+15.11. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module $paramod$c4fd62287f5239a4abe79f563127fdd5b49b5f48\instruction_memory.
+  Optimizing cells in module $paramod$f6ce05bb10604bc605cf6e7bdac8ad5db3f1ee7e\data_memory.
+  Optimizing cells in module \address_decoder.
+  Optimizing cells in module \cpu.
+  Optimizing cells in module \harvard_top.
+  Optimizing cells in module \io_reg.
+  Optimizing cells in module \program_counter.
+  Optimizing cells in module \register_file.
+  Optimizing cells in module \rw_control.
+Performed a total of 0 changes.
+
+15.12. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `$paramod$c4fd62287f5239a4abe79f563127fdd5b49b5f48\instruction_memory'.
+Finding identical cells in module `$paramod$f6ce05bb10604bc605cf6e7bdac8ad5db3f1ee7e\data_memory'.
+Finding identical cells in module `\address_decoder'.
+Finding identical cells in module `\cpu'.
+Finding identical cells in module `\harvard_top'.
+Finding identical cells in module `\io_reg'.
+Finding identical cells in module `\program_counter'.
+Finding identical cells in module `\register_file'.
+Finding identical cells in module `\rw_control'.
+Removed a total of 0 cells.
+
+15.13. Executing OPT_DFF pass (perform DFF optimizations).
+
+15.14. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module $paramod$c4fd62287f5239a4abe79f563127fdd5b49b5f48\instruction_memory..
+Finding unused cells or wires in module $paramod$f6ce05bb10604bc605cf6e7bdac8ad5db3f1ee7e\data_memory..
+Finding unused cells or wires in module \address_decoder..
+Finding unused cells or wires in module \cpu..
+Finding unused cells or wires in module \harvard_top..
+Finding unused cells or wires in module \io_reg..
+Finding unused cells or wires in module \program_counter..
+Finding unused cells or wires in module \register_file..
+Finding unused cells or wires in module \rw_control..
+
+15.15. Executing OPT_EXPR pass (perform const folding).
+Optimizing module $paramod$c4fd62287f5239a4abe79f563127fdd5b49b5f48\instruction_memory.
+Optimizing module $paramod$f6ce05bb10604bc605cf6e7bdac8ad5db3f1ee7e\data_memory.
+Optimizing module address_decoder.
+Optimizing module cpu.
+Optimizing module harvard_top.
+Optimizing module io_reg.
+Optimizing module program_counter.
+Optimizing module register_file.
+Optimizing module rw_control.
+
+15.16. Finished OPT passes. (There is nothing left to do.)
+
+16. Executing CHECK pass (checking for obvious problems).
+Checking module $paramod$c4fd62287f5239a4abe79f563127fdd5b49b5f48\instruction_memory...
+Checking module $paramod$f6ce05bb10604bc605cf6e7bdac8ad5db3f1ee7e\data_memory...
+Checking module address_decoder...
+Checking module cpu...
+Checking module harvard_top...
+Checking module io_reg...
+Checking module program_counter...
+Checking module register_file...
+Checking module rw_control...
+Found and reported 0 problems.
+
+17. Printing statistics.
+
+=== $paramod$c4fd62287f5239a4abe79f563127fdd5b49b5f48\instruction_memory ===
+
+   Number of wires:                  3
+   Number of wire bits:             54
+   Number of public wires:           3
+   Number of public wire bits:      54
+   Number of ports:                  2
+   Number of port bits:             22
+   Number of memories:               1
+   Number of memory bits:         1024
+   Number of processes:              0
+   Number of cells:                 66
+     $meminit_v2                    65
+     $memrd                          1
+
+=== $paramod$f6ce05bb10604bc605cf6e7bdac8ad5db3f1ee7e\data_memory ===
+
+   Number of wires:                  9
+   Number of wire bits:            110
+   Number of public wires:           6
+   Number of public wire bits:      72
+   Number of ports:                  5
+   Number of port bits:             40
+   Number of memories:               1
+   Number of memory bits:         1024
+   Number of processes:              0
+   Number of cells:                 70
+     $meminit_v2                    65
+     $memrd                          1
+     $memwr_v2                       1
+     $mux                            3
+
+=== address_decoder ===
+
+   Number of wires:                 10
+   Number of wire bits:             15
+   Number of public wires:           7
+   Number of public wire bits:      12
+   Number of ports:                  5
+   Number of port bits:             10
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                  6
+     $and                            2
+     $eq                             1
+     $le                             1
+     $not                            2
+
+=== cpu ===
+
+   Number of wires:                 55
+   Number of wire bits:            271
+   Number of public wires:          39
+   Number of public wire bits:     240
+   Number of ports:                 11
+   Number of port bits:             66
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                 38
+     $add                            2
+     $and                            7
+     $eq                             8
+     $mux                            4
+     $not                            3
+     $or                            10
+     $sdffe                          1
+     $sub                            1
+     program_counter                 1
+     register_file                   1
+
+=== harvard_top ===
+
+   Number of wires:                 19
+   Number of wire bits:            104
+   Number of public wires:          18
+   Number of public wire bits:     103
+   Number of ports:                  5
+   Number of port bits:             20
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                  7
+     $or                             1
+     $paramod$c4fd62287f5239a4abe79f563127fdd5b49b5f48\instruction_memory      1
+     $paramod$f6ce05bb10604bc605cf6e7bdac8ad5db3f1ee7e\data_memory      1
+     address_decoder                 1
+     cpu                             1
+     io_reg                          1
+     rw_control                      1
+
+=== io_reg ===
+
+   Number of wires:                  5
+   Number of wire bits:             35
+   Number of public wires:           5
+   Number of public wire bits:      35
+   Number of ports:                  5
+   Number of port bits:             35
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                  1
+     $sdffe                          1
+
+=== program_counter ===
+
+   Number of wires:                  8
+   Number of wire bits:             28
+   Number of public wires:           6
+   Number of public wire bits:      16
+   Number of ports:                  6
+   Number of port bits:             16
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                  3
+     $add                            1
+     $mux                            1
+     $sdffe                          1
+
+=== register_file ===
+
+   Number of wires:                 23
+   Number of wire bits:            214
+   Number of public wires:          10
+   Number of public wire bits:      92
+   Number of ports:                  9
+   Number of port bits:             60
+   Number of memories:               1
+   Number of memory bits:          128
+   Number of processes:              0
+   Number of cells:                 24
+     $logic_and                      1
+     $logic_not                      2
+     $memrd                          2
+     $memwr_v2                       9
+     $mux                            9
+     $reduce_bool                    1
+
+=== rw_control ===
+
+   Number of wires:                  9
+   Number of wire bits:             69
+   Number of public wires:           8
+   Number of public wire bits:      53
+   Number of ports:                  8
+   Number of port bits:             53
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                  4
+     $and                            2
+     $mux                            2
+
+=== design hierarchy ===
+
+   harvard_top                       1
+     $paramod$c4fd62287f5239a4abe79f563127fdd5b49b5f48\instruction_memory      1
+     $paramod$f6ce05bb10604bc605cf6e7bdac8ad5db3f1ee7e\data_memory      1
+     address_decoder                 1
+     cpu                             1
+       program_counter               1
+       register_file                 1
+     io_reg                          1
+     rw_control                      1
+
+   Number of wires:                141
+   Number of wire bits:            900
+   Number of public wires:         102
+   Number of public wire bits:     677
+   Number of ports:                 56
+   Number of port bits:            322
+   Number of memories:               3
+   Number of memory bits:         2176
+   Number of processes:              0
+   Number of cells:                211
+     $add                            3
+     $and                           11
+     $eq                             9
+     $le                             1
+     $logic_and                      1
+     $logic_not                      2
+     $meminit_v2                   130
+     $memrd                          4
+     $memwr_v2                      10
+     $mux                           19
+     $not                            5
+     $or                            11
+     $reduce_bool                    1
+     $sdffe                          3
+     $sub                            1
+
+End of script. Logfile hash: 1c71395223, CPU: user 0.07s system 0.00s, MEM: 16.90 MB peak
+Yosys 0.52 (git sha1 fee39a3284c90249e1d9684cf6944ffbbcbb8f90)
+Time spent: 29% 13x read_verilog (0 sec), 17% 4x opt_expr (0 sec), ...

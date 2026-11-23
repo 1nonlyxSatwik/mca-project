@@ -1,0 +1,1 @@
+read_verilog cache/rtl/cache_2way_top.v cache/rtl/cache_fsm.v cache/rtl/direct_mapped_cache.v cache/rtl/lru_state.v cache/rtl/tag_comparator.v cache/rtl/valid_bits.v cache/rtl/way_data_ram.v cache/rtl/way_tag_ram.v; hierarchy -check -top cache_2way_top; proc; opt; check -assert; stat;

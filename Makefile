@@ -1,4 +1,4 @@
-.PHONY: help test compare test-cpu test-cache test-integration harvard shared report synth
+.PHONY: help test compare test-cpu test-cache test-integration harvard shared report synth demo
 PYTHON ?= python3
 PROG ?= prog1
 help:
@@ -25,3 +25,5 @@ report:
 	$(PYTHON) scripts/report.py
 synth:
 	$(PYTHON) scripts/synth.py
+demo:
+	$(PYTHON) scripts/demo.py
