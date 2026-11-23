@@ -27,6 +27,15 @@ The project covers the full access path: tag lookup, hit selection, allocation, 
 - **Working CPU integration:** 36 configurations, with every retired instruction checked against an architectural interpreter.
 - **Reproducible evidence:** measured CSVs, plots, a final PDF report and automated simulation/structural synthesis.
 
+## Project team
+
+| Member | Name | Enrollment number | Assigned role |
+|:---:|:---|:---|:---|
+| 1 | Satwik | To be added | Direct-mapped baseline, cache data RAM and tag RAM |
+| 2 | Aditya Ranjan | To be added | 2-way cache controller, LRU replacement and top-level integration |
+| 3 | Ashar Asif Shaikh | To be added | Backing memory, CPU-cache bridge and memory-mapped I/O |
+| 4 | Aryan Singh Rathore | To be added | Verification, benchmark analysis, report and CI |
+
 ## Results at a glance
 
 Each benchmark contains **2,000 accesses**. The backing-memory latency parameter is **3 cycles**.
