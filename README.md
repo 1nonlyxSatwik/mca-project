@@ -33,8 +33,7 @@ The project covers the full access path: tag lookup, hit selection, allocation, 
 |:---:|:---|:---|:---|
 | 1 | Satwik | | Direct-mapped baseline, cache data RAM and tag RAM |
 | 2 | Aditya Ranjan | 2401010035 | 2-way cache controller, LRU replacement and top-level integration |
-| 3 | Ashar Asif Shaikh | | Backing memory, CPU-cache bridge and memory-mapped I/O |
-| 4 | Aryan Singh Rathore | | Verification, benchmark analysis, report and CI |
+| 3 | Ashar Asif Shaikh | 2401010110 | Backing memory, CPU-cache bridge and memory-mapped I/O |
 
 ## Results at a glance
 
@@ -200,7 +199,7 @@ All five top modules passed `hierarchy`, `proc`, `opt`, `check` and `stat` in Gi
 
 ## Credits and project scope
 
-MCA CacheLab is a team project maintained by **Satwik, Aditya Ranjan, Ashar Asif Shaikh, and Aryan Singh Rathore**. Our assigned responsibilities are listed in the [Project team](#project-team) section.
+MCA CacheLab is a team project maintained by **Satwik, Aditya Ranjan, and Ashar Asif Shaikh**. Our assigned responsibilities are listed in the [Project team](#project-team) section.
 
 The cache and CPU baselines build on the source revisions credited in [SOURCES.md](SOURCES.md). The combined project includes the CPU-cache bridge, latency-controlled CPU line memory, architectural reference checking, mixed-word cache stress tests, consolidated analysis, report generation and CI. Source attribution is preserved alongside our team responsibilities.
 
