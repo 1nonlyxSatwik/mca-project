@@ -12,6 +12,12 @@ Primary artifact: **MCA CacheLab - 2-Way Set-Associative Cache with LRU Replacem
 - Source revisions and contributor credits: `SOURCES.md`.
 - Viva/demo notes: `docs/viva.md`.
 
+## Team roster and contributions
+
+- **Satwik**: Direct-mapped baseline, cache data RAM, tag RAM, unit testbenches and CI.
+- **Aditya Ranjan** (Enrollment: `2401010035`): 2-way cache controller, LRU replacement, top-level integration and benchmark analysis.
+- **Ashar Asif Shaikh** (Enrollment: `2401010110`): Backing memory, CPU-cache bridge, memory-mapped I/O, architectural verification and final report.
+
 Run `make test` before packaging. Source history contains meaningful implementation/testing/documentation commits. Generated VVPs, VCDs, tool environments and transient logs are excluded. Historical reports in cache/report and original_* files are not the final submission report.
 
 The upstream cache demonstration is at https://github.com/Ritxshhh/2-Way_Set_Associative_Cache_with_LRU/blob/main/report/MCA_Phase1.mov . It is an upstream demo, not a newly recorded presentation of this integrated repository. Record the final presentation using docs/viva.md's demo sequence if a new video is required by the course.

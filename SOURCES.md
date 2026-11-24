@@ -9,7 +9,7 @@ This repository integrates two existing educational Verilog projects with a new 
 
 CPU source author: Ashar Asif Shaikh. Cache upstream credits Punit Yadav, Yash Kumar, Dhruv Kumar, Ritesh and Parul Nehra; see `cache/README.md` for their original roles and profile links.
 
-Integration and final repository maintained by Aditya Ranjan (`kvianAR`). New integration files are in `integration/`; new verification/report tooling is in `scripts/`; programs 5-6 and `tb/tb_components.v` are integration additions. Existing CPU tests gain failure exit codes; cache trace verification now rejects setup errors, empty traces and mismatches.
+Integration and final repository maintained jointly by Satwik, Aditya Ranjan (`kvianAR`), and Ashar Asif Shaikh. New integration files are in `integration/`; new verification/report tooling is in `scripts/`; programs 5-6 and `tb/tb_components.v` are integration additions. Existing CPU tests gain failure exit codes; cache trace verification now rejects setup errors, empty traces and mismatches.
 
 Original descriptions and reports are retained as historical source material. The root README, `docs/final_report.pdf`, and `results/` describe this combined implementation. Upstream synthesis figures are historical and are not adopted as measurements of this repository.
 
