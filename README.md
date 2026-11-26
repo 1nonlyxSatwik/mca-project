@@ -31,7 +31,7 @@ The project covers the full access path: tag lookup, hit selection, allocation, 
 
 | Member | Name | Enrollment number | Assigned role |
 |:---:|:---|:---|:---|
-| 1 | Satwik | | Direct-mapped baseline, cache data RAM, tag RAM, unit testbenches and CI |
+| 1 | Satwik | 2401020056 | Direct-mapped baseline, cache data RAM, tag RAM, unit testbenches and CI |
 | 2 | Aditya Ranjan | 2401010035 | 2-way cache controller, LRU replacement, top-level integration and benchmark analysis |
 | 3 | Ashar Asif Shaikh | 2401010110 | Backing memory, CPU-cache bridge, memory-mapped I/O, architectural verification and final report |
 
