@@ -3,7 +3,6 @@
 from pathlib import Path
 import csv,json,os
 os.environ.setdefault("MPLCONFIGDIR",str(Path(__file__).resolve().parents[1]/"sim/matplotlib"))
-from pathlib import Path
 import matplotlib
 matplotlib.use('Agg')
 import matplotlib.pyplot as plt
@@ -49,7 +48,7 @@ def page():story.append(PageBreak())
 p('MCA CacheLab','TitleMCA')
 p('2-Way Set-Associative Cache with LRU Replacement','Heading1')
 p('Direct-mapped baseline comparison, write-back verification and 16-bit CPU integration.','Heading2')
-p('Final integrated repository | Team: Satwik, Aditya Ranjan (2401010035), Ashar Asif Shaikh (2401010110)')
+p('Final integrated repository | Team: Satwik (2401020056), Aditya Ranjan (2401010035), Ashar Asif Shaikh (2401010110)')
 p('Abstract','Heading2')
 p('This project implements and verifies a 2 KB, two-way set-associative cache with least-recently-used replacement. An equal-capacity direct-mapped cache is the baseline. Both process identical memory traces against an independent golden model. Additional mixed-word tests exercise dirty writeback at three memory latencies. A new bridge connects the original 16-bit CPU to either cache and checks every retired instruction against a software-style architectural interpreter.')
 table([['Parameter','Direct mapped','2-way LRU'],['Address / data','32 / 32 bits','32 / 32 bits'],['Block size','16 bytes (4 words)','16 bytes (4 words)'],['Data capacity','2 KB','2 KB'],['Organization','128 lines','64 sets x 2 ways'],['Tag / index / offset','21 / 7 / 4 bits','22 / 6 / 4 bits'],['Writes','Write-back, write-allocate','Write-back, write-allocate']],[150,180,180])
@@ -102,7 +101,7 @@ p('Submission package','Heading2')
 p('Primary: cache RTL, direct-mapped baseline, cache verification, performance tables, figures and final report. Supporting: CPU baseline, cached CPU experiments, implementation notes and viva guide. Original reports are historical references. Official Phase 2 compliance must be assessed against the course requirement sheet, which was not supplied.')
 def footer(canvas,doc):
  canvas.setStrokeColor(colors.HexColor('#d8e0eb'));canvas.line(42,39,553,39);canvas.setFont('Helvetica',8);canvas.setFillColor(colors.HexColor('#607086'));canvas.drawString(42,25,'MCA CacheLab | Verified cache study and CPU integration');canvas.drawRightString(553,25,str(doc.page))
-SimpleDocTemplate(str(DOC/'final_report.pdf'),pagesize=(595,842),rightMargin=42,leftMargin=42,topMargin=42,bottomMargin=51,title='MCA CacheLab - Final Technical Report',author='Satwik, Aditya Ranjan (2401010035), Ashar Asif Shaikh (2401010110)').build(story,onFirstPage=footer,onLaterPages=footer)
+SimpleDocTemplate(str(DOC/'final_report.pdf'),pagesize=(595,842),rightMargin=42,leftMargin=42,topMargin=42,bottomMargin=51,title='MCA CacheLab - Final Technical Report',author='Satwik (2401020056), Aditya Ranjan (2401010035), Ashar Asif Shaikh (2401010110)').build(story,onFirstPage=footer,onLaterPages=footer)
 md+=['\n## CPU baseline\n','| Program | Harvard cycles | Shared cycles |\n|---|---:|---:|']
 for n in range(1,5):
  h=next(r for r in cpu if r['architecture']=='harvard' and r['program']==f'prog{n}');s=next(r for r in cpu if r['architecture']=='shared' and r['program']==f'prog{n}');md.append(f'| prog{n} | {h["cycles"]} | {s["cycles"]} |')
