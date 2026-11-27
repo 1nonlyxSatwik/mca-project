@@ -1,4 +1,4 @@
-.PHONY: help test compare test-cpu test-cache test-integration harvard shared report synth demo
+.PHONY: help test compare test-cpu test-cache test-integration harvard shared report synth demo clean
 PYTHON ?= python3
 PROG ?= prog1
 help:
@@ -9,6 +9,7 @@ help:
 	@echo 'make harvard PROG=prog1 / make shared PROG=prog1'
 	@echo 'make report            Generate final PDF, charts and Markdown results'
 	@echo 'make synth             Run Yosys structural synthesis (requires yosys)'
+	@echo 'make clean             Remove generated simulation and build artifacts'
 test:
 	$(PYTHON) scripts/verify.py all
 compare test-cpu:
@@ -27,3 +28,6 @@ synth:
 	$(PYTHON) scripts/synth.py
 demo:
 	$(PYTHON) scripts/demo.py
+clean:
+	rm -rf sim
+	$(MAKE) -C cache clean
