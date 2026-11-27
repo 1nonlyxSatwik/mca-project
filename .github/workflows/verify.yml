@@ -9,6 +9,10 @@ jobs:
         with:
           python-version: '3.11'
       - run: sudo apt-get update && sudo apt-get install -y iverilog
+      - name: Check Python scripts and Makefile targets
+        run: |
+          python3 -m py_compile scripts/*.py
+          make help
       - run: make test
       - name: Check reproducible measured CSVs
         run: git diff --exit-code -- results/*.csv
