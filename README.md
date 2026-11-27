@@ -92,6 +92,7 @@ For this private repository, clone using an account with access.
 | `make demo` | Live cache demonstration and measured comparison |
 | `make report` | Generate the final PDF and charts from measured CSVs |
 | `make synth` | Run Yosys structural checking for five top modules |
+| `make clean` | Remove generated simulation and build artifacts |
 
 Tests stop with a nonzero exit status on compiler errors, mismatches, missing inputs, incomplete results or timeouts. Generated logs and waveforms stay in build directories; measured CSVs are in [`results/`](results/).
 
