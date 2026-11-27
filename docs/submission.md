@@ -14,7 +14,7 @@ Primary artifact: **MCA CacheLab - 2-Way Set-Associative Cache with LRU Replacem
 
 ## Team roster and contributions
 
-- **Satwik**: Direct-mapped baseline, cache data RAM, tag RAM, unit testbenches and CI.
+- **Satwik** (Enrollment: `2401020056`): Direct-mapped baseline, cache data RAM, tag RAM, unit testbenches and CI.
 - **Aditya Ranjan** (Enrollment: `2401010035`): 2-way cache controller, LRU replacement, top-level integration and benchmark analysis.
 - **Ashar Asif Shaikh** (Enrollment: `2401010110`): Backing memory, CPU-cache bridge, memory-mapped I/O, architectural verification and final report.
 
